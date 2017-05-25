@@ -1,4 +1,4 @@
-# kentoriiWebsite
+# kentoriiWebsite docker
 
 ## Setting up local environment for web development
 
@@ -37,8 +37,3 @@ Password: root
 Connected? Good. You have access to your LOCAL mysql database.
 
 10. As a final test, go to your browser and enter `localhost` or `127.0.0.1` or `kentorii.local` into the url and press enter. If you get no error then your local site is ready for testing.
-
-
-## Deploying code to godaddy (production/live)
-
-## Code base structure briefing
