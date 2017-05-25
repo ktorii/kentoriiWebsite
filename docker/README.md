@@ -38,3 +38,9 @@ If you get errors, read the error and try to figure out how to solve it.
 Connected? Good.
 
 10. To verify your local environment is setup properly, go to your browser and enter `localhost` or `127.0.0.1` or `kentorii.local` into the url and press enter. If the local site successfully loads, then your local site is ready for testing
+
+11. When you're done working, turn off your docker containers with:
+```
+docker-compose down
+```
+If you don't do this, your computer will probably have its fan going on because docker uses up alot of the cpu% after a while. Also if you forget to `docker-compose down` before you put your computer to sleep, stuff may stop working, forcing you to quit the docker application and restart it.
