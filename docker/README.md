@@ -19,7 +19,9 @@ For mac: it should be in /etc folder. If it's not there, create the hosts file t
 for windows: C:\Windows\System32\drivers\etc\hosts . Or in another drive is you messed with partitions.
 
 Add the following onto a new line:
-    127.0.0.1	kentorii.local
+```
+127.0.0.1	kentorii.local
+```
 Make sure you're NOT commenting this out with a '#' at the beginning of the line
 
 6. (Make sure you're in the docker/ folder. Run `docker-compose build`.
