@@ -3,7 +3,7 @@
 
 ## Updating production
 1. If the user is not set to have permission into godaddy cpanel for kentorii.com, then set that up by importing the user's private key on godaddy.com
-2. ssh into the production server on godaddy: `ssh -l <username-for-godaddy-account> kentorii.com -p 22`
+2. ssh into the production server on godaddy: `ssh -l <username-for-godaddy-account> kentorii.com -p <port-number>`
 3. navigate to the main www directory
 4. git fetch and merge the develop branch from github. make sure current branch is develop
 5. make sure everything works on the live site. all developers need to go on the site and make sure the features are working. QA does not test this.
