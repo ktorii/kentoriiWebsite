@@ -16,13 +16,12 @@ docker's connection to your local mysql database
 
 5. Navigate to your etc hosts file. 
 For mac: it should be in /etc folder. If it's not there, create the hosts file there.
-for windows: C:\Windows\System32\drivers\etc\hosts . Or in another drive is you messed with partitions.
+for windows: C:\Windows\System32\drivers\etc\hosts . Or it's in another drive if you messed with partitions.
 
 Add the following onto a new line:
 ```
 127.0.0.1	kentorii.local
 ```
-Make sure you're NOT commenting this out with a '#' at the beginning of the line
 
 6. Make sure you're in the docker/ folder and run `docker-compose build`.
 If you get errors, read the error and try to figure out how to solve it.
