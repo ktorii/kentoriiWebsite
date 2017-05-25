@@ -38,4 +38,4 @@ If you get errors, read the error and try to figure out how to solve it.
 
 Connected? Good.
 
-10. To verify your local environment is setup properly, go to your browser and enter `localhost` or `127.0.0.1` or `kentorii.local` into the url and press enter. If you get no error then your local site is ready for testing.
+10. To verify your local environment is setup properly, go to your browser and enter `localhost` or `127.0.0.1` or `kentorii.local` into the url and press enter. If the local site successfully loads, then your local site is ready for testing
