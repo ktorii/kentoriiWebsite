@@ -9,4 +9,4 @@
 5. make sure everything works on the live site. all developers need to go on the site and make sure the features are working. QA does not test this.
 6. once everything is confirmed to be working on production, push the cards related to this period's release number into the corresponding release list on trello.
 7. Make a branch like `release-1.13` on the git repo that branches off the working dev branch.
-8. Merge the dev branch into the master branch too.
+8. Merge the dev branch into the master branch too
