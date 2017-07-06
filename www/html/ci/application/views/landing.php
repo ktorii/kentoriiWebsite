@@ -578,7 +578,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <p>Do you want to play an arcade game that has you flying a jetplane while playing epic music in space? Avoid the space obstacles and enemies and get to the end of the song! If you get hit, the space gods will give you another chance by having you press a keyboard key within a certain time limit. If you press it in time, then you are safe! If not, then I guess you are starting the song over again. Inspired by my childhood space arcade games and The Impossible Game.</p>
 
 <p><strong>Watch the trailer </strong><a href="https://youtu.be/tYUymiCDOY8" target="_blank">here!</a></p>
-<p><strong>Download the game! </strong><a href="http://www.mediafire.com/file/7fdkazh3w61l6dc/SpaceDodgersGithub.zip" target="_blank">WindowsOS</a></p>
+<p><strong>Download the game! </strong><a href="SpaceDodgersGithub.zip" download="SpaceDodgers">WindowsOS</a></p>
 <p><strong>Requires:</strong> python+pygame| WindowsOS</p>
 <p><strong>Check out the GitHub <a href="https://github.com/ktorii/Space-Dodgers-1.2" target="_blank">here!</a></strong></p>
 <ul class="list-inline">
@@ -669,9 +669,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <p>Combine the cuteness of mochi sticky rice balls and a classic game of speed hockey. You get Dango Puck! With the exception of the music, everything was made by me. All graphics, code, and audio clips were made by me.</p>
 
 <p><strong>Download the game for </strong>
-<a href="http://www.mediafire.com/file/ty75vbtmqx5450m/DangoPuckv1MacUniversal.zip" target="_blank" >MacOS</a>,
-<a href="http://www.mediafire.com/file/yl1w0b261212heb/DangoPuckv1Win86.zip" target="_blank" >Windows</a>, or
-<a href="http://www.mediafire.com/file/hpelalbkzni12m2/DangoPuckv1LinuxUniversal.zip" target="_blank" >Linux Universal.</a>
+<a href="DangoPuckv1MacUniversal.zip" download="DangoPuckv1Mac" >MacOS</a>,
+<a href="DangoPuckv1Win86.zip" download="DangoPuckv1Win86" >Windows</a>, or
+<a href="DangoPuckv1LinuxUniversal.zip" download="DangoPuckv1Linux" >Linux Universal.</a>
 </p>
 <p><strong>Check out the GitHub <a href="https://github.com/ktorii/DangoPuckv1" target="_blank">here!</a></strong></p>
 
