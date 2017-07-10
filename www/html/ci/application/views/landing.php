@@ -495,41 +495,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 			</div>
 		</div>
 	</section>
-	<!-- Team Section -->
-	<!--
-    <section id="team" style="background-image:url(img/notebook.jpg);">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12 text-center">
-                    <h2 class="section-heading">Math/Physics HELP</h2>
-                    <h3 class="section-subheading text-muted" style="margin-bottom:0;">WARNING: This section is purposely not professional. Please do not judge my professionalism based on this section. Thank you in advance.</h3><br />
-                </div>
-            </div>
-
-            <div class="row">
-                <div class="col-lg-8 col-lg-offset-2 text-center">
-                    <p class="large text-muted" style="margin-top:5px;">I make the school studying less frustrating. How? These videos are kept CASUAL and UNDERSTANDABLE. Big professional vocabulary just clouds up understanding. And a student teacher can relate more easily to the difficulties of the student.</p>
-                </div>
-            </div>
-            <br>
-            <div class="row">
-            <div class="col-lg-12 text-center">
-            <div class="col-md-4 col-sm-6 portfolio-item" style="background-color:#EBEBF5;">
-		<div class="portfolio-hover">
-		<div class="portfolio-hover-content">
-		</div>
-		</div>
-		<a class="portfolio-link" href="https://drive.google.com/file/d/0B7TI-OA8_nbqb09SaTRlb3Y2TUE/view?usp=sharing" target="_blank"><img alt="" class="img-responsive" src="<?php // echo base_url(); ?>img/derivativeskenvideo.jpg" /> </a>
-		<div class="portfolio-caption">
-		<h4>Derivatives<br>(Power/Quotient/Chain Rules)</h4>
-		<p class="text-muted">Did you miss that one important calculus class? You&#39;ll be good soon.(Contains mild swearing; 30mins)</p>
-		</div>
-	    </div>
-	    </div>
-	    </div>
-	</div>
-    </section>
--->
 </div>
 
 
