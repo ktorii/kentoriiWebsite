@@ -669,9 +669,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <p>Combine the cuteness of mochi sticky rice balls and a classic game of speed hockey. You get Dango Puck! With the exception of the music, everything was made by me. All graphics, code, and audio clips were made by me.</p>
 
 <p><strong>Download the game for </strong>
-<a href="<?php echo base_url(); ?>downloads/DangoPuckv1MacUniversal.zip" download="DangoPuckv1Mac" >MacOS</a>,
+<a href="<?php echo base_url(); ?>downloads/DangoPuckv1MacUniversal.zip" download="DangoPuckv1MacUniversal" >MacOS</a>,
 <a href="<?php echo base_url(); ?>downloads/DangoPuckv1Win86.zip" download="DangoPuckv1Win86" >Windows</a>, or
-<a href="<?php echo base_url(); ?>downloads/DangoPuckv1LinuxUniversal.zip" download="DangoPuckv1Linux" >Linux Universal.</a>
+<a href="<?php echo base_url(); ?>downloads/DangoPuckv1LinuxUniversal.zip" download="DangoPuckv1LinuxUniversal" >Linux Universal.</a>
 </p>
 <p><strong>Check out the GitHub <a href="https://github.com/ktorii/DangoPuckv1" target="_blank">here!</a></strong></p>
 
