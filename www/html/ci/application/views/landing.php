@@ -519,7 +519,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 		<div class="portfolio-hover-content">
 		</div>
 		</div>
-		<a class="portfolio-link" href="https://drive.google.com/file/d/0B7TI-OA8_nbqb09SaTRlb3Y2TUE/view?usp=sharing" target="_blank"><img alt="" class="img-responsive" src="<?php echo base_url(); ?>img/derivativeskenvideo.jpg" /> </a>
+		<a class="portfolio-link" href="https://drive.google.com/file/d/0B7TI-OA8_nbqb09SaTRlb3Y2TUE/view?usp=sharing" target="_blank"><img alt="" class="img-responsive" src="<?php // echo base_url(); ?>img/derivativeskenvideo.jpg" /> </a>
 		<div class="portfolio-caption">
 		<h4>Derivatives<br>(Power/Quotient/Chain Rules)</h4>
 		<p class="text-muted">Did you miss that one important calculus class? You&#39;ll be good soon.(Contains mild swearing; 30mins)</p>
