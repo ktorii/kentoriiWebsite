@@ -1,17 +1,19 @@
-<?php
+{% extends "navbar.html" %}
+
+
+{% block extra %}<?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 ?>
+{% endblock %}
+{% block head %}
 
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
 	<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
 	<title>Ken Torii &copy;</title>
 	<meta content="width=device-width, initial-scale=1" name="viewport" />
 	<link href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" />
-	<link href="<?php echo base_url(); ?>font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
-	<link href="<?php echo base_url(); ?>css/index2.css" rel="stylesheet" />
+	<link href="{{ data.base_url }}font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+	<link href="{{ data.base_url }}css/index2.css" rel="stylesheet" />
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
 	<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 	<script type="text/javascript">
@@ -74,46 +76,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     	});
 
 	</script>
-</head>
-<body>
-<div class="container kt-tabs-component">
-<div class="container strictly-no-padding ">
-<div class="kt-google-translate-widget" id="google_translate_element"></div>
-<nav class="navbar navbar-inverse kt-tabs-component-nav"><!--navbar-default-->
-  <div class="container-fluid">
-    <div class="navbar-header">
 
-      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      <a class="navbar-brand" href="#" style="color:#fed136;">Menu</a>
-    </div>
-    <div class="collapse navbar-collapse kt-tabs-component-nav-div" id="myNavbar">
-      <ul class="nav navbar-nav">
-        <li class="active"><a href="#aboutsite">About This Site</a></li>
-        <li><a href="#whatsup">What's Up?</a></li>
-		<li><a href="#aboutme">About Me</a></li>
-		<li><a href="#gamedev">Games</a></li>
-		<li><a href="#otherprojects">Other Projects</a></li>
-		<li><a href="#smash">Random</a></li>
-		<li class="dropdown"><a aria-expanded="false" aria-haspopup="true" class="dropdown-toggle" data-toggle="dropdown" href="#" role="button">Tutorials</a>
-			<ul class="dropdown-menu">
-				<li><a href="#physics">Physics</a></li>
-				<li><a href="#math">Math</a></li>
-			</ul>
-		</li>
-		<li><a href="#contactme">Contact</a></li>
-      </ul>
+{% endblock %}
 
-
-    </div>
-  </div>
-</nav>
-
-</div>
-</div>
+{% block content %}
 
 <!--ABOUT THIS SITE-->
 <div class="container kt-tabs-component-content clean-container-theme" id="aboutsite">
@@ -128,7 +94,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 			<h3>Or ask me <a class="kt-tab-link" href="#whatsup">What's Up?</a></h3>
 		  </div>
 		  <div class="col-sm-12 text-center">
-			<img src="<?php echo base_url(); ?>img/birdsleeping.png" class="img-responsive img-center" >
+			<img src="{{ data.base_url }}img/birdsleeping.png" class="img-responsive img-center" >
 		  </div>
 	  	</div>
 	</div>
@@ -147,9 +113,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	    <h4 style="display:none;">Feeling done.</h4>
 
 	    <div class="col-sm-12" style="text-align:center;">
-	    	<img style="display:none;" src="<?php echo base_url(); ?>img/totorohappy.jpeg" width="100px" height="100px" />
-	    	<img style="display:visible;" src="<?php echo base_url(); ?>img/totoroalright.png" width="100px" height="100px" />
-	    	<img style="display:none;" src="<?php echo base_url(); ?>img/patrickover.png" width="100px" height="100px" />
+	    	<img style="display:none;" src="{{ data.base_url }}img/totorohappy.jpeg" width="100px" height="100px" />
+	    	<img style="display:visible;" src="{{ data.base_url }}img/totoroalright.png" width="100px" height="100px" />
+	    	<img style="display:none;" src="{{ data.base_url }}img/patrickover.png" width="100px" height="100px" />
 	    </div>
 
 	    <div style="text-align:center;">Follow me on <a href="https://twitter.com/kTmochi">Twitter</a></div>
@@ -229,7 +195,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                 <i class="fa fa-info fa-3x"></i>
                             </div>
                         </div>
-                        <img alt="" class="img-responsive" src="<?php echo base_url(); ?>img/dangopuckpreview.png">
+                        <img alt="" class="img-responsive" src="{{ data.base_url }}img/dangopuckpreview.png">
                     </a>
                     <div class="portfolio-caption">
                         <h4>Dango Puck! v1.0</h4>
@@ -244,7 +210,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                 <i class="fa fa-info fa-3x"></i>
                             </div>
                         </div>
-                        <img alt="" class="img-responsive" src="<?php echo base_url(); ?>img/portfolio/space-dodgers.png">
+                        <img alt="" class="img-responsive" src="{{ data.base_url }}img/portfolio/space-dodgers.png">
                     </a>
                     <div class="portfolio-caption">
                         <h4>Space Dodgers v1.2</h4>
@@ -259,7 +225,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                 <i class="fa fa-info fa-3x"></i>
                             </div>
                         </div>
-                        <img alt="" class="img-responsive" src="<?php echo base_url(); ?>img/straightslogo.png">
+                        <img alt="" class="img-responsive" src="{{ data.base_url }}img/straightslogo.png">
                     </a>
                     <div class="portfolio-caption">
                         <h4>Straights Card Game</h4>
@@ -274,7 +240,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                 <i class="fa fa-info fa-3x"></i>
                             </div>
                         </div>
-                        <img alt="" class="img-responsive" src="<?php echo base_url(); ?>img/ums.png">
+                        <img alt="" class="img-responsive" src="{{ data.base_url }}img/ums.png">
                     </a>
                     <div class="portfolio-caption">
                         <h4>Widget Design</h4>
@@ -293,7 +259,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                 <i class="fa fa-info fa-3x"></i>
                             </div>
                         </div>
-                        <img alt="" class="img-responsive" src="<?php echo base_url(); ?>img/snakethumbnail2.png">
+                        <img alt="" class="img-responsive" src="{{ data.base_url }}img/snakethumbnail2.png">
                     </a>
                     <div class="portfolio-caption">
                         <h4>Custom Snake Game</h4>
@@ -336,7 +302,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                 <i class="fa fa-info fa-3x"></i>
                             </div>
                         </div>
-                        <img alt="" class="img-responsive" src="<?php echo base_url(); ?>img/ums.png">
+                        <img alt="" class="img-responsive" src="{{ data.base_url }}img/ums.png">
                     </a>
                     <div class="portfolio-caption">
                         <h4>Widget Design</h4>
@@ -353,7 +319,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                 <i class="fa fa-info fa-3x"></i>
                             </div>
                         </div>
-                        <img alt="" class="img-responsive" src="<?php echo base_url(); ?>img/myro.png">
+                        <img alt="" class="img-responsive" src="{{ data.base_url }}img/myro.png">
                     </a>
                     <div class="portfolio-caption">
                         <h4>Myro Robot Color Detector</h4>
@@ -416,7 +382,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                             <!--<i class="fa fa-caret-square-o-right fa-3x"></i>-->
                         </div>
                     </div>
-					<a class="portfolio-link" href="https://drive.google.com/file/d/0B7TI-OA8_nbqb09SaTRlb3Y2TUE/view?usp=sharing" target="_blank"><img alt="" class="img-responsive" src="<?php echo base_url(); ?>img/derivativeskenvideo.jpg" /> </a>
+					<a class="portfolio-link" href="https://drive.google.com/file/d/0B7TI-OA8_nbqb09SaTRlb3Y2TUE/view?usp=sharing" target="_blank"><img alt="" class="img-responsive" src="{{ data.base_url }}img/derivativeskenvideo.jpg" /> </a>
 					<div class="portfolio-caption">
 					<h4>Derivatives<br>(Power/Quotient/Chain Rules)</h4>
 					<p class="text-muted">Did you miss that one important calculus class? You&#39;ll be good soon.(Contains mild swearing; 30mins)</p>
@@ -428,7 +394,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                             <!--<i class="fa fa-caret-square-o-right fa-3x"></i>-->
                         </div>
                     </div>
-					<a class="portfolio-link" href="https://youtu.be/6qTN57qlfKs" target="_blank"><img alt="" class="img-responsive" src="<?php echo base_url(); ?>img/wipeglasses.png" /> </a>
+					<a class="portfolio-link" href="https://youtu.be/6qTN57qlfKs" target="_blank"><img alt="" class="img-responsive" src="{{ data.base_url }}img/wipeglasses.png" /> </a>
 					<div class="portfolio-caption">
 					<h4>Why is the derivative of a constant zero?</h4>
 					<p class="text-muted">It's good to understand the little things even though we know it's a fact.</p>
@@ -440,7 +406,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                             <!--<i class="fa fa-caret-square-o-right fa-3x"></i>-->
                         </div>
                     </div>
-					<a class="portfolio-link" href="https://www.youtube.com/watch?v=UCnDysoZwAs" target="_blank"><img alt="" class="img-responsive" src="<?php echo base_url(); ?>img/canwhat.png" /> </a>
+					<a class="portfolio-link" href="https://www.youtube.com/watch?v=UCnDysoZwAs" target="_blank"><img alt="" class="img-responsive" src="{{ data.base_url }}img/canwhat.png" /> </a>
 					<div class="portfolio-caption">
 					<h4>A trick to divide big numbers</h4>
 					<p class="text-muted">After you can do this with paper, try doing it in your head!</p>
@@ -486,7 +452,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                             <!--<i class="fa fa-caret-square-o-right fa-3x"></i>-->
                         </div>
                     </div>
-					<a class="portfolio-link" href="https://www.youtube.com/watch?v=n4_G3cM6mqo" target="_blank"><img alt="" class="img-responsive" src="<?php echo base_url(); ?>img/intro.png" /> </a>
+					<a class="portfolio-link" href="https://www.youtube.com/watch?v=n4_G3cM6mqo" target="_blank"><img alt="" class="img-responsive" src="{{ data.base_url }}img/intro.png" /> </a>
 					<div class="portfolio-caption">
 					<h4>Intro</h4>
 					<p class="text-muted">The purpose of these videos. Only for highschool students and first year university kids.</p>
@@ -538,7 +504,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <h2>Space Dodgers v1.2</h2>
 
 <p class="item-intro text-muted">My first successful game. Had a lot of fun playing it.</p>
-<img alt="" class="img-responsive img-centered" src="<?php echo base_url(); ?>img/portfolio/space.png" />
+<img alt="" class="img-responsive img-centered" src="{{ data.base_url }}img/portfolio/space.png" />
 
 <p>Do you want to play an arcade game that has you flying a jetplane while playing epic music in space? Avoid the space obstacles and enemies and get to the end of the song! If you get hit, the space gods will give you another chance by having you press a keyboard key within a certain time limit. If you press it in time, then you are safe! If not, then I guess you are starting the song over again. Inspired by my childhood space arcade games and The Impossible Game.</p>
 
@@ -575,7 +541,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <h2>Front-End Widget Developing</h2>
 
 <p class="item-intro text-muted">Designed a bank payment form widget for a client from Malaysia</p>
-<img alt="" class="img-responsive img-centered" src="<?php echo base_url(); ?>img/paymentform.png" />
+<img alt="" class="img-responsive img-centered" src="{{ data.base_url }}img/paymentform.png" />
 <p>The client had a design in mind for the user-interface of the payment form. This was given to me and I designed the widget exactly down to the same hex-color-code and programmed features wanted by the client. Bootstrap and JQuery were used to make the desktop and mobile interface as shown on the two right images. The widget uses the Google Translate Widget to be able to be shown in many different languages. The inputs have X&#39;s for easy deleting. The bank logo changes depending on the bank selected. A hand-over document was for the deisgn of the form also written so that any other developer could use or alter the design.</p>
 
 <p></p>
@@ -602,7 +568,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <h2>Myro Robot Color Detector </h2>
 
 <p class="item-intro text-muted">A team project to make a mini-game with a myro robot. The user types what colour to look for, and the myro robot tries to find it in square boundaries.</p>
-<img alt="" class="img-responsive img-centered" src="<?php echo base_url(); ?>img/code.png" />
+<img alt="" class="img-responsive img-centered" src="{{ data.base_url }}img/code.png" />
 <p>The Myro Robot uses its camera and an algorithm is used to find what colour any box in front of it is. If the colour is the same as the user specifies, then the robot types in the terminal "YES" and then makes a long beep sound, to signify it has found the user&#39;s colour. If the box&#39;s colour is not the same, then the robot moves around the box and continues on to try to find the correct box colour. If the robot has run through the whole area and has not found the colour, then the robot says that it has not found the colour in the terminal. This was programmed using python and using the pygame and myro library. (The above code is part of another color detection task)</p>
 
 <p>Contact me for any other questions at the bottom of the website.</p>
@@ -630,7 +596,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <h2>Dango Puck!</h2>
 
 <p class="item-intro text-muted">Inspired by Mario Party 2's minigame: Speed Hockey. Made using the popular <strong>Unity5</strong> game dev software.</p>
-<img alt="" class="img-responsive img-centered" src="<?php echo base_url(); ?>img/dangopuckpreviewmodal.png" />
+<img alt="" class="img-responsive img-centered" src="{{ data.base_url }}img/dangopuckpreviewmodal.png" />
 <p>Combine the cuteness of mochi sticky rice balls and a classic game of speed hockey. You get Dango Puck! With the exception of the music, everything was made by me. All graphics, code, and audio clips were made by me.</p>
 
 <p><strong>Download the game for </strong>
@@ -675,7 +641,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <h2>Straights Card Game</h2>
 
 <p class="item-intro text-muted">A C++ gtkmm project</p>
-<img alt="" class="img-responsive img-centered" src="<?php echo base_url(); ?>img/straights.png" />
+<img alt="" class="img-responsive img-centered" src="{{ data.base_url }}img/straights.png" />
 <p>A classic card game with appropriate UI made with C++, object-oriented design patterns like MVC, and gtkmm toolkit.</p>
 <div><strong>Due to University guidelines:</strong> the files for this game are not available for download online. If you would like to see the source and play the game, then please email me at ken.torii7@gmail.com and state who you are. </div>
 <br>
@@ -712,7 +678,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <h2>Custom Snake Game</h2>
 
 <p class="item-intro text-muted">A C++ xlib project</p>
-<img alt="" class="img-responsive img-centered" src="<?php echo base_url(); ?>img/snakepreview.png" />
+<img alt="" class="img-responsive img-centered" src="{{ data.base_url }}img/snakepreview.png" />
 <p>A classic snake game with appropriate UI made with C++, and the Xlib/X11 toolkit.</p>
 <div><strong>Due to University guidelines:</strong> the files for this game are not available for download online. If you would like to see the source and play the game, then please email me at ken.torii7@gmail.com and state who you are. </div>
 <br>
@@ -731,5 +697,4 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 </div>
 </div>
 
-</body>
-</html>
+{% endblock %}
