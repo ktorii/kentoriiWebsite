@@ -3,15 +3,28 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Landing extends CI_Controller {
 
+	public $loader;
+	public $twig;
+
 	public function __construct() {
 		parent::__construct();
 
 		// load database
         $this->load->database();
 		$this->load->helper('url');
+
+		//setup twig 
+		$this->loader = new Twig_Loader_Filesystem('ci/application/views');
+		$this->twig = new Twig_Environment($this->loader);
 	}
 	
 	public function index() {
+		
+		require_once '/../../../../../vendor/autoload.php';
+
+		$loader = new Twig_Loader_Array('../views');
+		$twig = new Twig_Environment($loader);
+		
 		// get data to send to the view from database
 		$database   = "vizmvp";
 		$query      = $this->db->query("SELECT TABLE_NAME FROM information_schema.TABLES WHERE TABLE_TYPE='BASE TABLE'");
@@ -29,9 +42,16 @@ class Landing extends CI_Controller {
 
 		$data = array(
 			'raw_html' => $info,
-			'tables' => $database_data
+			'tables' => $database_data,
+			'base_url' => base_url(),
 		);
 
-		$this->load->view('landing', $data);
+		// render views
+		$this->output->set_output(
+			$this->twig->render(
+				'landing.php', 
+				$data
+			)
+		);
 	}
 }
