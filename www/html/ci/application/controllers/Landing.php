@@ -1,10 +1,10 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
-
+require_once '/../../../vendor/autoload.php';
 class Landing extends CI_Controller {
 
-	public $loader;
-	public $twig;
+	private $loader;
+	private $twig;
 
 	public function __construct() {
 		parent::__construct();
@@ -20,10 +20,8 @@ class Landing extends CI_Controller {
 	
 	public function index() {
 		
-		require_once '/../../../../../vendor/autoload.php';
+		
 
-		$loader = new Twig_Loader_Array('../views');
-		$twig = new Twig_Environment($loader);
 		
 		// get data to send to the view from database
 		$database   = "vizmvp";
