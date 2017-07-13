@@ -22,12 +22,12 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	}
 	</script><script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 	<script>
-	
 
-	
-	
+
+
+
 	$(document).ready(function(){
-	
+
 	    var random_greeting;
 		var random_int = Math.floor((Math.random() * 3) + 1);
 		if (random_int == 1) {
@@ -40,42 +40,43 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 		    random_greeting = "Hey! How's it going?";
 		}
 		$("#randomGreeting").text(random_greeting);
-	
-	
+
+
 	    $(".kt-tabs-component-nav li a").click(function(e){
 	    	if(!$(this).hasClass('dropdown-toggle')){
 	    		e.preventDefault();
 		    	$(".kt-tabs-component-nav li").removeClass("active");
 		    	$(this).parent().addClass("active");
-		    	
-		    	
+
+
 		        $(".kt-tabs-component-content").hide();
 		        $(".kt-tabs-component-content" + $(this).attr('href') ).fadeIn("slow");
 	    	}
-	   
+
 	    });
 	    $("a.kt-tab-link").click(function(e){
     		e.preventDefault();
 	    	$(".kt-tabs-component-nav li").removeClass("active");
 	    	var tagId=$(this).attr('href');
 	    	//console.log(tagId);
-	    	
+
 	    	$('.kt-tabs-component-nav li a[href="' + tagId + '"]').parent().addClass("active");
-	    	
-	    	
+
+
 	        $(".kt-tabs-component-content").hide();
 	        $(".kt-tabs-component-content" + $(this).attr('href') ).fadeIn("slow");
-	   
+
 	    });
-	   
+
 	});
-	
+
 	$( window ).load(function() {
             $(".kt-tabs-component-content").hide();
 	    $("#aboutsite").show();
     	});
-    	
+
 	</script>
+
 {% endblock %}
 
 {% block content %}
@@ -87,7 +88,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 		  <div class="text-center">
 		  	<h1 id="randomGreeting" class="section-heading "></h1>
 		  </div>
-		  
+
 		  <div class="col-sm-12 maintenance-info-box">
 			<h3>Take a look at <a class="kt-tab-link" href="#physics">tutorials</a>, <a class="kt-tab-link" href="#gamedev">games</a> and <a class="kt-tab-link" href="#otherprojects">other projects</a> I have worked on.</h3>
 			<h3>Or ask me <a class="kt-tab-link" href="#whatsup">What's Up?</a></h3>
@@ -105,22 +106,22 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	  <div class="container">
 	    <h1 style="text-align:center;">What's up Ken?</h1>
 	    <h2>Catching up with old friends after 3-6 years. Actually amazing.</h2>
-	    <h3>On my coop term.</h3> 
-	    
+	    <h3>On my coop term.</h3>
+
 	    <h4 style="display:visible;">Feeling good.</h4>
 	    <h4 style="display:none;">Feeling ok.</h4>
 	    <h4 style="display:none;">Feeling done.</h4>
-	    
+
 	    <div class="col-sm-12" style="text-align:center;">
 	    	<img style="display:none;" src="{{ data.base_url }}img/totorohappy.jpeg" width="100px" height="100px" />
 	    	<img style="display:visible;" src="{{ data.base_url }}img/totoroalright.png" width="100px" height="100px" />
 	    	<img style="display:none;" src="{{ data.base_url }}img/patrickover.png" width="100px" height="100px" />
 	    </div>
-	    
-	    <div style="text-align:center;">Follow me on <a href="https://twitter.com/kTmochi">Twitter</a></div> 
+
+	    <div style="text-align:center;">Follow me on <a href="https://twitter.com/kTmochi">Twitter</a></div>
 	  </div>
 	</div>
-	
+
 </div>
 
 <!--ABOUT ME-->
@@ -128,13 +129,13 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	<div class="container bg-light-gray">
 		<div class="col-lg-12 text-center div-extra-padding">
 			<h1 id="whoami" class="section-heading">Who Am I?</h1>
-		
+
 			<div class="weight-decrease-header-tags">
 				<h3 class="text-muted">Software Engineer &bull; Game Developer &bull; Web Developer &bull; Highschool Online Tutor &bull; Smasher</h3>
 			</div>
 		</div>
 	</div>
-	
+
 
 	<div class="container bg-light-white">
 		<div class="col-lg-12 text-center div-extra-padding">
@@ -144,7 +145,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 			</div>
 		</div>
 	</div>
-	
+
 	<div class="container bg-light-gray">
 		<div class="col-lg-12 text-center div-extra-padding">
 			<h1 id="randomfacts" class="section-heading">Random</h1>
@@ -153,19 +154,19 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 			</div>
 		</div>
 	</div>
-	
-	
+
+
 	<!--
 	<h3 id="casualvids">Casual Online Tutoring Videos</h3>
 	<p>I always thought some teachers are so smart and experienced with what they teach that the students sometimes have a hard time following along because of this. In my eyes, a student teacher can be better. Professional language clouds a student's process of understanding concepts. Lets' dumb it down. My videos are 100% casual and relateable to the student's learning. May contain some swearing. All for the sake of them understanding of course. Check out my tutorial vids <a class="kt-tab-link" href="#physics">here!</a></p>
-	
+
 	<h3 id="smasher">Smasher</h3>
 	<p>I love playing Super Smash Bros. Melee. I play it competitively and its great. I wish I could have it as an actual side-job after I graduate Waterloo. Find out more <a class="kt-tab-link" href="#smash">here!</a></p>
 	-->
 
 </div>
 
-<!--GAMEDEV--> 
+<!--GAMEDEV-->
 <div class="container kt-tabs-component-content clean-container-theme strictly-no-padding" id="gamedev">
 	<div class="container bg-light-gray">
 		<div class="col-lg-12 text-center div-extra-padding">
@@ -216,7 +217,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                         <p class="text-muted">Game Developer</p>
                     </div>
                 </div>
-                
+
                 <div class="col-md-4 col-sm-6 portfolio-item">
                     <a class="portfolio-link" data-toggle="modal" href="#portfolioModal5">
                         <div class="portfolio-hover">
@@ -266,9 +267,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                     </div>
                 </div>
 
-                
+
 			</div>
-		</div> 
+		</div>
 	</section>
 
 </div>
@@ -331,7 +332,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 					</div>
 				</div>
 			</div>
-		</div> 
+		</div>
 	</section>
 
 </div>
@@ -364,7 +365,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 			</div>
 		</div>
 	</div>
-	
+
 	<!-- Portfolio Grid Section -->
 	<section class="bg-light-white" id="portfolio">
 		<div class="container">
@@ -412,7 +413,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 					</div>
 				</div>
 			</div>
-		</div> 
+		</div>
 	</section>
 
 </div>
@@ -458,43 +459,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 					</div>
 				</div>
 			</div>
-		</div> 
+		</div>
 	</section>
-	<!-- Team Section -->
-	<!--
-    <section id="team" style="background-image:url(img/notebook.jpg);">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12 text-center">
-                    <h2 class="section-heading">Math/Physics HELP</h2>
-                    <h3 class="section-subheading text-muted" style="margin-bottom:0;">WARNING: This section is purposely not professional. Please do not judge my professionalism based on this section. Thank you in advance.</h3><br />
-                </div>
-            </div>
-            
-            <div class="row">
-                <div class="col-lg-8 col-lg-offset-2 text-center">
-                    <p class="large text-muted" style="margin-top:5px;">I make the school studying less frustrating. How? These videos are kept CASUAL and UNDERSTANDABLE. Big professional vocabulary just clouds up understanding. And a student teacher can relate more easily to the difficulties of the student.</p>
-                </div>
-            </div>
-            <br>
-            <div class="row">
-            <div class="col-lg-12 text-center">
-            <div class="col-md-4 col-sm-6 portfolio-item" style="background-color:#EBEBF5;">
-		<div class="portfolio-hover">
-		<div class="portfolio-hover-content">
-		</div>
-		</div>
-		<a class="portfolio-link" href="https://drive.google.com/file/d/0B7TI-OA8_nbqb09SaTRlb3Y2TUE/view?usp=sharing" target="_blank"><img alt="" class="img-responsive" src="{{ data.base_url }}img/derivativeskenvideo.jpg" /> </a>
-		<div class="portfolio-caption">
-		<h4>Derivatives<br>(Power/Quotient/Chain Rules)</h4>
-		<p class="text-muted">Did you miss that one important calculus class? You&#39;ll be good soon.(Contains mild swearing; 30mins)</p>
-		</div>
-	    </div>
-	    </div>
-	    </div>
-	</div>
-    </section>
--->
 </div>
 
 
@@ -543,7 +509,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <p>Do you want to play an arcade game that has you flying a jetplane while playing epic music in space? Avoid the space obstacles and enemies and get to the end of the song! If you get hit, the space gods will give you another chance by having you press a keyboard key within a certain time limit. If you press it in time, then you are safe! If not, then I guess you are starting the song over again. Inspired by my childhood space arcade games and The Impossible Game.</p>
 
 <p><strong>Watch the trailer </strong><a href="https://youtu.be/tYUymiCDOY8" target="_blank">here!</a></p>
-<p><strong>Download the game! </strong><a href="http://www.mediafire.com/file/7fdkazh3w61l6dc/SpaceDodgersGithub.zip" target="_blank">WindowsOS</a></p>
+<p><strong>Download the game! </strong><a href="<?php echo base_url(); ?>downloads/SpaceDodgersGithub.zip" download>WindowsOS</a></p>
 <p><strong>Requires:</strong> python+pygame| WindowsOS</p>
 <p><strong>Check out the GitHub <a href="https://github.com/ktorii/Space-Dodgers-1.2" target="_blank">here!</a></strong></p>
 <ul class="list-inline">
@@ -634,9 +600,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <p>Combine the cuteness of mochi sticky rice balls and a classic game of speed hockey. You get Dango Puck! With the exception of the music, everything was made by me. All graphics, code, and audio clips were made by me.</p>
 
 <p><strong>Download the game for </strong>
-<a href="http://www.mediafire.com/file/ty75vbtmqx5450m/DangoPuckv1MacUniversal.zip" target="_blank" >MacOS</a>, 
-<a href="http://www.mediafire.com/file/yl1w0b261212heb/DangoPuckv1Win86.zip" target="_blank" >Windows</a>, or
-<a href="http://www.mediafire.com/file/hpelalbkzni12m2/DangoPuckv1LinuxUniversal.zip" target="_blank" >Linux Universal.</a>
+<a href="<?php echo base_url(); ?>downloads/DangoPuckv1MacUniversal.zip" download>MacOS</a>,
+<a href="<?php echo base_url(); ?>downloads/DangoPuckv1Win86.zip" download>Windows</a>, or
+<a href="<?php echo base_url(); ?>downloads/DangoPuckv1LinuxUniversal.zip" download>Linux Universal.</a>
 </p>
 <p><strong>Check out the GitHub <a href="https://github.com/ktorii/DangoPuckv1" target="_blank">here!</a></strong></p>
 
