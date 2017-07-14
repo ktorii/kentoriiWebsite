@@ -1,0 +1,10 @@
+PROJECT_ROOT=../www/html
+
+# IMPORTANT: Replace with your Docker Host IP
+HOST_APP_IP=192.168.0.154
+
+# MySQL config
+MYSQL_ROOT_PASSWORD=root
+MYSQL_DATABASE=vizmvp
+MYSQL_USER=web
+MYSQL_PASSWORD=web
