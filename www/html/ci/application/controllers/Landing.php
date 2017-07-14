@@ -1,6 +1,6 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
-require_once '/vendor/autoload.php';
+require_once 'vendor/autoload.php';
 class Landing extends CI_Controller {
 
 	private $loader;
@@ -10,7 +10,7 @@ class Landing extends CI_Controller {
 		parent::__construct();
 
 		// load database
-        $this->load->database();
+        //$this->load->database();
 		$this->load->helper('url');
 
 		//setup twig 
@@ -24,11 +24,11 @@ class Landing extends CI_Controller {
 
 		
 		// get data to send to the view from database
-		$database   = "vizmvp";
-		$query      = $this->db->query("SELECT TABLE_NAME FROM information_schema.TABLES WHERE TABLE_TYPE='BASE TABLE'");
-        $tables     = $query->result_array(PDO::FETCH_COLUMN);
+		//$database   = "vizmvp";
+		//$query      = $this->db->query("SELECT TABLE_NAME FROM information_schema.TABLES WHERE TABLE_TYPE='BASE TABLE'");
+        //$tables     = $query->result_array(PDO::FETCH_COLUMN);
 		
-		$info = "";
+		/*$info = "";
 		$database_data = array();
 
         if (empty($tables)) {
@@ -36,11 +36,11 @@ class Landing extends CI_Controller {
         } else {
             $info = "<p>Database \"{$database}\" has the following tables:</p>";
             $database_data = $tables;
-        }
+        }*/
 
 		$data = array(
-			'raw_html' => $info,
-			'tables' => $database_data,
+			//'raw_html' => $info,
+			//'tables' => $database_data,
 			'base_url' => base_url(),
 		);
 
