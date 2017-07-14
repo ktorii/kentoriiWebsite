@@ -34,7 +34,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 				<h3>Take a look at <a class="kt-tab-link" href="#physics">tutorials</a>, <a class="kt-tab-link" href="#gamedev">games</a> and <a class="kt-tab-link" href="#otherprojects">other projects</a> I have worked on.</h3>
 				<h3>Or ask me <a class="kt-tab-link" href="#whatsup">What's Up?</a></h3>
 			</div>
-			<div class="col-sm-12 text-center"><img class="img-responsive img-center" src="{{%20data.base_url%20}}img/birdsleeping.png"></div>
+			<div class="col-sm-12 text-center"><img class="img-responsive img-center" src="{{ data.base_url }}img/birdsleeping.png"></div>
 		</div>
 	</div>
 </div>
@@ -122,7 +122,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 						<div class="portfolio-hover-content">
 							<i class="fa fa-info fa-3x"></i>
 						</div>
-					</div><img alt="" class="img-responsive" src="{{%20data.base_url%20}}img/dangopuckpreview.png"></a>
+					</div><img alt="" class="img-responsive" src="{{ data.base_url }}img/dangopuckpreview.png"></a>
 					<div class="portfolio-caption">
 						<h4>Dango Puck! v1.0</h4>
 						<p class="text-muted">Game+Graphics+Sound Developer</p>
@@ -134,7 +134,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 						<div class="portfolio-hover-content">
 							<i class="fa fa-info fa-3x"></i>
 						</div>
-					</div><img alt="" class="img-responsive" src="{{%20data.base_url%20}}img/portfolio/space-dodgers.png"></a>
+					</div><img alt="" class="img-responsive" src="{{ data.base_url }}img/portfolio/space-dodgers.png"></a>
 					<div class="portfolio-caption">
 						<h4>Space Dodgers v1.2</h4>
 						<p class="text-muted">Game Developer</p>
@@ -146,7 +146,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 						<div class="portfolio-hover-content">
 							<i class="fa fa-info fa-3x"></i>
 						</div>
-					</div><img alt="" class="img-responsive" src="{{%20data.base_url%20}}img/straightslogo.png"></a>
+					</div><img alt="" class="img-responsive" src="{{ data.base_url }}img/straightslogo.png"></a>
 					<div class="portfolio-caption">
 						<h4>Straights Card Game</h4>
 						<p class="text-muted">Game Developer</p>
@@ -175,7 +175,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 						<div class="portfolio-hover-content">
 							<i class="fa fa-info fa-3x"></i>
 						</div>
-					</div><img alt="" class="img-responsive" src="{{%20data.base_url%20}}img/snakethumbnail2.png"></a>
+					</div><img alt="" class="img-responsive" src="{{ data.base_url }}img/snakethumbnail2.png"></a>
 					<div class="portfolio-caption">
 						<h4>Custom Snake Game</h4>
 						<p class="text-muted">Game Developer</p>
@@ -211,7 +211,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 						<div class="portfolio-hover-content">
 							<i class="fa fa-info fa-3x"></i>
 						</div>
-					</div><img alt="" class="img-responsive" src="{{%20data.base_url%20}}img/ums.png"></a>
+					</div><img alt="" class="img-responsive" src="{{ data.base_url }}img/ums.png"></a>
 					<div class="portfolio-caption">
 						<h4>Widget Design</h4>
 						<p class="text-muted">Front-End Developer</p>
@@ -223,7 +223,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 						<div class="portfolio-hover-content">
 							<i class="fa fa-info fa-3x"></i>
 						</div>
-					</div><img alt="" class="img-responsive" src="{{%20data.base_url%20}}img/myro.png"></a>
+					</div><img alt="" class="img-responsive" src="{{ data.base_url }}img/myro.png"></a>
 					<div class="portfolio-caption">
 						<h4>Myro Robot Color Detector</h4>
 						<p class="text-muted">Python Programmer</p>
@@ -248,7 +248,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 			</div>
 			<div class="col-sm-12 maintenance-info-box">
 				<h3>Follow me on <a href="https://twitter.com/kTmochi">Twitter</a></h3>
-				<h3>Listen to some music on spotify that I listen to:</h3><iframe frameborder="0" height="380" src="https://embed.spotify.com/?uri=spotify%3Auser%3Aktorii%3Aplaylist%3A4z1Tkn4FCpt5ARe81ev1C6" width="300"></iframe> <iframe frameborder="0" height="380" src="https://embed.spotify.com/?uri=spotify%3Auser%3Aktorii%3Aplaylist%3A5iRIXZAwETSNzgjZihwLGi" width="300"></iframe>
+				<h3>Listen to some music on spotify that I listen to:</h3>
+				<iframe src="https://embed.spotify.com/?uri=spotify%3Auser%3Aktorii%3Aplaylist%3A4z1Tkn4FCpt5ARe81ev1C6" width="300" height="380" frameborder="0" allowtransparency="true"></iframe>
+				<iframe src="https://embed.spotify.com/?uri=spotify%3Auser%3Aktorii%3Aplaylist%3A5iRIXZAwETSNzgjZihwLGi" width="300" height="380" frameborder="0" allowtransparency="true"></iframe>
 			</div>
 		</div>
 	</div>
@@ -277,7 +279,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 						<div class="portfolio-hover-content">
 							<!--<i class="fa fa-caret-square-o-right fa-3x"></i>-->
 						</div>
-					</div><a class="portfolio-link" href="https://drive.google.com/file/d/0B7TI-OA8_nbqb09SaTRlb3Y2TUE/view?usp=sharing" target="_blank"><img alt="" class="img-responsive" src="{{%20data.base_url%20}}img/derivativeskenvideo.jpg"></a>
+					</div><a class="portfolio-link" href="https://drive.google.com/file/d/0B7TI-OA8_nbqb09SaTRlb3Y2TUE/view?usp=sharing" target="_blank"><img alt="" class="img-responsive" src="{{ data.base_url }}img/derivativeskenvideo.jpg"></a>
 					<div class="portfolio-caption">
 						<h4>Derivatives<br>
 						(Power/Quotient/Chain Rules)</h4>
@@ -289,7 +291,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 						<div class="portfolio-hover-content">
 							<!--<i class="fa fa-caret-square-o-right fa-3x"></i>-->
 						</div>
-					</div><a class="portfolio-link" href="https://youtu.be/6qTN57qlfKs" target="_blank"><img alt="" class="img-responsive" src="{{%20data.base_url%20}}img/wipeglasses.png"></a>
+					</div><a class="portfolio-link" href="https://youtu.be/6qTN57qlfKs" target="_blank"><img alt="" class="img-responsive" src="{{ data.base_url }}img/wipeglasses.png"></a>
 					<div class="portfolio-caption">
 						<h4>Why is the derivative of a constant zero?</h4>
 						<p class="text-muted">It's good to understand the little things even though we know it's a fact.</p>
@@ -300,7 +302,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 						<div class="portfolio-hover-content">
 							<!--<i class="fa fa-caret-square-o-right fa-3x"></i>-->
 						</div>
-					</div><a class="portfolio-link" href="https://www.youtube.com/watch?v=UCnDysoZwAs" target="_blank"><img alt="" class="img-responsive" src="{{%20data.base_url%20}}img/canwhat.png"></a>
+					</div><a class="portfolio-link" href="https://www.youtube.com/watch?v=UCnDysoZwAs" target="_blank"><img alt="" class="img-responsive" src="{{ data.base_url }}img/canwhat.png"></a>
 					<div class="portfolio-caption">
 						<h4>A trick to divide big numbers</h4>
 						<p class="text-muted">After you can do this with paper, try doing it in your head!</p>
@@ -341,7 +343,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 						<div class="portfolio-hover-content">
 							<!--<i class="fa fa-caret-square-o-right fa-3x"></i>-->
 						</div>
-					</div><a class="portfolio-link" href="https://www.youtube.com/watch?v=n4_G3cM6mqo" target="_blank"><img alt="" class="img-responsive" src="{{%20data.base_url%20}}img/intro.png"></a>
+					</div><a class="portfolio-link" href="https://www.youtube.com/watch?v=n4_G3cM6mqo" target="_blank"><img alt="" class="img-responsive" src="{{ data.base_url }}img/intro.png"></a>
 					<div class="portfolio-caption">
 						<h4>Intro</h4>
 						<p class="text-muted">The purpose of these videos. Only for highschool students and first year university kids.</p>
@@ -378,10 +380,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 						<div class="modal-body">
 							<!-- Project Details Go Here -->
 							<h2>Space Dodgers v1.2</h2>
-							<p class="item-intro text-muted">My first successful game. Had a lot of fun playing it.</p><img alt="" class="img-responsive img-centered" src="{{%20data.base_url%20}}img/portfolio/space.png">
+							<p class="item-intro text-muted">My first successful game. Had a lot of fun playing it.</p><img alt="" class="img-responsive img-centered" src="{{ data.base_url }}img/portfolio/space.png">
 							<p>Do you want to play an arcade game that has you flying a jetplane while playing epic music in space? Avoid the space obstacles and enemies and get to the end of the song! If you get hit, the space gods will give you another chance by having you press a keyboard key within a certain time limit. If you press it in time, then you are safe! If not, then I guess you are starting the song over again. Inspired by my childhood space arcade games and The Impossible Game.</p>
 							<p><strong>Watch the trailer</strong> <a href="https://youtu.be/tYUymiCDOY8" target="_blank">here!</a></p>
-							<p><strong>Download the game!</strong> <a href="%3C?php%20echo%20base_url();%20?%3Edownloads/SpaceDodgersGithub.zip">WindowsOS</a></p>
+							<p><strong>Download the game! </strong><a href="<?php echo base_url(); ?>downloads/SpaceDodgersGithub.zip" download>WindowsOS</a></p>
 							<p><strong>Requires:</strong> python+pygame| WindowsOS</p>
 							<p><strong>Check out the GitHub <a href="https://github.com/ktorii/Space-Dodgers-1.2" target="_blank">here!</a></strong></p>
 							<ul class="list-inline">
@@ -407,7 +409,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 					<div class="col-lg-8 col-lg-offset-2">
 						<div class="modal-body">
 							<h2>Front-End Widget Developing</h2>
-							<p class="item-intro text-muted">Designed a bank payment form widget for a client from Malaysia</p><img alt="" class="img-responsive img-centered" src="{{%20data.base_url%20}}img/paymentform.png">
+							<p class="item-intro text-muted">Designed a bank payment form widget for a client from Malaysia</p><img alt="" class="img-responsive img-centered" src="{{ data.base_url }}img/paymentform.png">
 							<p>The client had a design in mind for the user-interface of the payment form. This was given to me and I designed the widget exactly down to the same hex-color-code and programmed features wanted by the client. Bootstrap and JQuery were used to make the desktop and mobile interface as shown on the two right images. The widget uses the Google Translate Widget to be able to be shown in many different languages. The inputs have X&#39;s for easy deleting. The bank logo changes depending on the bank selected. A hand-over document was for the deisgn of the form also written so that any other developer could use or alter the design.</p>
 							<p></p><button class="btn btn-primary" data-dismiss="modal" type="button">Close Project</button>
 						</div>
@@ -429,7 +431,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 						<div class="modal-body">
 							<!-- Project Details Go Here -->
 							<h2>Myro Robot Color Detector</h2>
-							<p class="item-intro text-muted">A team project to make a mini-game with a myro robot. The user types what colour to look for, and the myro robot tries to find it in square boundaries.</p><img alt="" class="img-responsive img-centered" src="{{%20data.base_url%20}}img/code.png">
+							<p class="item-intro text-muted">A team project to make a mini-game with a myro robot. The user types what colour to look for, and the myro robot tries to find it in square boundaries.</p><img alt="" class="img-responsive img-centered" src="{{ data.base_url }}img/code.png">
 							<p>The Myro Robot uses its camera and an algorithm is used to find what colour any box in front of it is. If the colour is the same as the user specifies, then the robot types in the terminal "YES" and then makes a long beep sound, to signify it has found the user&#39;s colour. If the box&#39;s colour is not the same, then the robot moves around the box and continues on to try to find the correct box colour. If the robot has run through the whole area and has not found the colour, then the robot says that it has not found the colour in the terminal. This was programmed using python and using the pygame and myro library. (The above code is part of another color detection task)</p>
 							<p>Contact me for any other questions at the bottom of the website.</p><button class="btn btn-primary" data-dismiss="modal" type="button">Close Project</button>
 						</div>
@@ -451,9 +453,13 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 						<div class="modal-body">
 							<!-- Project Details Go Here -->
 							<h2>Dango Puck!</h2>
-							<p class="item-intro text-muted">Inspired by Mario Party 2's minigame: Speed Hockey. Made using the popular <strong>Unity5</strong> game dev software.</p><img alt="" class="img-responsive img-centered" src="{{%20data.base_url%20}}img/dangopuckpreviewmodal.png">
+							<p class="item-intro text-muted">Inspired by Mario Party 2's minigame: Speed Hockey. Made using the popular <strong>Unity5</strong> game dev software.</p><img alt="" class="img-responsive img-centered" src="{{ data.base_url }}img/dangopuckpreviewmodal.png">
 							<p>Combine the cuteness of mochi sticky rice balls and a classic game of speed hockey. You get Dango Puck! With the exception of the music, everything was made by me. All graphics, code, and audio clips were made by me.</p>
-							<p><strong>Download the game for</strong> <a href="%3C?php%20echo%20base_url();%20?%3Edownloads/DangoPuckv1MacUniversal.zip">MacOS</a>, <a href="%3C?php%20echo%20base_url();%20?%3Edownloads/DangoPuckv1Win86.zip">Windows</a>, or <a href="%3C?php%20echo%20base_url();%20?%3Edownloads/DangoPuckv1LinuxUniversal.zip">Linux Universal.</a></p>
+							<p><strong>Download the game for </strong>
+							<a href="<?php echo base_url(); ?>downloads/DangoPuckv1MacUniversal.zip" download>MacOS</a>,
+							<a href="<?php echo base_url(); ?>downloads/DangoPuckv1Win86.zip" download>Windows</a>, or
+							<a href="<?php echo base_url(); ?>downloads/DangoPuckv1LinuxUniversal.zip" download>Linux Universal.</a>
+						    </p>
 							<p><strong>Check out the GitHub <a href="https://github.com/ktorii/DangoPuckv1" target="_blank">here!</a></strong></p>
 							<p>Audio Development: Audacity and MAC's garageband. e.x: end game sound, score sounds, whistle sounds, etc.</p>
 							<p>Code Development: C#</p>
@@ -483,7 +489,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 						<div class="modal-body">
 							<!-- Project Details Go Here -->
 							<h2>Straights Card Game</h2>
-							<p class="item-intro text-muted">A C++ gtkmm project</p><img alt="" class="img-responsive img-centered" src="{{%20data.base_url%20}}img/straights.png">
+							<p class="item-intro text-muted">A C++ gtkmm project</p><img alt="" class="img-responsive img-centered" src="{{ data.base_url }}img/straights.png">
 							<p>A classic card game with appropriate UI made with C++, object-oriented design patterns like MVC, and gtkmm toolkit.</p>
 							<div>
 								<strong>Due to University guidelines:</strong> the files for this game are not available for download online. If you would like to see the source and play the game, then please email me at ken.torii7@gmail.com and state who you are.
@@ -513,7 +519,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 						<div class="modal-body">
 							<!-- Project Details Go Here -->
 							<h2>Custom Snake Game</h2>
-							<p class="item-intro text-muted">A C++ xlib project</p><img alt="" class="img-responsive img-centered" src="{{%20data.base_url%20}}img/snakepreview.png">
+							<p class="item-intro text-muted">A C++ xlib project</p><img alt="" class="img-responsive img-centered" src="{{ data.base_url }}img/snakepreview.png">
 							<p>A classic snake game with appropriate UI made with C++, and the Xlib/X11 toolkit.</p>
 							<div>
 								<strong>Due to University guidelines:</strong> the files for this game are not available for download online. If you would like to see the source and play the game, then please email me at ken.torii7@gmail.com and state who you are.
