@@ -18,8 +18,8 @@ class Landing extends CI_Controller {
 		$this->twig = new Twig_Environment($this->loader);
 	}
 	
-	public function index() {
-		
+	public function index() {	
+		$info = "";
 		$data = array(
 			'raw_html' => $info,
 			'base_url' => base_url(),
