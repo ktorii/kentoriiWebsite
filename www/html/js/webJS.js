@@ -35,7 +35,7 @@ $(document).ready(function() {
 		$(".kt-tabs-component-content" + $(this).attr('href')).fadeIn("slow");
 	});
 });
-$(window).load(function() {
+$(document).ready(function() {
 	$(".kt-tabs-component-content").hide();
 	$("#aboutsite").show();
 });
