@@ -10,15 +10,15 @@ class Landing extends CI_Controller {
 		parent::__construct();
 
 		// load database
-        $this->load->database();
+ 		$this->load->database();
 		$this->load->helper('url');
 
-		//setup twig 
+		//setup twig
 		$this->loader = new Twig_Loader_Filesystem('ci/application/views');
 		$this->twig = new Twig_Environment($this->loader);
 	}
-	
-	public function index() {	
+
+	public function index() {
 		$info = "";
 		$data = array(
 			'raw_html' => $info,
@@ -28,7 +28,7 @@ class Landing extends CI_Controller {
 		// render views
 		$this->output->set_output(
 			$this->twig->render(
-				'landing.php', 
+				'landing.php',
 				$data
 			)
 		);
