@@ -10,7 +10,7 @@ class Landing extends CI_Controller {
 		parent::__construct();
 
 		// load database
-//        $this->load->database();
+ 		$this->load->database();
 		$this->load->helper('url');
 
 		//setup twig
