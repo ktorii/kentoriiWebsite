@@ -1,5 +1,6 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
+session_start();
 require_once 'vendor/autoload.php';
 class Landing extends CI_Controller {
 
@@ -11,7 +12,10 @@ class Landing extends CI_Controller {
 
 		// load database
         $this->load->database();
-		$this->load->helper('url');
+		$this->load->helper(array('url', 'form'));
+		
+
+
 
 		//setup twig 
 		$this->loader = new Twig_Loader_Filesystem('ci/application/views');
@@ -28,9 +32,60 @@ class Landing extends CI_Controller {
 		// render views
 		$this->output->set_output(
 			$this->twig->render(
-				'landing.php', 
+				'admin.html', 
 				$data
 			)
 		);
+	}
+	
+		public function login() {
+		
+		$this->load->library('form_validation');
+
+		$info = "";
+		$data = array(
+			'raw_html' => $info,
+			'base_url' => base_url(),
+		);
+
+		$this->form_validation->set_rules('username', 'Username', 'required',
+			array(
+				'required' => 'You must provide a %s.',
+				//'in_list' => 'Username is not in '
+					
+			)
+		);
+
+        $this->form_validation->set_rules('password', 'Password', 'required',
+        	array(
+				'required' => 'You must provide a %s.',
+				'match' => 'password does not match username'
+
+		   )
+		);
+
+		if($this->form_validation->run()== true){
+			
+			$this->output->set_output(
+				$this->twig->render(
+					'landing.php', 
+					$data
+				)
+			);
+		
+		}else{
+			$this->output->set_output(
+				$this->twig->render(
+					'admin.html', 
+					$data
+				)
+			);
+
+		}
+		
+
+
+		
+		
 	}
 }
