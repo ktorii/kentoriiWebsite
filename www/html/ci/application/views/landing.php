@@ -360,7 +360,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 		<div class="container">
 			<div class="text-center">
 				<h1 class="section-heading">Contact Me</h1><!--'-->
-				<h3 class="text-muted"><a href="https://ca.linkedin.com/in/ken-torii-444118a6" target="_blank">Linkedin</a> &bull; ken.torii7@gmail.com &bull; <a href="https://www.facebook.com/ken.torii.1?fref=ts" target="_blank">Facebook</a> &bull; <a href="https://twitter.com/kTmochi" target="_blank">Twitter</a></h3>
+				<h3 class="text-muted"><a href="https://ca.linkedin.com/in/ken-torii-444118a6" target="_blank">Linkedin</a> &bull; ken.torii7@gmail.com &bull; <a href="https://www.facebook.com/ken.torii.1?fref=ts" target="_blank">Facebook</a> &bull; <a href="https://twitter.com/kTmochi" target="_blank">Twitter</a> &bull; <a href="https://www.instagram.com/ktmochi7/" target="_blank">Instagram</a></h3>
 			</div>
 		</div>
 	</div>
@@ -383,7 +383,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 							<p class="item-intro text-muted">My first successful game. Had a lot of fun playing it.</p><img alt="" class="img-responsive img-centered" src="{{ data.base_url }}img/portfolio/space.png">
 							<p>Do you want to play an arcade game that has you flying a jetplane while playing epic music in space? Avoid the space obstacles and enemies and get to the end of the song! If you get hit, the space gods will give you another chance by having you press a keyboard key within a certain time limit. If you press it in time, then you are safe! If not, then I guess you are starting the song over again. Inspired by my childhood space arcade games and The Impossible Game.</p>
 							<p><strong>Watch the trailer</strong> <a href="https://youtu.be/tYUymiCDOY8" target="_blank">here!</a></p>
-							<p><strong>Download the game! </strong><a href="<?php echo base_url(); ?>downloads/SpaceDodgersGithub.zip" download>WindowsOS</a></p>
+							<p><strong>Download the game! </strong><a href="{{ data.base_url }}downloads/SpaceDodgersGithub.zip" download>WindowsOS</a></p>
 							<p><strong>Requires:</strong> python+pygame| WindowsOS</p>
 							<p><strong>Check out the GitHub <a href="https://github.com/ktorii/Space-Dodgers-1.2" target="_blank">here!</a></strong></p>
 							<ul class="list-inline">
@@ -456,9 +456,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 							<p class="item-intro text-muted">Inspired by Mario Party 2's minigame: Speed Hockey. Made using the popular <strong>Unity5</strong> game dev software.</p><img alt="" class="img-responsive img-centered" src="{{ data.base_url }}img/dangopuckpreviewmodal.png">
 							<p>Combine the cuteness of mochi sticky rice balls and a classic game of speed hockey. You get Dango Puck! With the exception of the music, everything was made by me. All graphics, code, and audio clips were made by me.</p>
 							<p><strong>Download the game for </strong>
-							<a href="<?php echo base_url(); ?>downloads/DangoPuckv1MacUniversal.zip" download>MacOS</a>,
-							<a href="<?php echo base_url(); ?>downloads/DangoPuckv1Win86.zip" download>Windows</a>, or
-							<a href="<?php echo base_url(); ?>downloads/DangoPuckv1LinuxUniversal.zip" download>Linux Universal.</a>
+							<a href="{{ data.base_url }}downloads/DangoPuckv1MacUniversal.zip" download>MacOS</a>,
+							<a href="{{ data.base_url }}downloads/DangoPuckv1Win86.zip" download>Windows</a>, or
+							<a href="{{ data.base_url }}downloads/DangoPuckv1LinuxUniversal.zip" download>Linux Universal.</a>
 						    </p>
 							<p><strong>Check out the GitHub <a href="https://github.com/ktorii/DangoPuckv1" target="_blank">here!</a></strong></p>
 							<p>Audio Development: Audacity and MAC's garageband. e.x: end game sound, score sounds, whistle sounds, etc.</p>

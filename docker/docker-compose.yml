@@ -1,64 +1,30 @@
-version: "2.1"
+version: '2'
 
 services:
-    nginx:
-        build: ./nginx/
-        ports:
-            - 80:80
-        volumes:
-            - "${PROJECT_ROOT}:/var/www/html:ro"
-        networks:
-            - server
-        depends_on:
-            - php
+  webserver:
+    build: ./webserver
+    image: runwaytest_web
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ../www/html:/var/www/html
+    links:
+      - mysql
+    links:
+      - "mysql:kentorii.local"
+    extra_hosts:
+      - "kentorii.local:${HOST_APP_IP}"
 
-    php:
-        build: ./php/
-        restart: always
-        expose:
-            - 9000
-        volumes:
-            - "${PROJECT_ROOT}:/var/www/html"
-        networks:
-            - database
-            - server
-        depends_on:
-            - mysql
-        links:
-            - "mysql:kentorii.local"
-        extra_hosts:
-            - "kentorii.local:${HOST_APP_IP}"
-        env_file: .env
-
-    mysql:
-        image: mysql:latest
-        volumes:
-            - data:/var/lib/mysql
-        networks:
-            - database
-        environment:
-            MYSQL_USER: ${MYSQL_USER}
-            MYSQL_PASSWORD: ${MYSQL_PASSWORD}
-            MYSQL_DATABASE: ${MYSQL_DATABASE}
-            MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
-        ports:
-            - "3306:3306"
-        env_file: .env
-
-    phpmyadmin:
-        image: phpmyadmin/phpmyadmin
-        ports:
-            - 8080:80
-        networks:
-            - database
-        depends_on:
-            - mysql
-        environment:
-            PMA_HOST: mysql
-
-volumes:
-    data:
-
-networks:
-    database:
-    server:
+  mysql:
+    image: mysql:5.7
+    ports: 
+      - "3306:3306"
+    volumes:
+      - ./db:/var/lib/mysql
+    environment:
+      MYSQL_USER: ${MYSQL_USER}
+      MYSQL_PASSWORD: ${MYSQL_PASSWORD}
+      MYSQL_DATABASE: ${MYSQL_DATABASE}
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+    env_file: .env

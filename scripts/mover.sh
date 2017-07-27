@@ -4,11 +4,11 @@
 # update repo files with git fetch+merge
 
 # the location of godaddy's website root
-GODADDY_SITE_ROOT = "/home/ktorii7/public_html"
+GODADDY_SITE_ROOT="/home/ktorii7/public_html"
 
 # name of repo must be kentoriiWebsite
-REPO_NAME = "kentoriiWebsite"
-REPO_DIRECTORY = "/home/ktorii7/REPO/$REPO_NAME"
+REPO_NAME="kentoriiWebsite"
+REPO_DIRECTORY="/home/ktorii7/REPO/$REPO_NAME"
 
 # check if repo name is exactly what's it's supposed to be.
 # if the repo does not exist, quit the script
