@@ -5,6 +5,7 @@ class Landing extends CI_Controller {
 
 	private $loader;
 	private $twig;
+	
 
 	public function __construct() {
 		parent::__construct();
@@ -16,6 +17,16 @@ class Landing extends CI_Controller {
 		//setup twig 
 		$this->loader = new Twig_Loader_Filesystem('ci/application/views');
 		$this->twig = new Twig_Environment($this->loader);
+	}
+	
+	public function tracking($section, $date, $location){
+		
+		
+		
+		
+		
+		
+		
 	}
 	
 	public function index() {
