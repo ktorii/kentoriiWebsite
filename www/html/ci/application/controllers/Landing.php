@@ -22,10 +22,7 @@ class Landing extends CI_Controller {
 	
 	public function tracking($section, $date, $location){
 		
-		
-		
-		
-		
+		$tracking = $this->load->database('tracking', TRUE);
 		
 		
 	}
