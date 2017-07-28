@@ -13,7 +13,7 @@ class Landing extends CI_Controller {
 		// load database
         $this->load->database();
 		$this->load->helper(array('url', 'form'));
-		
+		$this->load->library('form_validation');		
 
 
 
@@ -40,11 +40,10 @@ class Landing extends CI_Controller {
 	
 		public function login() {
 		
-		$this->load->library('form_validation');
+		
 
-		$info = "";
 		$data = array(
-			'raw_html' => $info,
+			'error' => '',
 			'base_url' => base_url(),
 		);
 
@@ -74,6 +73,8 @@ class Landing extends CI_Controller {
 			);
 		
 		}else{
+			//$data['error'] = " " . validaton_error('<p class ="formError">', '</p></br>');
+
 			$this->output->set_output(
 				$this->twig->render(
 					'admin.html', 
