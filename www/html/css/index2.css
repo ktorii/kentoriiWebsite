@@ -1,18 +1,10 @@
-button.tutortab {
-  background-color: transparent !important;
-  border: transparent !important;
-  letter-spacing: 1px;
-  padding: 0px;
+.navbar-collapse.in {
+    overflow-y: visible !important;
 }
 
 .container.kt-tabs-component {
   margin: 0;
   padding: 0;
-}
-
-li.list-group-item {
-  background-color: #080808;
-  border-color: #080808;
 }
 
 .container {
