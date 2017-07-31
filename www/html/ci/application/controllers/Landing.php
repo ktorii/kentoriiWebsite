@@ -18,22 +18,48 @@ class Landing extends CI_Controller {
 		$this->loader = new Twig_Loader_Filesystem('ci/application/views');
 		$this->twig = new Twig_Environment($this->loader);
 	}
-<<<<<<< HEAD
 	
-	public function tracking($section, $date, $location){
+	public function trackingnavigation(){
 		
 		$tracking = $this->load->database('tracking', TRUE);
 		
+		$pagname =  $_POST['phpvar1'];
+		$time =  $_POST['phpvar2'];
+		$city =  $_POST['phpvar3'];
+		$country =  $_POST['phpvar4'];
 		
+		$data = array(
+	        'page_name' => '$pagename',
+	        'recorded_at' => '$time',
+	        'city' => '$city',
+	        'country' => '$country'
+        );
+
+        $tracking->db->insert('user_tracking_timing', $data);
+	}
+	public function trackinglanding(){
+		
+		$tracking = $this->load->database('tracking', TRUE);
+		
+	
+		$time =  $_POST['phpvar1'];
+		$city =  $_POST['phpvar2'];
+		$country =  $_POST['phpvar3'];
+		
+		$data = array(
+	   
+	        'recorded_at' => '$time',
+	        'city' => '$city',
+	        'country' => '$country'
+        );
+
+        $tracking->db->insert('user_tracking_entry', $data);
 	}
 	
-	public function index() {
-		
-		
-=======
->>>>>>> original/develop
 
 	public function index() {
+		
+
 		$info = "";
 		$data = array(
 			'raw_html' => $info,

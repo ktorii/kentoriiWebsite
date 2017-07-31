@@ -39,3 +39,93 @@ $(document).ready(function() {
 	$(".kt-tabs-component-content").hide();
 	$("#aboutsite").show();
 });
+
+$("li").click(function(){
+ 
+  //set global variables
+  var city;
+  var country; 
+  var page = $(this).text(); 
+  
+   //city and country
+   $.get("http://ipinfo.io", function (response) { 
+   
+       var city = response.city; 
+       var country = response.country; 
+       
+   }, "jsonp");
+
+    // current date
+    var currentdate = new Date(); 
+    var datetime = currentdate.getFullYear() + "-"
+                + (currentdate.getMonth()+1)  + "-" 
+                + currentdate.getDate() + " "  
+                + currentdate.getHours() + ":"  
+                + currentdate.getMinutes() + ":" 
+                + currentdate.getSeconds();
+    
+    //call function
+    updateNavbarTracking(page, datetime, city , country)
+    
+  
+    //ajax function
+    function updateNavbarTracking(page, time, city, country) {
+        $.ajax({
+            url: '/landing/trackingnavigation',
+            type: 'post',
+            contentType: 'application/json',
+            data: JSON.stringify({ 
+                phpvar1: page, 
+                phpvar2: time,
+                phpvar3: city,
+                phpvar4: country
+            })
+       });
+    }
+        
+       
+});
+
+$(document).ready(function() { 
+  //set global variables
+  var city;
+  var country; 
+  
+   //city and country
+   $.get("http://ipinfo.io", function (response) { 
+   
+       var city = response.city; 
+       var country = response.country; 
+       
+   }, "jsonp");
+
+    // current date
+    var currentdate = new Date(); 
+    var datetime = currentdate.getFullYear() + "-"
+                + (currentdate.getMonth()+1)  + "-" 
+                + currentdate.getDate() + " "  
+                + currentdate.getHours() + ":"  
+                + currentdate.getMinutes() + ":" 
+                + currentdate.getSeconds();
+    
+    //call function
+    updateNavbarTracking(datetime, city , country); 
+    
+  
+    //ajax function
+    function updateNavbarTracking(time, city, country) {
+        $.ajax({
+            url: '/landing/trackingnavigation',
+            type: 'post',
+            contentType: 'application/json',
+            data: JSON.stringify({ 
+                phpvar1: time,
+                phpvar2: city,
+                phpvar3: country
+            })
+       });
+    }
+        
+       
+});
+
