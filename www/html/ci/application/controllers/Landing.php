@@ -1,6 +1,8 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
-session_start();
+
+
+
 require_once 'vendor/autoload.php';
 class Landing extends CI_Controller {
 
@@ -13,7 +15,16 @@ class Landing extends CI_Controller {
 		// load database
         $this->load->database();
 		$this->load->helper(array('url', 'form'));
-		$this->load->library('form_validation');		
+		$this->load->library('form_validation');
+		$this->load->library('session');
+
+		if(!isset($_SESSION['loggedIn'])){
+			$newdata = array(
+        		'username'  => null,
+        		'loggedIn' => false
+			);
+			$this->session->set_userdata($newdata);
+		}
 
 
 
@@ -32,21 +43,29 @@ class Landing extends CI_Controller {
 		// render views
 		$this->output->set_output(
 			$this->twig->render(
-				'admin.html', 
+				'login.html', 
 				$data
 			)
 		);
 	}
 	
 		public function login() {
-		
-		
-
 		$data = array(
 			'error' => '',
 			'base_url' => base_url(),
 		);
 
+		if($this->session->loggedIn == true){
+			$this->output->set_output(
+			$this->twig->render(
+				'admin.html', 
+				$data
+				)
+			);
+
+		}else{
+
+		
 		$this->form_validation->set_rules('username', 'Username', 'required',
 			array(
 				'required' => 'You must provide a %s.',
@@ -58,26 +77,32 @@ class Landing extends CI_Controller {
         $this->form_validation->set_rules('password', 'Password', 'required',
         	array(
 				'required' => 'You must provide a %s.',
-				'match' => 'password does not match username'
+				'match' => 'Password does not match Username'
 
 		   )
 		);
 
 		if($this->form_validation->run()== true){
+			$newdata = array(
+        		'username'  => $this->input->post('username'),
+        		'loggedIn' => true
+			);
+
+			$this->session->set_userdata($newdata);
 			
 			$this->output->set_output(
 				$this->twig->render(
-					'landing.php', 
+					'admin.html', 
 					$data
 				)
 			);
 		
 		}else{
-			//$data['error'] = " " . validaton_error('<p class ="formError">', '</p></br>');
+			$data['error'] =  validation_errors(' ', ' ');;
 
 			$this->output->set_output(
 				$this->twig->render(
-					'admin.html', 
+					'login.html', 
 					$data
 				)
 			);
@@ -88,5 +113,29 @@ class Landing extends CI_Controller {
 
 		
 		
+	}}
+	
+	public function logout(){
+		$data = array(
+			'base_url' => base_url(),
+		);
+		
+		$newdata = array(
+        	'username'  => null,
+        	'loggedIn' => true
+		);
+
+		$this->session->set_userdata($newdata);
+
+
+		$this->output->set_output(
+			$this->twig->render(
+				'landing.php', 
+				$data
+			)
+		);
+		
+
 	}
 }
+
