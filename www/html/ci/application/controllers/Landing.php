@@ -21,7 +21,7 @@ class Landing extends CI_Controller {
 	
 	public function trackingnavigation(){
 		
-		$tracking = $this->load->database('tracking', TRUE);
+       $this->load->database();
 		
 		$pagname =  $_POST['phpvar1'];
 		$time =  $_POST['phpvar2'];
@@ -35,11 +35,11 @@ class Landing extends CI_Controller {
 	        'country' => '$country'
         );
 
-        $tracking->db->insert('user_tracking_timing', $data);
+        $this->db->insert('user_tracking_timing', $data);
 	}
 	public function trackinglanding(){
 		
-		$tracking = $this->load->database('tracking', TRUE);
+		$this->load->database();
 		
 	
 		$time =  $_POST['phpvar1'];
@@ -53,7 +53,7 @@ class Landing extends CI_Controller {
 	        'country' => '$country'
         );
 
-        $tracking->db->insert('user_tracking_entry', $data);
+        $this->db->insert('user_tracking_entry', $data);
 	}
 	
 
