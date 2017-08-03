@@ -50,8 +50,8 @@ $("li").click(function(){
    //city and country
    $.get("http://ipinfo.io", function (response) { 
    
-       var city = response.city; 
-       var country = response.country; 
+        city = response.city; 
+       country = response.country; 
        
    }, "jsonp");
 
@@ -94,8 +94,8 @@ $(document).ready(function() {
    //city and country
    $.get("http://ipinfo.io", function (response) { 
    
-       var city = response.city; 
-       var country = response.country; 
+       city = response.city; 
+       country = response.country; 
        
    }, "jsonp");
 
