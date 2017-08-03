@@ -66,9 +66,10 @@ $("li").click(function(){
     
     //call function
     updateNavbarTracking(page, datetime, city , country); 
-    
-  
-    //ajax function
+ 
+       
+});
+ //ajax function
     function updateNavbarTracking(page, time, city, country) {
         $.ajax({
             url: '/Landing/trackingnavigation',
@@ -82,9 +83,6 @@ $("li").click(function(){
             })
        });
     }
-        
-       
-});
 
 $(document).ready(function() { 
   //set global variables
@@ -109,13 +107,13 @@ $(document).ready(function() {
                 + currentdate.getSeconds();
     
     //call function
-    updateNavbarTracking(datetime, city , country); 
+    updateLandingTracking(datetime, city , country); 
     
-  
-    //ajax function
-    function updateNavbarTracking(time, city, country) {
+});
+//ajax function
+function updateLandingTracking(time, city, country) {
         $.ajax({
-            url: '/Landing/trackingnavigation',
+            url: '/Landing/trackinglanding',
             type: 'post',
             contentType: 'application/json',
             data: JSON.stringify({ 
@@ -125,7 +123,3 @@ $(document).ready(function() {
             })
        });
     }
-        
-       
-});
-
