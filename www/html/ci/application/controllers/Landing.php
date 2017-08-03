@@ -13,6 +13,7 @@ class Landing extends CI_Controller {
 		parent::__construct();
 
 		// load database
+
         $this->load->database();
 		$this->load->helper(array('url', 'form'));
 		$this->load->library('form_validation');
@@ -28,14 +29,15 @@ class Landing extends CI_Controller {
 
 
 
-		//setup twig 
+
+		//setup twig
 		$this->loader = new Twig_Loader_Filesystem('ci/application/views');
 		$this->twig = new Twig_Environment($this->loader);
 	}
-	
-	public function index() {	
-		
-		
+
+
+	public function index() {
+
 		$info = "";
 		$data = array(
 			'session' => $_SESSION['loggedIn'],
@@ -45,7 +47,7 @@ class Landing extends CI_Controller {
 		// render views
 		$this->output->set_output(
 			$this->twig->render(
-				'landing.php', 
+				'landing.php',
 				$data
 			)
 		);
