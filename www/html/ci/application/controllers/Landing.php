@@ -23,16 +23,16 @@ class Landing extends CI_Controller {
 		
        $this->load->database();
 		
-		$pagname =  $_POST['phpvar1'];
-		$time =  $_POST['phpvar2'];
-		$city =  $_POST['phpvar3'];
-		$country =  $_POST['phpvar4'];
+		$pagname =  $_POST['data'][0];
+		$time =  $_POST['data'][1];
+		$city =  $_POST['data'][2];
+		$country =  $_POST['data'][3];
 		
 		$data = array(
-	        'page_name' => '$pagename',
-	        'recorded_at' => '$time',
-	        'city' => '$city',
-	        'country' => '$country'
+	        'page_name' => $pagename,
+	        'recorded_at' => $time,
+	        'city' => $city,
+	        'country' => $country
         );
 
         $this->db->insert('user_tracking_timing', $data);
@@ -42,9 +42,10 @@ class Landing extends CI_Controller {
 		$this->load->database();
 		
 	
-		$time =  $_POST['phpvar1'];
-		$city =  $_POST['phpvar2'];
-		$country =  $_POST['phpvar3'];
+	
+		$time =  $_POST['data'][1];
+		$city =  $_POST['data'][2];
+		$country =  $_POST['data'][3];
 		
 		$data = array(
 	   
