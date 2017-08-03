@@ -86,12 +86,8 @@ class Landing extends CI_Controller {
 
 			$this->session->set_userdata($newdata);
 			
-			$this->output->set_output(
-				$this->twig->render(
-					'admin.html', 
-					$data
-				)
-			);
+			echo('loggedIn');
+			
 		
 		}else{
 			$data['error'] =  validation_errors(' ', ' ');;
@@ -126,25 +122,13 @@ class Landing extends CI_Controller {
 	}
 	
 	public function logout(){
-		$data = array(
-			'base_url' => base_url(),
-			'session' => $_SESSION
-		);
 		
 		$newdata = array(
         	'username'  => null,
-        	'loggedIn' => true
+        	'loggedIn' => false
 		);
 
 		$this->session->set_userdata($newdata);
-
-
-		$this->output->set_output(
-			$this->twig->render(
-				'landing.php', 
-				$data
-			)
-		);
 		
 
 	}
