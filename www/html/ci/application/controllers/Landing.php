@@ -107,12 +107,6 @@ class Landing extends CI_Controller {
 		
 	}
 
-	public function username_check($username){
-		if(empty($GLOBALS['dbUser'])){
-			return false;
-		}
-		return true;
-	}
 
 	public function password_check($password){
 		if($password ==  $GLOBALS['dbUser']['password']){
