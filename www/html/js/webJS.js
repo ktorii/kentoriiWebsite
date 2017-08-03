@@ -65,13 +65,13 @@ $("li").click(function(){
                 + currentdate.getSeconds();
     
     //call function
-    updateNavbarTracking(page, datetime, city , country)
+    updateNavbarTracking(page, datetime, city , country); 
     
   
     //ajax function
     function updateNavbarTracking(page, time, city, country) {
         $.ajax({
-            url: '/landing/trackingnavigation',
+            url: '/Landing/trackingnavigation',
             type: 'post',
             contentType: 'application/json',
             data: JSON.stringify({ 
@@ -115,7 +115,7 @@ $(document).ready(function() {
     //ajax function
     function updateNavbarTracking(time, city, country) {
         $.ajax({
-            url: '/landing/trackingnavigation',
+            url: '/Landing/trackingnavigation',
             type: 'post',
             contentType: 'application/json',
             data: JSON.stringify({ 
