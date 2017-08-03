@@ -49,9 +49,9 @@ class Landing extends CI_Controller {
 		
 		$data = array(
 	   
-	        'recorded_at' => '$time',
-	        'city' => '$city',
-	        'country' => '$country'
+	        'recorded_at' => $time,
+	        'city' => $city,
+	        'country' => $country
         );
 
         $this->db->insert('user_tracking_entry', $data);
