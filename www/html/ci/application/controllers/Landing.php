@@ -38,14 +38,14 @@ class Landing extends CI_Controller {
 		
 		$info = "";
 		$data = array(
-			'session' => $_SESSION,
+			'session' => $_SESSION['loggedIn'],
 			'base_url' => base_url()
 		);
 
 		// render views
 		$this->output->set_output(
 			$this->twig->render(
-				'login.html', 
+				'landing.php', 
 				$data
 			)
 		);
