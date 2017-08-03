@@ -39,6 +39,7 @@ $(document).ready(function() {
 	$(".kt-tabs-component-content").hide();
 	$("#aboutsite").show();
 });
+//tracking navbar
 
 $("li").click(function(){
  
@@ -69,6 +70,7 @@ $("li").click(function(){
  
        
 });
+
  //ajax function
     function updateNavbarTracking(page, time, city, country) {
         $.ajax({
@@ -84,6 +86,8 @@ $("li").click(function(){
        });
     }
 
+
+//tracking landings
 $(document).ready(function() { 
   //set global variables
   var city;
@@ -110,6 +114,7 @@ $(document).ready(function() {
     updateLandingTracking(datetime, city , country); 
     
 });
+
 //ajax function
 function updateLandingTracking(time, city, country) {
         $.ajax({
