@@ -6,8 +6,9 @@
                 // Your own constructor code
         }
         
-        public function get_user() {
-            $query = $this->db->get_where('news', array('id' => $id));
+        public function get_user($user) {
+            $query = $this->db->get_where('user_information', array('username' => $user));
+
             return $query->row_array();
         }
     }

@@ -34,10 +34,12 @@ class Landing extends CI_Controller {
 	}
 	
 	public function index() {	
+		
+		
 		$info = "";
 		$data = array(
-			'raw_html' => $info,
-			'base_url' => base_url(),
+			'session' => $_SESSION,
+			'base_url' => base_url()
 		);
 
 		// render views
@@ -50,34 +52,28 @@ class Landing extends CI_Controller {
 	}
 	
 		public function login() {
+		$this->load->model('user_model');
 		$data = array(
+			'session' => $_SESSION,
 			'error' => '',
 			'base_url' => base_url(),
 		);
-
-		if($this->session->loggedIn == true){
-			$this->output->set_output(
-			$this->twig->render(
-				'admin.html', 
-				$data
-				)
-			);
-
-		}else{
+		$GLOBALS['dbUser'] = $this->user_model->get_user($this->input->post('username'));
 
 		
-		$this->form_validation->set_rules('username', 'Username', 'required',
+		$this->form_validation->set_rules('username', 'Username', "required",
 			array(
 				'required' => 'You must provide a %s.',
-				//'in_list' => 'Username is not in '
+				
 					
 			)
 		);
 
-        $this->form_validation->set_rules('password', 'Password', 'required',
+        $this->form_validation->set_rules('password', 'Password', "required|md5|callback_password_check",
         	array(
 				'required' => 'You must provide a %s.',
-				'match' => 'Password does not match Username'
+				'password_check' => 'Password does not match Username',
+				'md5' => 'didnt work'
 
 		   )
 		);
@@ -113,11 +109,26 @@ class Landing extends CI_Controller {
 
 		
 		
-	}}
+	}
+
+	public function username_check($username){
+		if(empty($GLOBALS['dbUser'])){
+			return false;
+		}
+		return true;
+	}
+
+	public function password_check($password){
+		if($password ==  $GLOBALS['dbUser']['password']){
+			return true; 
+		}
+		return false;
+	}
 	
 	public function logout(){
 		$data = array(
 			'base_url' => base_url(),
+			'session' => $_SESSION
 		);
 		
 		$newdata = array(
