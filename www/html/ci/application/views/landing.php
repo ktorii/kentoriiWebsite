@@ -18,6 +18,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 	<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 	<script type="text/javascript" src="{{ base_url }}js/webJS.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js" ></script>
 	
 {% endblock %}
 
@@ -541,7 +542,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <!--ADMIN PAGE-->
 <div class="container kt-tabs-component-content clean-container-theme strictly-no-padding" id="adminpage">
 	<button type="button" id='logout'>Logout</button>
-	
+	<div class="chart-container" style="position: relative; height:40vh; width:80vw">
+    <canvas id="chart"></canvas>
+</div>
 </div>
 
 
