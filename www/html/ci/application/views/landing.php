@@ -1,7 +1,8 @@
 {% extends "navbar.html" %}
 
 
-{% block extra %}<?php
+{% block extra %}
+<?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 ?>
 {% endblock %}
@@ -18,7 +19,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 	<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 	<script type="text/javascript" src="{{ base_url }}js/webJS.js"></script>
-	
+
 {% endblock %}
 
 {% block content %}
@@ -541,7 +542,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <!--ADMIN PAGE-->
 <div class="container kt-tabs-component-content clean-container-theme strictly-no-padding" id="adminpage">
 	<button type="button" id='logout'>Logout</button>
-	
+
 </div>
 
 
