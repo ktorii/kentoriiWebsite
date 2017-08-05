@@ -19,6 +19,7 @@ class Landing extends CI_Controller {
 		$this->load->helper(array('url', 'form'));
 		$this->load->library('form_validation');
 		$this->load->library('session');
+		$this->load->model('tracking_model');
 
 		if(!isset($_SESSION['loggedIn'])){
 			$newdata = array(
@@ -36,7 +37,7 @@ class Landing extends CI_Controller {
 		$this->twig = new Twig_Environment($this->loader);
 	}
 	
-	public function trackingnavigation(){
+	public function trackingNavigation(){
 		
        
 		
@@ -46,20 +47,17 @@ class Landing extends CI_Controller {
 		$country =  $this->input->post('country');
 		
 		$data = array(
-	        'page_name' => $pagename,
-	        'recorded_at' => $time,
-	        'city' => $city,
-	        'country' => $country
+	    	'page_name' => 		$pagename,
+	        'recorded_at' =>	$time,
+	        'city' => 			$city,
+	        'country' => 		$country
         );
-
-        $this->db->insert('user_tracking_timing', $data);
+		
+		$this->tracking_model->input_navigation_data($data);
+        
 	}
-	public function trackinglanding(){
+	public function trackingLanding(){
 		
-	
-		
-	
-	
 		$time =  $this->input->post('time');
 		$city =  $this->input->post('city');
 		$country =  $this->input->post('country');
@@ -71,18 +69,18 @@ class Landing extends CI_Controller {
 	        'country' => $country
         );
 
-        $this->db->insert('user_tracking_entry', $data);
+		$this->tracking_model->input_landing_data($data);
+        
 	}
 	
 
 
 	public function index() {
 
-
 		$info = "";
 		$data = array(
-			'session' => $_SESSION['loggedIn'],
-			'base_url' => base_url()
+			'session' => 	$_SESSION['loggedIn'],
+			'base_url' => 	base_url()
 		);
 
 		// render views
@@ -97,9 +95,9 @@ class Landing extends CI_Controller {
 		public function login() {
 		$this->load->model('user_model');
 		$data = array(
-			'session' => $_SESSION,
-			'error' => '',
-			'base_url' => base_url(),
+			'session' => 	$_SESSION,
+			'error' => 		'',
+			'base_url' => 	base_url(),
 		);
 		$GLOBALS['dbUser'] = $this->user_model->get_user($this->input->post('username'));
 
@@ -123,8 +121,8 @@ class Landing extends CI_Controller {
 
 		if($this->form_validation->run()== true){
 			$newdata = array(
-        		'username'  => $this->input->post('username'),
-        		'loggedIn' => true
+        		'username'  => 	$this->input->post('username'),
+        		'loggedIn' => 	true
 			);
 
 			$this->session->set_userdata($newdata);
@@ -142,12 +140,7 @@ class Landing extends CI_Controller {
 				)
 			);
 
-		}
-		
-
-
-		
-		
+		}	
 	}
 
 
@@ -161,8 +154,8 @@ class Landing extends CI_Controller {
 	public function logout(){
 		
 		$newdata = array(
-        	'username'  => null,
-        	'loggedIn' => false
+        	'username'  => 	null,
+        	'loggedIn' => 	false
 		);
 
 		$this->session->set_userdata($newdata);

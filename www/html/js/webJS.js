@@ -56,7 +56,7 @@ $(document).ready(function() {
 });
 //tracking navbar
 $(document).ready(function() {
-    $("li").click(function() {
+    $(".navbar-tab").click(function() {
 
         //set global variables
         var city;
@@ -97,7 +97,7 @@ function updateNavbarTracking(page, time, city, country) {
 
 
     $.ajax({
-        url: 'index.php/landing/trackingnavigation',
+        url: 'index.php/landing/trackingNavigation',
         type: 'post',
         dataType: 'json',
         data: { 'page': page, 'time': time, 'city': city, 'country': country }
@@ -139,10 +139,9 @@ function updateLandingTracking(time, city, country) {
 
 
     $.ajax({
-        url: 'index.php/landing/trackinglanding',
+        url: 'index.php/landing/trackingLanding',
         type: 'post',
         dataType: 'json',
         data: { 'time': time, 'city': city, 'country': country }
     });
 }
-
