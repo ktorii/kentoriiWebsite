@@ -35,6 +35,7 @@ $(document).ready(function() {
         $(".kt-tabs-component-content" + $(this).attr('href')).fadeIn("slow");
     });
 
+
     $('#logout').click(function(event) {
         event.preventDefault();
 
@@ -46,8 +47,70 @@ $(document).ready(function() {
 
 
     });
+
+    //tracking navbar
+    $(".navbar-tab").click(function() {
+        page = $(this).text();
+        trackUser(updateNavbarTracking, page);
+    });
+
+    //tracking landings
+    trackUser(updateLandingTracking);
+
 });
 $(document).ready(function() {
     $(".kt-tabs-component-content").hide();
     $("#aboutsite").show();
+
 });
+
+
+//ajax function
+function updateNavbarTracking(time, city, country) {
+
+    $.ajax({
+        url: 'index.php/landing/trackingNavigation',
+        type: 'post',
+        dataType: 'json',
+        data: { 'page': page, 'time': time, 'city': city, 'country': country }
+    });
+}
+
+//ajax function
+function updateLandingTracking(time, city, country) {
+
+
+    $.ajax({
+        url: 'index.php/landing/trackingLanding',
+        type: 'post',
+        dataType: 'json',
+        data: { 'time': time, 'city': city, 'country': country }
+    });
+}
+
+function trackUser(callback, page) {
+    $.get("http://ipinfo.io", function(userlocation) {
+
+        city = userlocation.city;
+        country = userlocation.country;
+        datetime = getDate();
+
+        callback(datetime, city, country, page);
+    }, 'jsonp');
+
+
+}
+
+function getDate() {
+    // current date
+    var currentdate = new Date();
+    var datetime = currentdate.getFullYear() + "-" +
+        (currentdate.getMonth() + 1) + "-" +
+        currentdate.getDate() + " " +
+        currentdate.getHours() + ":" +
+        currentdate.getMinutes() + ":" +
+        currentdate.getSeconds();
+
+    return datetime;
+
+}
