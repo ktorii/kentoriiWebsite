@@ -1,24 +1,8 @@
-{% extends "navbar.html" %}
-
+{% extends "base.html" %}
 
 {% block extra %}<?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 ?>
-{% endblock %}
-{% block head %}
-
-
-	<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
-	<title>Ken Torii &copy;</title>
-	<meta content="width=device-width, initial-scale=1" name="viewport" />
-	<link href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" />
-	<link href="{{ base_url }}font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
-	<link href="{{ base_url }}css/index2.css" rel="stylesheet" />
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
-	<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-	<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
-	<script type="text/javascript" src="{{ base_url }}js/webJS.js"></script>
-	
 {% endblock %}
 
 {% block content %}
@@ -117,65 +101,105 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 			</div>
 			<div class="row">
 				<div class="col-md-4 col-sm-6 portfolio-item">
-					<a class="portfolio-link" data-toggle="modal" href="#portfolioModal4">
-					<div class="portfolio-hover">
-						<div class="portfolio-hover-content">
-							<i class="fa fa-info fa-3x"></i>
+					<div class="portfolio-link">
+						<div class="portfolio-hover">
+							<div class="portfolio-hover-content">
+								<a class="portfolio-hover-link"> <!--href="{{ base_url }}index.php/games/dangopuck"-->
+									<div class="portfolio-hover-col portfolio-hover-play">
+										<center>
+											<i class="fa fa-gamepad fa-4x"></i>
+										</center>
+									</div>
+								</a>
+								<a class="portfolio-hover-link" data-toggle="modal" href="#portfolioModal4">
+									<div class="portfolio-hover-col portfolio-hover-info">
+										<center>
+											<i class="fa fa-info fa-4x"></i>
+										</center>
+									</div>
+								</a>
+							</div>
 						</div>
-					</div><img alt="" class="img-responsive" src="{{ base_url }}img/dangopuckpreview.png"></a>
+						<img alt="" class="img-responsive" src="{{ base_url }}img/dangopuckpreview.png">
+					</div>
 					<div class="portfolio-caption">
 						<h4>Dango Puck! v1.0</h4>
 						<p class="text-muted">Game+Graphics+Sound Developer</p>
 					</div>
 				</div>
 				<div class="col-md-4 col-sm-6 portfolio-item">
-					<a class="portfolio-link" data-toggle="modal" href="#portfolioModal1">
-					<div class="portfolio-hover">
-						<div class="portfolio-hover-content">
-							<i class="fa fa-info fa-3x"></i>
+					<div class="portfolio-link">
+						<div class="portfolio-hover">
+							<div class="portfolio-hover-content">
+								<div class="portfolio-hover-col portfolio-hover-play">
+									<center>
+										<i class="fa fa-gamepad fa-4x"></i>
+									</center>
+								</div>
+								<a class="portfolio-hover-link" data-toggle="modal" href="#portfolioModal1">
+									<div class="portfolio-hover-col portfolio-hover-info">
+										<center>
+											<i class="fa fa-info fa-4x"></i>
+										</center>
+									</div>
+								</a>
+							</div>
 						</div>
-					</div><img alt="" class="img-responsive" src="{{ base_url }}img/portfolio/space-dodgers.png"></a>
+						<img alt="" class="img-responsive" src="{{ base_url }}img/portfolio/space-dodgers.png">
+					</div>
 					<div class="portfolio-caption">
 						<h4>Space Dodgers v1.2</h4>
 						<p class="text-muted">Game Developer</p>
 					</div>
 				</div>
 				<div class="col-md-4 col-sm-6 portfolio-item">
-					<a class="portfolio-link" data-toggle="modal" href="#portfolioModal5">
-					<div class="portfolio-hover">
-						<div class="portfolio-hover-content">
-							<i class="fa fa-info fa-3x"></i>
+					<div class="portfolio-link">
+						<div class="portfolio-hover">
+							<div class="portfolio-hover-content">
+								<div class="portfolio-hover-col portfolio-hover-play-disabled">
+									<center>
+										<i class="fa fa-gamepad fa-4x"></i>
+									</center>
+								</div>
+								<a class="portfolio-hover-link" data-toggle="modal" href="#portfolioModal5">
+									<div class="portfolio-hover-col portfolio-hover-info">
+										<center>
+											<i class="fa fa-info fa-4x"></i>
+										</center>
+									</div>
+								</a>
+							</div>
 						</div>
-					</div><img alt="" class="img-responsive" src="{{ base_url }}img/straightslogo.png"></a>
+						<img alt="" class="img-responsive" src="{{ base_url }}img/straightslogo.png">
+					</div>
 					<div class="portfolio-caption">
 						<h4>Straights Card Game</h4>
 						<p class="text-muted">Game Developer</p>
 					</div>
-				</div><!--
-                <div class="col-md-4 col-sm-6 portfolio-item">
-                    <a class="portfolio-link" data-toggle="modal" href="#portfolioModal2">
-                        <div class="portfolio-hover">
-                            <div class="portfolio-hover-content">
-                                <i class="fa fa-info fa-3x"></i>
-                            </div>
-                        </div>
-                        <img alt="" class="img-responsive" src="{{ base_url }}img/ums.png">
-                    </a>
-                    <div class="portfolio-caption">
-                        <h4>Widget Design</h4>
-                        <p class="text-muted">Front-End Developer</p>
-                    </div>
-                </div>
--->
+				</div>
 			</div>
 			<div class="row">
 				<div class="col-md-4 col-sm-6 portfolio-item">
-					<a class="portfolio-link" data-toggle="modal" href="#portfolioModal6">
-					<div class="portfolio-hover">
-						<div class="portfolio-hover-content">
-							<i class="fa fa-info fa-3x"></i>
+					<div class="portfolio-link">
+						<div class="portfolio-hover">
+							<div class="portfolio-hover-content">
+								<div class="portfolio-hover-col portfolio-hover-play-disabled">
+									<center>
+										<i class="fa fa-gamepad fa-4x"></i>
+									</center>
+								</div>
+								<a class="portfolio-hover-link" data-toggle="modal" href="#portfolioModal6">
+									<div class="portfolio-hover-col portfolio-hover-info">
+										<center>
+											<i class="fa fa-info fa-4x"></i>
+										</center>
+									</div>
+								</a>
+								
+							</div>
 						</div>
-					</div><img alt="" class="img-responsive" src="{{ base_url }}img/snakethumbnail2.png"></a>
+						<img alt="" class="img-responsive" src="{{ base_url }}img/snakethumbnail2.png">
+					</div>
 					<div class="portfolio-caption">
 						<h4>Custom Snake Game</h4>
 						<p class="text-muted">Game Developer</p>
@@ -207,7 +231,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 			<div class="row">
 				<div class="col-md-4 col-sm-6 portfolio-item">
 					<a class="portfolio-link" data-toggle="modal" href="#portfolioModal2">
-					<div class="portfolio-hover">
+					<div class="portfolio-hover portfolio-hover-info">
 						<div class="portfolio-hover-content">
 							<i class="fa fa-info fa-3x"></i>
 						</div>
@@ -219,7 +243,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 				</div>
 				<div class="col-md-4 col-sm-6 portfolio-item">
 					<a class="portfolio-link" data-toggle="modal" href="#portfolioModal3">
-					<div class="portfolio-hover">
+					<div class="portfolio-hover portfolio-hover-info">
 						<div class="portfolio-hover-content">
 							<i class="fa fa-info fa-3x"></i>
 						</div>
