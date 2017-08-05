@@ -1,0 +1,50 @@
+<html>
+
+<head>
+    <title>Kentorri &copy;</title>
+
+    <link href="{{ base_url }}css/index2.css" rel="stylesheet" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+    <div id='errorMessage'>
+        {{error|nl2br}}
+    </div>
+
+    <form method="POST" action="controllers/Landing.php" name="signIn" id="signInForm">
+
+        <h5>Username</h5>
+        <input type="text" name="username" value="" size="50" />
+
+        <h5>Password</h5>
+        <input type="password" name="password" value="" size="50" />
+
+        <div><input type="submit" value="Login" /></div>
+
+    </form>
+
+    <script type='text/javascript'>
+        $('#signInForm').submit(function(event) {
+            event.preventDefault();
+
+            $.post('{{ base_url }}index.php/landing/login',
+                $('#signInForm').serializeArray(),
+                function(data) {
+                    if (data == 'loggedIn') {
+                        window.location.href = "{{base_url}}";
+                    } else {
+                        $('html').html(data)
+
+                    }
+                }
+            )
+
+
+        });
+    </script>
+
+</body>
+
+</html>

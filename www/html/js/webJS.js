@@ -34,10 +34,25 @@ $(document).ready(function() {
         $(".kt-tabs-component-content").hide();
         $(".kt-tabs-component-content" + $(this).attr('href')).fadeIn("slow");
     });
+
+
+    $('#logout').click(function(event) {
+        event.preventDefault();
+
+        $.get('index.php/landing/logout',
+            function(data) {
+                location.reload();
+            }
+        );
+
+
+    });
+
 });
 $(document).ready(function() {
     $(".kt-tabs-component-content").hide();
     $("#aboutsite").show();
+
 });
 //tracking navbar
 $(document).ready(function() {
@@ -130,3 +145,4 @@ function updateLandingTracking(time, city, country) {
         data: { 'time': time, 'city': city, 'country': country }
     });
 }
+

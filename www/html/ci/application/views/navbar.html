@@ -1,12 +1,14 @@
-
-{% block extra %}{% endblock %}
+ {% block extra %}{% endblock %}
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-{% block head %}{% endblock %}
+    {% block head %}{% endblock %}
 </head>
+
 <body>
+
 <div class="container kt-tabs-component">
 <div class="container strictly-no-padding ">
 <div class="kt-google-translate-widget" id="google_translate_element"></div>
@@ -15,10 +17,12 @@
     <div class="navbar-header">
 
       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
+
       <a class="navbar-brand" href="#" style="color:#fed136;">Menu</a>
     </div>
     <div class="collapse navbar-collapse kt-tabs-component-nav-div" id="myNavbar">
@@ -29,25 +33,33 @@
 		<li><a href="#gamedev">Games</a></li>
 		<li><a href="#otherprojects">Other Projects</a></li>
 		<li><a href="#smash">Random</a></li>
-		<li><a data-toggle="collapse" href="#tutorials">Tutorials</a>
-      <div id="tutorials" class="collapse panel-collapse">
-			<ul class="list-group">
-				<li class="list-group-item"><a href="#physics">Physics</a></li>
-				<li class="list-group-item"><a href="#math">Math</a></li>
+		<li class="dropdown"><a aria-expanded="false" aria-haspopup="true" class="dropdown-toggle" data-toggle="dropdown" href="#" role="button">Tutorials</a>
+			<ul class="dropdown-menu">
+				<li><a href="#physics">Physics</a></li>
+				<li><a href="#math">Math</a></li>
 			</ul>
-    </div>
 		</li>
 		<li><a href="#contactme">Contact</a></li>
+    {% if true == session %}
+        <li><a href="#adminpage">Admin</a></li>
+    {% endif %}
+
       </ul>
 
 
-    </div>
-  </div>
-</nav>
 
-</div>
-</div>
-{% block content %}{% endblock %}
+
+                        </ul>
+
+
+                    </div>
+                </div>
+            </nav>
+
+        </div>
+    </div>
+    {% block content %}{% endblock %}
 
 </body>
+
 </html>
