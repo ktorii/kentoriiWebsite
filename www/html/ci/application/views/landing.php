@@ -104,7 +104,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 					<div class="portfolio-link">
 						<div class="portfolio-hover">
 							<div class="portfolio-hover-content">
-								<a class="portfolio-hover-link"> <!--href="{{ base_url }}index.php/games/dangopuck"-->
+								<a class="portfolio-hover-link" href="{{ base_url }}index.php/Games/DangoPlop">
 									<div class="portfolio-hover-col portfolio-hover-play">
 										<center>
 											<i class="fa fa-gamepad fa-4x"></i>
@@ -131,7 +131,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 					<div class="portfolio-link">
 						<div class="portfolio-hover">
 							<div class="portfolio-hover-content">
-								<div class="portfolio-hover-col portfolio-hover-play">
+								<div class="portfolio-hover-col portfolio-hover-play-disabled">
 									<center>
 										<i class="fa fa-gamepad fa-4x"></i>
 									</center>
