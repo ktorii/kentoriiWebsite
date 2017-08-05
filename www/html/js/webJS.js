@@ -48,53 +48,25 @@ $(document).ready(function() {
 
     });
 
+    //tracking navbar
+    $(".navbar-tab").click(function() {
+        page = $(this).text();
+        trackUser(updateNavbarTracking, page);
+    });
+
+    //tracking landings
+    trackUser(updateLandingTracking);
+
 });
 $(document).ready(function() {
     $(".kt-tabs-component-content").hide();
     $("#aboutsite").show();
 
 });
-//tracking navbar
-$(document).ready(function() {
-    $(".navbar-tab").click(function() {
-
-        //set global variables
-        var city;
-        var country;
-        var page = $(this).text();
 
 
-        // current date
-        var currentdate = new Date();
-        var datetime = currentdate.getFullYear() + "-" +
-            (currentdate.getMonth() + 1) + "-" +
-            currentdate.getDate() + " " +
-            currentdate.getHours() + ":" +
-            currentdate.getMinutes() + ":" +
-            currentdate.getSeconds();
-
-        //city and country
-        $.get("http://ipinfo.io", function(response) {
-
-            city = response.city;
-            country = response.country;
-
-            //call function
-            updateNavbarTracking(page, datetime, city, country);
-
-        }, "jsonp");
-
-
-
-
-
-
-    });
-});
 //ajax function
-function updateNavbarTracking(page, time, city, country) {
-
-
+function updateNavbarTracking(time, city, country) {
 
     $.ajax({
         url: 'index.php/landing/trackingNavigation',
@@ -103,36 +75,6 @@ function updateNavbarTracking(page, time, city, country) {
         data: { 'page': page, 'time': time, 'city': city, 'country': country }
     });
 }
-
-
-//tracking landings
-$(document).ready(function() {
-    //set global variables
-    var city;
-    var country;
-
-    // current date
-    var currentdate = new Date();
-    var datetime = currentdate.getFullYear() + "-" +
-        (currentdate.getMonth() + 1) + "-" +
-        currentdate.getDate() + " " +
-        currentdate.getHours() + ":" +
-        currentdate.getMinutes() + ":" +
-        currentdate.getSeconds();
-
-    //city and country
-    $.get("http://ipinfo.io", function(response) {
-
-        city = response.city;
-        country = response.country;
-
-        updateLandingTracking(datetime, city, country);
-    }, 'jsonp');
-
-    //call function
-
-
-});
 
 //ajax function
 function updateLandingTracking(time, city, country) {
@@ -144,4 +86,31 @@ function updateLandingTracking(time, city, country) {
         dataType: 'json',
         data: { 'time': time, 'city': city, 'country': country }
     });
+}
+
+function trackUser(callback, page) {
+    $.get("http://ipinfo.io", function(userlocation) {
+
+        city = userlocation.city;
+        country = userlocation.country;
+        datetime = getDate();
+
+        callback(datetime, city, country, page);
+    }, 'jsonp');
+
+
+}
+
+function getDate() {
+    // current date
+    var currentdate = new Date();
+    var datetime = currentdate.getFullYear() + "-" +
+        (currentdate.getMonth() + 1) + "-" +
+        currentdate.getDate() + " " +
+        currentdate.getHours() + ":" +
+        currentdate.getMinutes() + ":" +
+        currentdate.getSeconds();
+
+    return datetime;
+
 }
