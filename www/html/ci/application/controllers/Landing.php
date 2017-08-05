@@ -21,12 +21,12 @@ class Landing extends CI_Controller {
 	
 	public function trackingnavigation(){
 		
-       $this->load->database();
+       
 		
-		$pagname =  $_POST['data'][0];
-		$time =  $_POST['data'][1];
-		$city =  $_POST['data'][2];
-		$country =  $_POST['data'][3];
+		$pagename =  $this->input->post('page');
+		$time =  $this->input->post('time');
+		$city =  $this->input->post('city');
+		$country =  $this->input->post('country');
 		
 		$data = array(
 	        'page_name' => $pagename,
@@ -39,13 +39,13 @@ class Landing extends CI_Controller {
 	}
 	public function trackinglanding(){
 		
-		$this->load->database();
+	
 		
 	
 	
-		$time =  $_POST['data'][1];
-		$city =  $_POST['data'][2];
-		$country =  $_POST['data'][3];
+		$time =  $this->input->post('time');
+		$city =  $this->input->post('city');
+		$country =  $this->input->post('country');
 		
 		$data = array(
 	   

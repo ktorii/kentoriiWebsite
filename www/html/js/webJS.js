@@ -40,47 +40,52 @@ $(document).ready(function() {
     $("#aboutsite").show();
 });
 //tracking navbar
+$(document).ready(function() {
+    $("li").click(function() {
 
-$("li").click(function() {
-
-    //set global variables
-    var city;
-    var country;
-    var page = $(this).text();
-
-    //city and country
-    $.get("http://ipinfo.io", function(response) {
-
-        city = response.city;
-        country = response.country;
-
-    }, "jsonp");
-
-    // current date
-    var currentdate = new Date();
-    var datetime = currentdate.getFullYear() + "-" +
-        (currentdate.getMonth() + 1) + "-" +
-        currentdate.getDate() + " " +
-        currentdate.getHours() + ":" +
-        currentdate.getMinutes() + ":" +
-        currentdate.getSeconds();
-
-    //call function
-    updateNavbarTracking(page, datetime, city, country);
+        //set global variables
+        var city;
+        var country;
+        var page = $(this).text();
 
 
+        // current date
+        var currentdate = new Date();
+        var datetime = currentdate.getFullYear() + "-" +
+            (currentdate.getMonth() + 1) + "-" +
+            currentdate.getDate() + " " +
+            currentdate.getHours() + ":" +
+            currentdate.getMinutes() + ":" +
+            currentdate.getSeconds();
+
+        //city and country
+        $.get("http://ipinfo.io", function(response) {
+
+            city = response.city;
+            country = response.country;
+
+            //call function
+            updateNavbarTracking(page, datetime, city, country);
+
+        }, "jsonp");
+
+
+
+
+
+
+    });
 });
-
 //ajax function
 function updateNavbarTracking(page, time, city, country) {
-    
-    var data = [ page, time, city, country]
-    
+
+
+
     $.ajax({
         url: 'index.php/landing/trackingnavigation',
         type: 'post',
-        contentType: 'application/json',
-        data: data
+        dataType: 'json',
+        data: { 'page': page, 'time': time, 'city': city, 'country': country }
     });
 }
 
@@ -91,14 +96,6 @@ $(document).ready(function() {
     var city;
     var country;
 
-    //city and country
-    $.get("http://ipinfo.io", function(response) {
-
-        city = response.city;
-        country = response.country;
-
-    }, "jsonp");
-
     // current date
     var currentdate = new Date();
     var datetime = currentdate.getFullYear() + "-" +
@@ -108,19 +105,28 @@ $(document).ready(function() {
         currentdate.getMinutes() + ":" +
         currentdate.getSeconds();
 
+    //city and country
+    $.get("http://ipinfo.io", function(response) {
+
+        city = response.city;
+        country = response.country;
+
+        updateLandingTracking(datetime, city, country);
+    }, 'jsonp');
+
     //call function
-    updateLandingTracking(datetime, city, country);
+
 
 });
 
 //ajax function
 function updateLandingTracking(time, city, country) {
-   var data = [ time, city, country]; 
-    
+
+
     $.ajax({
-        url: 'index.php/landing/landingnavigation',
+        url: 'index.php/landing/trackinglanding',
         type: 'post',
-        contentType: 'application/json',
-        data: data
+        dataType: 'json',
+        data: { 'time': time, 'city': city, 'country': country }
     });
 }
