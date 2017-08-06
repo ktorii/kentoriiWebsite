@@ -111,7 +111,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 										</center>
 									</div> 
 								</a>
-								<a class="portfolio-hover-link" href="{{ base_url }}index.php/Games/DangoPlop">
+								<a class="portfolio-hover-link" href="{{ base_url }}index.php/Games/DangoPuck">
 									<div class="portfolio-hover-col-half portfolio-hover-play">
 										<center>
 											<i class="fa fa-gamepad fa-4x"></i>
