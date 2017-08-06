@@ -104,15 +104,22 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 					<div class="portfolio-link">
 						<div class="portfolio-hover">
 							<div class="portfolio-hover-content">
+								<a class="portfolio-mobile-link" data-toggle="modal" href="#portfolioModal4">
+									<div class="portfolio-hover-col-full portfolio-hover-info"> 
+										<center>
+											<i class="fa fa-info fa-4x"></i>
+										</center>
+									</div> 
+								</a>
 								<a class="portfolio-hover-link" href="{{ base_url }}index.php/Games/DangoPlop">
-									<div class="portfolio-hover-col portfolio-hover-play">
+									<div class="portfolio-hover-col-half portfolio-hover-play">
 										<center>
 											<i class="fa fa-gamepad fa-4x"></i>
 										</center>
 									</div>
 								</a>
 								<a class="portfolio-hover-link" data-toggle="modal" href="#portfolioModal4">
-									<div class="portfolio-hover-col portfolio-hover-info">
+									<div class="portfolio-hover-col-half portfolio-hover-info">
 										<center>
 											<i class="fa fa-info fa-4x"></i>
 										</center>
@@ -131,13 +138,20 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 					<div class="portfolio-link">
 						<div class="portfolio-hover">
 							<div class="portfolio-hover-content">
-								<div class="portfolio-hover-col portfolio-hover-play-disabled">
+								<a class="portfolio-mobile-link" data-toggle="modal" href="#portfolioModal1">
+									<div class="portfolio-hover-col-full portfolio-hover-info"> 
+										<center>
+											<i class="fa fa-info fa-4x"></i>
+										</center>
+									</div> 
+								</a>
+								<div class="portfolio-hover-col-half portfolio-hover-play-disabled">
 									<center>
 										<i class="fa fa-gamepad fa-4x"></i>
 									</center>
 								</div>
 								<a class="portfolio-hover-link" data-toggle="modal" href="#portfolioModal1">
-									<div class="portfolio-hover-col portfolio-hover-info">
+									<div class="portfolio-hover-col-half portfolio-hover-info">
 										<center>
 											<i class="fa fa-info fa-4x"></i>
 										</center>
@@ -156,13 +170,20 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 					<div class="portfolio-link">
 						<div class="portfolio-hover">
 							<div class="portfolio-hover-content">
-								<div class="portfolio-hover-col portfolio-hover-play-disabled">
+								<a class="portfolio-mobile-link" data-toggle="modal" href="#portfolioModal5">
+									<div class="portfolio-hover-col-full portfolio-hover-info"> 
+										<center>
+											<i class="fa fa-info fa-4x"></i>
+										</center>
+									</div> 
+								</a>
+								<div class="portfolio-hover-col-half portfolio-hover-play-disabled">
 									<center>
 										<i class="fa fa-gamepad fa-4x"></i>
 									</center>
 								</div>
 								<a class="portfolio-hover-link" data-toggle="modal" href="#portfolioModal5">
-									<div class="portfolio-hover-col portfolio-hover-info">
+									<div class="portfolio-hover-col-half portfolio-hover-info">
 										<center>
 											<i class="fa fa-info fa-4x"></i>
 										</center>
@@ -183,19 +204,25 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 					<div class="portfolio-link">
 						<div class="portfolio-hover">
 							<div class="portfolio-hover-content">
-								<div class="portfolio-hover-col portfolio-hover-play-disabled">
+								<a class="portfolio-mobile-link" data-toggle="modal" href="#portfolioModal6">
+									<div class="portfolio-hover-col-full portfolio-hover-info"> 
+										<center>
+											<i class="fa fa-info fa-4x"></i>
+										</center>
+									</div> 
+								</a>
+								<div class="portfolio-hover-col-half portfolio-hover-play-disabled">
 									<center>
 										<i class="fa fa-gamepad fa-4x"></i>
 									</center>
 								</div>
 								<a class="portfolio-hover-link" data-toggle="modal" href="#portfolioModal6">
-									<div class="portfolio-hover-col portfolio-hover-info">
+									<div class="portfolio-hover-col-half portfolio-hover-info">
 										<center>
 											<i class="fa fa-info fa-4x"></i>
 										</center>
 									</div>
 								</a>
-								
 							</div>
 						</div>
 						<img alt="" class="img-responsive" src="{{ base_url }}img/snakethumbnail2.png">
