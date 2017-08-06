@@ -274,7 +274,7 @@ body {
     width: 100%;
     height: 100%;
     opacity: 0;
-    background: rgba(254,209,54,.9);
+    background: rgba(48,61,74,.9);/*rgba(254,209,54,.9)*/
     -webkit-transition: all ease .5s;
     -moz-transition: all ease .5s;
     transition: all ease .5s;
@@ -282,17 +282,56 @@ body {
 
 #portfolio .portfolio-item .portfolio-link .portfolio-hover .portfolio-hover-content {
     position: absolute;
-    top: 50%;
+    top: 0;
     width: 100%;
-    height: 20px;
-    margin-top: -12px;
+    height: 100%;
     text-align: center;
     font-size: 20px;
     color: #fff;
 }
 
+#portfolio .portfolio-item .portfolio-link .portfolio-hover .portfolio-hover-content .portfolio-hover-col {
+    width: 49%;
+    height: 100%;
+    display: inline-block;
+    vertical-align: center;
+    position: relative;
+}
+
+.portfolio-hover-info:hover {
+    background: rgba(254,209,54,0.9) !important;
+    -webkit-transition: all ease .5s !important;
+    -moz-transition: all ease .5s !important;
+    transition: all ease .5s !important;
+}
+
+.portfolio-hover-col.portfolio-hover-play-disabled,
+.portfolio-hover-col.portfolio-hover-info-disabled {
+    color: black;
+}
+
+.portfolio-hover-play:hover {
+    background-color: rgba(27, 193, 56, 0.9);
+    -webkit-transition: all ease .5s;
+    -moz-transition: all ease .5s;
+    transition: all ease .5s;
+}
+
+a.portfolio-hover-link,
+a.portfolio-hover-link:hover {
+    color: white !important;
+} 
+
 #portfolio .portfolio-item .portfolio-link .portfolio-hover .portfolio-hover-content i {
-    margin-top: -12px;
+    position: absolute;
+    left: 0;
+    right: 0;
+    /* height: 100%; */
+    margin-left: auto;
+    margin-right: auto;
+    top: 50%;
+    /* bottom: 0; */
+    transform: translate(0,-60%);
 }
 #portfolio .portfolio-item .portfolio-caption {
     margin: 0 auto;

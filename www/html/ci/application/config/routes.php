@@ -52,3 +52,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 $route['default_controller'] = 'landing';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
+
+// Games route for each game's page
+// e.x: Games/dangoplop will route to passing dangoplop as a parameter into the index function of Games
+$route['Games/(:any)'] = "Games/index/$1";
