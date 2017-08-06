@@ -503,7 +503,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 					<div class="col-lg-8 col-lg-offset-2">
 						<div class="modal-body">
 							<!-- Project Details Go Here -->
-							<h2>Dango Puck!</h2>
+							<h2>Dango Puck!<a class="button-play" href="{{ base_url }}index.php/Games/DangoPuck">Play!</a></h2>
 							<p class="item-intro text-muted">Inspired by Mario Party 2's minigame: Speed Hockey. Made using the popular <strong>Unity5</strong> game dev software.</p><img alt="" class="img-responsive img-centered" src="{{ base_url }}img/dangopuckpreviewmodal.png">
 							<p>Combine the cuteness of mochi sticky rice balls and a classic game of speed hockey. You get Dango Puck! With the exception of the music, everything was made by me. All graphics, code, and audio clips were made by me.</p>
 							<p><strong>Download the game for </strong>
