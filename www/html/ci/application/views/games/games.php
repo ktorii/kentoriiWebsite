@@ -11,7 +11,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	<div class="jumbotron strictly-no-background-color">
 		<div class="container">
 			<div class="text-center">
-				<h1 class="section-heading"><!--parameter for game name--></h1>
+				<h1 class="section-heading"></h1>
 			</div>
 			<div class="col-sm-12 maintenance-info-box">
 				{{ game_embed | raw }}
