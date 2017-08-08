@@ -43,8 +43,18 @@ $(document).ready(function() {
                 location.reload();
             }
         );
+      });
 
+    $("i").hover(function(event) {
+      $(this).removeClass("fa-lock");
+      $(this).addClass("fa-unlock");
+    }, function(event) {
+        $(this).removeClass("fa-unlock");
+        $(this).addClass("fa-lock");
+    });
 
+    $("#myBtn").click(function(event) {
+      $("#myModal").modal("show");
     });
 });
 $(document).ready(function() {
