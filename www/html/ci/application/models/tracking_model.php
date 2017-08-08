@@ -18,6 +18,19 @@
         }
 
         public function get_landing_data(){
+            $minDate = $this->db->query('SELECT MIN(recorded_at) AS EarliestDate FROM user_tracking_entry;');
+            $minDate = $minDate->result();
+
+            $maxDate = $this->db->query('SELECT MAX(recorded_at) AS LatestDate FROM user_tracking_entry;');
+            $maxDate = $maxDate->result();
+
+            $currentDate = $minDate['EarliestDate'];
+
+            if($currentDate <= $maxDate['LatestDate']){
+
+
+            }
+
             $data =array(
                 'recorded_at'=> array(),
                 'city'=> array(),
@@ -31,7 +44,7 @@
                 array_push($data['country'], $row['country']);
             }
             
-            return $data; 
+            return $minDate; 
         }
     }
 

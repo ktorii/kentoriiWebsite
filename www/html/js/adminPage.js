@@ -3,9 +3,10 @@ $('document').ready(function() {
     $.get(
         'index.php/landing/chartData',
         function(data) {
+            console.log(data);
             data = JSON.parse(data);
-            console.log(data.recorded_at);
-            console.log(typeof(data.recorded_at[0]));
+            console.log(data);
+            console.log(typeof(data));
         }
     );
 
