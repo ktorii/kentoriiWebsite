@@ -43,12 +43,12 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 		    <form method="POST" action="controllers/Landing.php" name="signIn" id="signInForm">
 
 		        <h5>Username</h5>
-		        <input type="text" name="username" value="" size="50" />
+		        <input class="form-control" type="text" name="username" value="" size="50" /><br>
 
 		        <h5>Password</h5>
-		        <input type="password" name="password" value="" size="50" />
+		        <input class="form-control" type="password" name="password" value="" size="50" />
 
-		        <div><input type="submit" value="Login" /></div>
+		        <div><input class="btn" type="submit" value="Login" /></div>
 
 		    </form>
 
