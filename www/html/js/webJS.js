@@ -5,7 +5,10 @@ function googleTranslateElementInit() {
     }, 'google_translate_element');
 }
 
+
 $(document).ready(function() {
+
+
     var random_greeting;
     var random_int = Math.floor((Math.random() * 3) + 1);
     if (random_int == 1) {
@@ -45,14 +48,6 @@ $(document).ready(function() {
             }
         );
       });
-
-    $("i").hover(function(event) {
-      $(this).removeClass("fa-lock");
-      $(this).addClass("fa-unlock");
-    }, function(event) {
-        $(this).removeClass("fa-unlock");
-        $(this).addClass("fa-lock");
-    });
 
     $("#myBtn").click(function(event) {
       $("#myModal").modal("show");
@@ -123,4 +118,14 @@ function getDate() {
 
     return datetime;
 
+}
+
+function unlock(x){
+  x.classList.remove("fa-lock");
+  x.classList.add("fa-unlock");
+}
+
+function lock(x) {
+  x.classList.remove("fa-unlock");
+  x.classList.add("fa-lock"); 
 }

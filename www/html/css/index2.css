@@ -10,6 +10,7 @@ input.btn {
 
 #lock {
   color: #fed136;
+  padding-left: 10px;
 }
 
 table {
@@ -371,7 +372,7 @@ a.button-play:hover,
 a.button-download:hover {
     color: white !important;
     text-decoration: none;
-} 
+}
 
 #portfolio .portfolio-item .portfolio-link .portfolio-hover .portfolio-hover-content i {
     position: absolute;
