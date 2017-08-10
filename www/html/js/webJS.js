@@ -39,7 +39,7 @@ $(document).ready(function() {
     });
 
 
-    $('#logout').click(function(event) {
+    $('.logout').click(function(event) {
         event.preventDefault();
 
         $.get('index.php/landing/logout',
@@ -61,6 +61,22 @@ $(document).ready(function() {
 
     //tracking landings
     trackUser(updateLandingTracking);
+
+    $('#signInForm').submit(function(event) {
+        event.preventDefault();
+
+        $.post('{{ base_url }}index.php/landing/login',
+            $('#signInForm').serializeArray(),
+            function(data) {
+                if (data == 'loggedIn') {
+                    window.location.href = "{{base_url}}";
+                } else {
+                    $('html').html(data)
+
+                }
+            }
+        )
+    });
 
 });
 $(document).ready(function() {
@@ -127,5 +143,5 @@ function unlock(x){
 
 function lock(x) {
   x.classList.remove("fa-unlock");
-  x.classList.add("fa-lock"); 
+  x.classList.add("fa-lock");
 }

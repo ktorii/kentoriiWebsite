@@ -7,22 +7,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 ?>
 {% endblock %}
 {% block head %}
-
-
-	<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
-	<title>Ken Torii &copy;</title>
-	<meta content="width=device-width, initial-scale=1" name="viewport" />
-	<link href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" />
-	<link href="{{ base_url }}font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
-	<link href="{{ base_url }}css/index2.css" rel="stylesheet" />
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
-	<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-	<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
-	<script type="text/javascript" src="{{ base_url }}js/webJS.js"></script>
-
 {% endblock %}
 
-{% block content1 %}
+{% block content %}
 
 <!-- Modal -->
 <div id="myModal" class="modal fade" role="dialog">
@@ -51,26 +38,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 		        <div><input class="btn" type="submit" value="Login" /></div>
 
 		    </form>
-
-		    <script type='text/javascript'>
-		        $('#signInForm').submit(function(event) {
-		            event.preventDefault();
-
-		            $.post('{{ base_url }}index.php/landing/login',
-		                $('#signInForm').serializeArray(),
-		                function(data) {
-		                    if (data == 'loggedIn') {
-		                        window.location.href = "{{base_url}}";
-		                    } else {
-		                        $('html').html(data)
-
-		                    }
-		                }
-		            )
-
-
-		        });
-		    </script>
 
 			</div>
 			<div class="modal-footer">
@@ -176,10 +143,31 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 			</div>
 			<div class="row">
 				<div class="col-md-4 col-sm-6 portfolio-item">
-					<a class="portfolio-link" data-toggle="modal" href="#portfolioModal4">
-					<div class="portfolio-hover">
-						<div class="portfolio-hover-content">
-							<i class="fa fa-info fa-3x"></i>
+					<div class="portfolio-link">
+ 					<div class="portfolio-hover">
+ 							<div class="portfolio-hover-content">
+  							<a class="portfolio-mobile-link" data-toggle="modal" href="#portfolioModal4">
+ 									<div class="portfolio-hover-col-full portfolio-hover-info">
+ 										<center>
+ 											<i class="fa fa-info fa-4x"></i>
+ 										</center>
+ 									</div>
+ 								</a>
+ 								<a class="portfolio-hover-link" href="{{ base_url }}index.php/Games/DangoPuck">
+ 									<div class="portfolio-hover-col-half portfolio-hover-play">
+ 										<center>
+ 											<i class="fa fa-gamepad fa-4x"></i>
+ 										</center>
+ 									</div>
+ 								</a>
+ 								<a class="portfolio-hover-link" data-toggle="modal" href="#portfolioModal4">
+ 									<div class="portfolio-hover-col-half portfolio-hover-info">
+ 										<center>
+ 											<i class="fa fa-info fa-4x"></i>
+ 										</center>
+ 									</div>
+ 								</a>
+ 							</div>
 						</div>
 					</div><img alt="" class="img-responsive" src="{{ base_url }}img/dangopuckpreview.png"></a>
 					<div class="portfolio-caption">
@@ -188,10 +176,29 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 					</div>
 				</div>
 				<div class="col-md-4 col-sm-6 portfolio-item">
-					<a class="portfolio-link" data-toggle="modal" href="#portfolioModal1">
-					<div class="portfolio-hover">
-						<div class="portfolio-hover-content">
-							<i class="fa fa-info fa-3x"></i>
+					<div class="portfolio-link">
+ 						<div class="portfolio-hover">
+ 							<div class="portfolio-hover-content">
+ 								<a class="portfolio-mobile-link" data-toggle="modal" href="#portfolioModal1">
+ 									<div class="portfolio-hover-col-full portfolio-hover-info">
+ 										<center>
+ 											<i class="fa fa-info fa-4x"></i>
+ 										</center>
+ 									</div>
+ 								</a>
+ 								<div class="portfolio-hover-col-half portfolio-hover-play-disabled">
+ 									<center>
+ 										<i class="fa fa-gamepad fa-4x"></i>
+ 									</center>
+ 								</div>
+ 								<a class="portfolio-hover-link" data-toggle="modal" href="#portfolioModal1">
+ 									<div class="portfolio-hover-col-half portfolio-hover-info">
+ 										<center>
+ 										<i class="fa fa-info fa-4x"></i>
+ 										</center>
+ 									</div>
+ 								</a>
+ 							</div>
 						</div>
 					</div><img alt="" class="img-responsive" src="{{ base_url }}img/portfolio/space-dodgers.png"></a>
 					<div class="portfolio-caption">
@@ -200,10 +207,29 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 					</div>
 				</div>
 				<div class="col-md-4 col-sm-6 portfolio-item">
-					<a class="portfolio-link" data-toggle="modal" href="#portfolioModal5">
-					<div class="portfolio-hover">
-						<div class="portfolio-hover-content">
-							<i class="fa fa-info fa-3x"></i>
+					<div class="portfolio-link">
+ 						<div class="portfolio-hover">
+ 							<div class="portfolio-hover-content">
+ 								<a class="portfolio-mobile-link" data-toggle="modal" href="#portfolioModal5">
+ 									<div class="portfolio-hover-col-full portfolio-hover-info">
+ 										<center>
+ 											<i class="fa fa-info fa-4x"></i>
+ 										</center>
+ 									</div>
+ 								</a>
+ 								<div class="portfolio-hover-col-half portfolio-hover-play-disabled">
+ 									<center>
+ 										<i class="fa fa-gamepad fa-4x"></i>
+ 									</center>
+ 								</div>
+ 								<a class="portfolio-hover-link" data-toggle="modal" href="#portfolioModal5">
+ 									<div class="portfolio-hover-col-half portfolio-hover-info">
+ 										<center>
+ 											<i class="fa fa-info fa-4x"></i>
+ 										</center>
+ 									</div>
+ 								</a>
+ 							</div>
 						</div>
 					</div><img alt="" class="img-responsive" src="{{ base_url }}img/straightslogo.png"></a>
 					<div class="portfolio-caption">
@@ -229,10 +255,29 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 			</div>
 			<div class="row">
 				<div class="col-md-4 col-sm-6 portfolio-item">
-					<a class="portfolio-link" data-toggle="modal" href="#portfolioModal6">
-					<div class="portfolio-hover">
-						<div class="portfolio-hover-content">
-							<i class="fa fa-info fa-3x"></i>
+					<div class="portfolio-link">
+ 						<div class="portfolio-hover">
+ 							<div class="portfolio-hover-content">
+ 								<a class="portfolio-mobile-link" data-toggle="modal" href="#portfolioModal6">
+ 									<div class="portfolio-hover-col-full portfolio-hover-info">
+ 										<center>
+ 											<i class="fa fa-info fa-4x"></i>
+ 										</center>
+ 									</div>
+ 								</a>
+ 								<div class="portfolio-hover-col-half portfolio-hover-play-disabled">
+ 									<center>
+ 										<i class="fa fa-gamepad fa-4x"></i>
+ 									</center>
+ 								</div>
+ 								<a class="portfolio-hover-link" data-toggle="modal" href="#portfolioModal6">
+ 									<div class="portfolio-hover-col-half portfolio-hover-info">
+ 										<center>
+ 											<i class="fa fa-info fa-4x"></i>
+ 										</center>
+ 									</div>
+ 								</a>
+ 							</div>
 						</div>
 					</div><img alt="" class="img-responsive" src="{{ base_url }}img/snakethumbnail2.png"></a>
 					<div class="portfolio-caption">
@@ -597,22 +642,3 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	</div>
 
 	{% endblock %}
-
-
-	{% block content2 %}
-
-
-
-</body>
-
-<!--ADMIN PAGE-->
-<div class="container kt-tabs-component-content clean-container-theme strictly-no-padding" id="adminpage">
-	<button type="button" id='logout'>Logout</button>
-</div>
-
-
-
-
-
-
-{% endblock %}

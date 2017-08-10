@@ -5,6 +5,20 @@
 
 <head>
     {% block head %}{% endblock %}
+
+
+    	<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+    	<title>Ken Torii &copy;</title>
+    	<meta content="width=device-width, initial-scale=1" name="viewport" />
+    	<link href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" />
+    	<link href="{{ base_url }}font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+    	<link href="{{ base_url }}css/index2.css" rel="stylesheet" />
+    	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+    	<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    	<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+    	<script type="text/javascript" src="{{ base_url }}js/webJS.js"></script>
+
+
 </head>
 
 <body>
@@ -57,22 +71,20 @@
             </nav>
         </div>
     </div>
-    {% block content1 %}{% endblock %}
+    {% block content %}{% endblock %}
 
 
     	<footer class="container-fluid center-block">
     		<table><tr>
     			<td><h6 id="copyright">Copyright KenTorii.com</h6></td>
           {% if true == session %}
-    			<td><a type="button" data-toggle="modal" data-target="#myModal"><i class="fa fa-2x fa-unlock" onmouseover="lock(this)" onmouseout="unlock(this)" id="lock" aria-hidden="true"></i></a></td>
+    			<td><a type="button"><i class="fa fa-2x fa-unlock logout" onmouseover="lock(this)" onmouseout="unlock(this)" id="lock" aria-hidden="true"></i></a></td>
           {% else %}
           <td><a type="button" data-toggle="modal" data-target="#myModal"><i class="fa fa-2x fa-lock" onmouseover="unlock(this)" onmouseout="lock(this)" id="lock" aria-hidden="true"></i></a></td>
           {% endif %}
     		</tr></table>
 
     	</footer>
-
-    {% block content2 %}{% endblock %}
 
 </body>
 
