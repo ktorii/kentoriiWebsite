@@ -35,6 +35,7 @@ $(document).ready(function() {
         $(".kt-tabs-component-content" + $(this).attr('href')).fadeIn("slow");
     });
 
+
     $('#logout').click(function(event) {
         event.preventDefault();
 
@@ -56,10 +57,21 @@ $(document).ready(function() {
     $("#myBtn").click(function(event) {
       $("#myModal").modal("show");
     });
+
+    //tracking navbar
+    $(".navbar-tab").click(function() {
+        page = $(this).text();
+        trackUser(updateNavbarTracking, page);
+    });
+
+    //tracking landings
+    trackUser(updateLandingTracking);
+
 });
 $(document).ready(function() {
     $(".kt-tabs-component-content").hide();
     $("#aboutsite").show();
+
 });
 
 
