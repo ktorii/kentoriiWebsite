@@ -1,12 +1,8 @@
 {% extends "base.html" %}
 
-
-{% block extra %}
-<?php
+{% block extra %}<?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 ?>
-{% endblock %}
-{% block head %}
 {% endblock %}
 
 {% block content %}

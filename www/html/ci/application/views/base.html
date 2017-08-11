@@ -4,71 +4,68 @@
 <html lang="en">
 
 <head>
-    {% block head %}{% endblock %}
-
-
-    	<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
-    	<title>Ken Torii &copy;</title>
-    	<meta content="width=device-width, initial-scale=1" name="viewport" />
-    	<link href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" />
-    	<link href="{{ base_url }}font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
-    	<link href="{{ base_url }}css/index2.css" rel="stylesheet" />
-    	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
-    	<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-    	<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
-    	<script type="text/javascript" src="{{ base_url }}js/webJS.js"></script>
-
-
+    <meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+    <title>Ken Torii &copy;</title>
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
+    <link href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="{{ base_url }}font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+    <link href="{{ base_url }}css/index2.css" rel="stylesheet" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+    <script type="text/javascript" src="{{ base_url }}js/webJS.js"></script>
 </head>
 
 <body>
 
+    <div class="container kt-tabs-component">
+        <div class="container strictly-no-padding ">
+            <div class="kt-google-translate-widget" id="google_translate_element"></div>
+            <nav class="navbar navbar-inverse kt-tabs-component-nav">
+                <!--navbar-default-->
+                <div class="container-fluid">
+                    <div class="navbar-header">
 
-
-
-
-<div class="container kt-tabs-component">
-<div class="container strictly-no-padding ">
-<div class="kt-google-translate-widget" id="google_translate_element"></div>
-<nav class="navbar navbar-inverse kt-tabs-component-nav"><!--navbar-default-->
-  <div class="container-fluid">
-    <div class="navbar-header">
-
-      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
 
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
 
-      <a class="navbar-brand" href="#" style="color:#fed136;">Menu</a>
-    </div>
-    <div class="collapse navbar-collapse kt-tabs-component-nav-div" id="myNavbar">
-      <ul class="nav navbar-nav">
-        <li class="active"><a href="#aboutsite">About This Site</a></li>
-        <li><a href="#whatsup">What's Up?</a></li>
-		<li><a href="#aboutme">About Me</a></li>
-		<li><a href="#gamedev">Games</a></li>
-		<li><a href="#otherprojects">Other Projects</a></li>
-		<li><a href="#smash">Random</a></li>
-		<li class="dropdown"><a aria-expanded="false" aria-haspopup="true" class="dropdown-toggle" data-toggle="dropdown" href="#" role="button">Tutorials</a>
-			<ul class="dropdown-menu">
-				<li><a href="#physics">Physics</a></li>
-				<li><a href="#math">Math</a></li>
-			</ul>
-		</li>
-		<li><a href="#contactme">Contact</a></li>
-    {% if true == session %}
-        <li><a href="#adminpage">Admin</a></li>
-    {% endif %}
+                        <a class="navbar-brand" href="#" style="color:#fed136;">Menu</a>
+                    </div>
+                    <div class="collapse navbar-collapse kt-tabs-component-nav-div" id="myNavbar">
+                        <ul class="nav navbar-nav">
+                            <li class="navbar-tab" class="active"><a href="#aboutsite">About This Site</a></li>
+                            <li class="navbar-tab"><a href="#whatsup">What's Up?</a></li>
+                            <li class="navbar-tab"><a href="#aboutme">About Me</a></li>
+                            <li class="navbar-tab"><a href="#gamedev">Games</a></li>
+                            <li class="navbar-tab"><a href="#otherprojects">Other Projects</a></li>
+                            <li class="navbar-tab"><a href="#smash">Random</a></li>
+                            <li class="dropdown"><a aria-expanded="false" aria-haspopup="true" class="dropdown-toggle" data-toggle="dropdown" href="#" role="button">Tutorials</a>
+                                <ul class="dropdown-menu">
+                                    <li class="navbar-tab"><a href="#physics">Physics</a></li>
+                                    <li class="navbar-tab"><a href="#math">Math</a></li>
+                                </ul>
+                            </li>
+                            <li class="navbar-tab"><a href="#contactme">Contact</a></li>
+                            {% if true == session %}
+                            <li class="navbar-tab"><a href="#adminpage">Admin</a></li>
+                            {% endif %}
+
+                        </ul>
 
 
 
-      </ul>
-</ul>
+
+                        </ul>
+
+
                     </div>
                 </div>
             </nav>
+
         </div>
     </div>
     {% block content %}{% endblock %}
