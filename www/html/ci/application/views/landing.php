@@ -140,30 +140,30 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 			<div class="row">
 				<div class="col-md-4 col-sm-6 portfolio-item">
 					<div class="portfolio-link">
- 					<div class="portfolio-hover">
- 							<div class="portfolio-hover-content">
-  							<a class="portfolio-mobile-link" data-toggle="modal" href="#portfolioModal4">
- 									<div class="portfolio-hover-col-full portfolio-hover-info">
- 										<center>
- 											<i class="fa fa-info fa-4x"></i>
- 										</center>
- 									</div>
- 								</a>
- 								<a class="portfolio-hover-link" href="{{ base_url }}index.php/Games/DangoPuck">
- 									<div class="portfolio-hover-col-half portfolio-hover-play">
- 										<center>
- 											<i class="fa fa-gamepad fa-4x"></i>
- 										</center>
- 									</div>
- 								</a>
- 								<a class="portfolio-hover-link" data-toggle="modal" href="#portfolioModal4">
- 									<div class="portfolio-hover-col-half portfolio-hover-info">
- 										<center>
- 											<i class="fa fa-info fa-4x"></i>
- 										</center>
- 									</div>
- 								</a>
- 							</div>
+ 						<div class="portfolio-hover">
+ 						<div class="portfolio-hover-content">
+								<a class="portfolio-mobile-link" data-toggle="modal" href="#portfolioModal4">
+								<div class="portfolio-hover-col-full portfolio-hover-info">
+ 									<center>
+ 										<i class="fa fa-info fa-4x"></i>
+ 									</center>
+ 								</div>
+ 							</a>
+ 							<a class="portfolio-hover-link" href="{{ base_url }}index.php/Games/DangoPuck">
+ 								<div class="portfolio-hover-col-half portfolio-hover-play">
+ 									<center>
+										<i class="fa fa-gamepad fa-4x"></i>
+ 									</center>
+ 								</div>
+ 							</a>
+ 							<a class="portfolio-hover-link" data-toggle="modal" href="#portfolioModal4">
+ 								<div class="portfolio-hover-col-half portfolio-hover-info">
+ 									<center>
+ 										<i class="fa fa-info fa-4x"></i>
+									</center>
+ 								</div>
+ 							</a>
+ 						</div>
 						</div>
 					</div><img alt="" class="img-responsive" src="{{ base_url }}img/dangopuckpreview.png"></a>
 					<div class="portfolio-caption">
@@ -173,28 +173,28 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 				</div>
 				<div class="col-md-4 col-sm-6 portfolio-item">
 					<div class="portfolio-link">
- 						<div class="portfolio-hover">
- 							<div class="portfolio-hover-content">
- 								<a class="portfolio-mobile-link" data-toggle="modal" href="#portfolioModal1">
- 									<div class="portfolio-hover-col-full portfolio-hover-info">
- 										<center>
- 											<i class="fa fa-info fa-4x"></i>
- 										</center>
- 									</div>
- 								</a>
- 								<div class="portfolio-hover-col-half portfolio-hover-play-disabled">
- 									<center>
- 										<i class="fa fa-gamepad fa-4x"></i>
- 									</center>
- 								</div>
- 								<a class="portfolio-hover-link" data-toggle="modal" href="#portfolioModal1">
- 									<div class="portfolio-hover-col-half portfolio-hover-info">
- 										<center>
- 										<i class="fa fa-info fa-4x"></i>
- 										</center>
- 									</div>
- 								</a>
- 							</div>
+ 					<div class="portfolio-hover">
+ 						<div class="portfolio-hover-content">
+							<a class="portfolio-mobile-link" data-toggle="modal" href="#portfolioModal1">
+								<div class="portfolio-hover-col-full portfolio-hover-info">
+									<center>
+										<i class="fa fa-info fa-4x"></i>
+									</center>
+								</div>
+							</a>
+							<div class="portfolio-hover-col-half portfolio-hover-play-disabled">
+								<center>
+									<i class="fa fa-gamepad fa-4x"></i>
+								</center>
+							</div>
+							<a class="portfolio-hover-link" data-toggle="modal" href="#portfolioModal1">
+								<div class="portfolio-hover-col-half portfolio-hover-info">
+									<center>
+										<i class="fa fa-info fa-4x"></i>
+									</center>
+								</div>
+							</a>
+						</div>
 						</div>
 					</div><img alt="" class="img-responsive" src="{{ base_url }}img/portfolio/space-dodgers.png"></a>
 					<div class="portfolio-caption">
@@ -204,29 +204,29 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 				</div>
 				<div class="col-md-4 col-sm-6 portfolio-item">
 					<div class="portfolio-link">
- 						<div class="portfolio-hover">
- 							<div class="portfolio-hover-content">
- 								<a class="portfolio-mobile-link" data-toggle="modal" href="#portfolioModal5">
- 									<div class="portfolio-hover-col-full portfolio-hover-info">
- 										<center>
- 											<i class="fa fa-info fa-4x"></i>
- 										</center>
- 									</div>
- 								</a>
- 								<div class="portfolio-hover-col-half portfolio-hover-play-disabled">
+ 					<div class="portfolio-hover">
+ 						<div class="portfolio-hover-content">
+ 							<a class="portfolio-mobile-link" data-toggle="modal" href="#portfolioModal5">
+ 							<div class="portfolio-hover-col-full portfolio-hover-info">
  									<center>
- 										<i class="fa fa-gamepad fa-4x"></i>
+ 										<i class="fa fa-info fa-4x"></i>
  									</center>
  								</div>
- 								<a class="portfolio-hover-link" data-toggle="modal" href="#portfolioModal5">
- 									<div class="portfolio-hover-col-half portfolio-hover-info">
- 										<center>
- 											<i class="fa fa-info fa-4x"></i>
- 										</center>
- 									</div>
- 								</a>
+ 							</a>
+ 							<div class="portfolio-hover-col-half portfolio-hover-play-disabled">
+ 								<center>
+ 									<i class="fa fa-gamepad fa-4x"></i>
+ 								</center>
  							</div>
-						</div>
+ 							<a class="portfolio-hover-link" data-toggle="modal" href="#portfolioModal5">
+ 								<div class="portfolio-hover-col-half portfolio-hover-info">
+ 									<center>
+ 										<i class="fa fa-info fa-4x"></i>
+ 									</center>
+ 								</div>
+ 							</a>
+ 						</div>
+	  				</div>
 					</div><img alt="" class="img-responsive" src="{{ base_url }}img/straightslogo.png"></a>
 					<div class="portfolio-caption">
 						<h4>Straights Card Game</h4>
@@ -252,30 +252,31 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 			<div class="row">
 				<div class="col-md-4 col-sm-6 portfolio-item">
 					<div class="portfolio-link">
- 						<div class="portfolio-hover">
- 							<div class="portfolio-hover-content">
- 								<a class="portfolio-mobile-link" data-toggle="modal" href="#portfolioModal6">
- 									<div class="portfolio-hover-col-full portfolio-hover-info">
- 										<center>
- 											<i class="fa fa-info fa-4x"></i>
- 										</center>
- 									</div>
- 								</a>
- 								<div class="portfolio-hover-col-half portfolio-hover-play-disabled">
+ 					<div class="portfolio-hover">
+ 						<div class="portfolio-hover-content">
+ 							<a class="portfolio-mobile-link" data-toggle="modal" href="#portfolioModal6">
+ 								<div class="portfolio-hover-col-full portfolio-hover-info">
  									<center>
- 										<i class="fa fa-gamepad fa-4x"></i>
+ 										<i class="fa fa-info fa-4x"></i>
  									</center>
  								</div>
- 								<a class="portfolio-hover-link" data-toggle="modal" href="#portfolioModal6">
- 									<div class="portfolio-hover-col-half portfolio-hover-info">
- 										<center>
- 											<i class="fa fa-info fa-4x"></i>
- 										</center>
- 									</div>
- 								</a>
+ 							</a>
+ 							<div class="portfolio-hover-col-half portfolio-hover-play-disabled">
+ 								<center>
+ 									<i class="fa fa-gamepad fa-4x"></i>
+ 								</center>
  							</div>
+ 							<a class="portfolio-hover-link" data-toggle="modal" href="#portfolioModal6">
+ 								<div class="portfolio-hover-col-half portfolio-hover-info">
+ 									<center>
+ 										<i class="fa fa-info fa-4x"></i>
+ 									</center>
+ 								</div>
+ 							</a>
+ 						</div>
 						</div>
-					</div><img alt="" class="img-responsive" src="{{ base_url }}img/snakethumbnail2.png"></a>
+						<img alt="" class="img-responsive" src="{{ base_url }}img/snakethumbnail2.png">
+						</div>
 					<div class="portfolio-caption">
 						<h4>Custom Snake Game</h4>
 						<p class="text-muted">Game Developer</p>
@@ -307,7 +308,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 			<div class="row">
 				<div class="col-md-4 col-sm-6 portfolio-item">
 					<a class="portfolio-link" data-toggle="modal" href="#portfolioModal2">
-					<div class="portfolio-hover">
+					<div class="portfolio-hover portfolio-hover-info">
 						<div class="portfolio-hover-content">
 							<i class="fa fa-info fa-3x"></i>
 						</div>
@@ -319,7 +320,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 				</div>
 				<div class="col-md-4 col-sm-6 portfolio-item">
 					<a class="portfolio-link" data-toggle="modal" href="#portfolioModal3">
-					<div class="portfolio-hover">
+					<div class="portfolio-hover portfolio-hover-info">
 						<div class="portfolio-hover-content">
 							<i class="fa fa-info fa-3x"></i>
 						</div>
@@ -552,7 +553,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 					<div class="col-lg-8 col-lg-offset-2">
 						<div class="modal-body">
 							<!-- Project Details Go Here -->
-							<h2>Dango Puck!</h2>
+							<h2>Dango Puck!<a class="button-play" href="{{ base_url }}index.php/Games/DangoPuck">Play!</a></h2>
 							<p class="item-intro text-muted">Inspired by Mario Party 2's minigame: Speed Hockey. Made using the popular <strong>Unity5</strong> game dev software.</p><img alt="" class="img-responsive img-centered" src="{{ base_url }}img/dangopuckpreviewmodal.png">
 							<p>Combine the cuteness of mochi sticky rice balls and a classic game of speed hockey. You get Dango Puck! With the exception of the music, everything was made by me. All graphics, code, and audio clips were made by me.</p>
 							<p><strong>Download the game for </strong>
