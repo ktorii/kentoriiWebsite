@@ -7,6 +7,45 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 {% block content %}
 
+<!-- Modal -->
+<div id="myModal" class="modal fade" role="dialog">
+	<div class="modal-dialog">
+
+		<!-- Modal content-->
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal">&times;</button>
+				<h4 class="modal-title">Login</h4>
+			</div>
+			<div class="modal-body">
+
+				<div id='errorMessage'>
+		        {{error|nl2br}}
+		    </div>
+
+		    <form method="POST" action="controllers/Landing.php" name="signIn" id="signInForm">
+
+		        <h5>Username</h5>
+		        <input class="form-control" type="text" name="username" value="" size="50" /><br>
+
+		        <h5>Password</h5>
+		        <input class="form-control" type="password" name="password" value="" size="50" />
+
+		        <div><input class="btn" type="submit" value="Login" /></div>
+
+		    </form>
+
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+			</div>
+		</div>
+
+	</div>
+</div>
+
+
+
 <!--ABOUT THIS SITE-->
 <div class="container kt-tabs-component-content clean-container-theme" id="aboutsite">
 	<div class="jumbotron strictly-no-background-color">
@@ -105,11 +144,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 						<div class="portfolio-hover">
 							<div class="portfolio-hover-content">
 								<a class="portfolio-mobile-link" data-toggle="modal" href="#portfolioModal4">
-									<div class="portfolio-hover-col-full portfolio-hover-info"> 
+									<div class="portfolio-hover-col-full portfolio-hover-info">
 										<center>
 											<i class="fa fa-info fa-4x"></i>
 										</center>
-									</div> 
+									</div>
 								</a>
 								<a class="portfolio-hover-link" href="{{ base_url }}index.php/Games/DangoPuck">
 									<div class="portfolio-hover-col-half portfolio-hover-play">
@@ -139,11 +178,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 						<div class="portfolio-hover">
 							<div class="portfolio-hover-content">
 								<a class="portfolio-mobile-link" data-toggle="modal" href="#portfolioModal1">
-									<div class="portfolio-hover-col-full portfolio-hover-info"> 
+									<div class="portfolio-hover-col-full portfolio-hover-info">
 										<center>
 											<i class="fa fa-info fa-4x"></i>
 										</center>
-									</div> 
+									</div>
 								</a>
 								<div class="portfolio-hover-col-half portfolio-hover-play-disabled">
 									<center>
@@ -171,11 +210,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 						<div class="portfolio-hover">
 							<div class="portfolio-hover-content">
 								<a class="portfolio-mobile-link" data-toggle="modal" href="#portfolioModal5">
-									<div class="portfolio-hover-col-full portfolio-hover-info"> 
+									<div class="portfolio-hover-col-full portfolio-hover-info">
 										<center>
 											<i class="fa fa-info fa-4x"></i>
 										</center>
-									</div> 
+									</div>
 								</a>
 								<div class="portfolio-hover-col-half portfolio-hover-play-disabled">
 									<center>
@@ -205,11 +244,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 						<div class="portfolio-hover">
 							<div class="portfolio-hover-content">
 								<a class="portfolio-mobile-link" data-toggle="modal" href="#portfolioModal6">
-									<div class="portfolio-hover-col-full portfolio-hover-info"> 
+									<div class="portfolio-hover-col-full portfolio-hover-info">
 										<center>
 											<i class="fa fa-info fa-4x"></i>
 										</center>
-									</div> 
+									</div>
 								</a>
 								<div class="portfolio-hover-col-half portfolio-hover-play-disabled">
 									<center>
@@ -591,8 +630,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 <!--ADMIN PAGE-->
 <div class="container kt-tabs-component-content clean-container-theme strictly-no-padding" id="adminpage">
-	<button type="button" id='logout'>Logout</button>
-	
+
 </div>
 
 
