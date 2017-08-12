@@ -39,7 +39,7 @@ $(document).ready(function() {
     });
 
 
-    $('.logout').click(function(event) {
+    $('#logout').click(function(event) {
         event.preventDefault();
 
         $.get('index.php/landing/logout',
