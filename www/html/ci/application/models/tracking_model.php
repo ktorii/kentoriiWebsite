@@ -18,35 +18,94 @@
         }
 
         public function get_landing_data(){
-            $minDate = $this->db->query('SELECT MIN(recorded_at) AS EarliestDate FROM user_tracking_entry;');
-            $minDate = $minDate->result();
+            
+            $this->db->select_min('recorded_at', 'minDate');
+            $minDate = $this->db->get('user_tracking_entry');
+            $minDate = $minDate->result_array();
+            
+            $currentDate = date_create(substr($minDate[0]["minDate"],0,8)."01");
 
-            $maxDate = $this->db->query('SELECT MAX(recorded_at) AS LatestDate FROM user_tracking_entry;');
-            $maxDate = $maxDate->result();
+            $this->db->select_max('recorded_at', 'maxDate');
+            $maxDate = $this->db->get('user_tracking_entry');
+            $maxDate = date_create(substr($maxDate->result_array()[0]['maxDate'],0,8).'01');
 
-            $currentDate = $minDate['EarliestDate'];
+            $data = array();
+            
+            while($currentDate <= $maxDate){
+                
+                $date =  date_format($currentDate,'Y-m-d' );
+                $nextdate = date_create($date);
+                $nextdate = date_format(date_add($currentDate,date_interval_create_from_date_string("1 month")),'Y-m-d' );
+                
 
-            if($currentDate <= $maxDate['LatestDate']){
-
-
+                $this->db->where('recorded_at >=', $date);
+                $this->db->where('recorded_at <', $nextdate);
+                $count = $this->db->count_all_results('user_tracking_entry');
+                
+                
+                $data[substr($date,0,8)] = $count;
+                
+                
             }
 
-            $data =array(
-                'recorded_at'=> array(),
-                'city'=> array(),
-                'country'=> array()
-            );
+            return $data; 
+        }
 
-            $query = $this->db->get('user_tracking_entry');
-            foreach($query->result_array() as $row){
-                array_push($data['recorded_at'], $row['recorded_at']);
-                array_push($data['city'], $row['city']);
-                array_push($data['country'], $row['country']);
+        public function get_navigation_data(){
+            $data = array();
+            
+            $this->db->select('page_name');
+            $this->db->distinct();
+            $pages = $this->db->get('user_tracking_timing')->result_array();
+
+            for($x = 0; $x < count($pages); $x++){
+                $data[$pages[$x]['page_name']] = array();
             }
             
-            return $minDate; 
+            foreach($data as $key => $value){
+                
+                $data[$key] = $this->get_chart('user_tracking_timing', $key);
+                
+
+            } 
+            return $data;
         }
+
+
+
+        public function get_chart($table, $page){
+            $this->db->select_min('recorded_at', 'minDate');
+            $this->db->where('page_name =', $page);
+            $minDate = $this->db->get($table);
+            $minDate = $minDate->result_array();
+            
+            $currentDate = date_create(substr($minDate[0]["minDate"],0,8)."01");
+
+            $this->db->select_max('recorded_at', 'maxDate');
+            $this->db->where('page_name =', $page); 
+            $maxDate = $this->db->get($table);
+            $maxDate = date_create(substr($maxDate->result_array()[0]['maxDate'],0,8).'01');
+
+            $data = array();
+            
+            while($currentDate <= $maxDate){
+                
+                $date =  date_format($currentDate,'Y-m-d' );
+                $nextdate = date_create($date);
+                $nextdate = date_format(date_add($currentDate,date_interval_create_from_date_string("1 month")),'Y-m-d' );
+                
+
+                $this->db->where('recorded_at >=', $date);
+                $this->db->where('recorded_at <', $nextdate);
+                $this->db->where('page_name =', $page);
+                $count = $this->db->count_all_results($table);
+                
+                
+                $data[substr($date,0,8)] = $count;
+                
+                
+            }
+             return $data;
+        }   
     }
-
-
 ?>

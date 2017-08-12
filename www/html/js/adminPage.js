@@ -1,54 +1,82 @@
 $('document').ready(function() {
-    adminGraph();
     $.get(
-        'index.php/landing/chartData',
+        'index.php/landing/navigationChartData',
         function(data) {
-            console.log(data);
             data = JSON.parse(data);
-            console.log(data);
-            console.log(typeof(data));
+            adminGraphNavigation(data);
+
+
+        }
+    );
+
+    $.get(
+        'index.php/landing/landingChartData',
+        function(data) {
+            data = JSON.parse(data);
+            adminGraphLanding(data);
+
+
         }
     );
 
 });
 
-function adminGraph() {
-    var ctx = document.getElementById("chart");
+function adminGraphLanding(data) {
+
+    var monthlyData = [];
+    for (var key in data) {
+        monthlyData.push(data[key]);
+    }
+    console.log(monthlyData);
+
+    var ctx = document.getElementById("landingChart");
     var myChart = new Chart(ctx, {
         type: 'line',
         data: {
-            labels: ["Red", "Blue", "Yellow", "Green", "Purple", "Orange"],
+            labels: Object.keys(data),
             datasets: [{
                 label: '# of Votes',
-                data: [12, 19, 3, 5, 2, 3],
-                backgroundColor: [
-                    'rgba(255, 99, 132, 0.2)',
-                    'rgba(54, 162, 235, 0.2)',
-                    'rgba(255, 206, 86, 0.2)',
-                    'rgba(75, 192, 192, 0.2)',
-                    'rgba(153, 102, 255, 0.2)',
-                    'rgba(255, 159, 64, 0.2)'
-                ],
-                borderColor: [
-                    'rgba(255,99,132,1)',
-                    'rgba(54, 162, 235, 1)',
-                    'rgba(255, 206, 86, 1)',
-                    'rgba(75, 192, 192, 1)',
-                    'rgba(153, 102, 255, 1)',
-                    'rgba(255, 159, 64, 1)'
-                ],
+                data: monthlyData,
+                backgroundColor: 'rgba(255, 99, 132, 0.2)',
+                borderColor: 'rgba(255,99,132,1)',
                 borderWidth: 1
             }]
         },
-        options: {
-            scales: {
-                yAxes: [{
-                    ticks: {
-                        beginAtZero: true
-                    }
-                }]
-            }
+    });
+
+}
+
+
+function adminGraphNavigation(data) {
+
+
+    var chartData = [];
+
+    for (var key in data) {
+        var monthlyData = [];
+
+        for (var month in data[key]) {
+            monthlyData.push(data[key][month]);
         }
+
+        colour = 'rgb(' + (Math.floor(Math.random() * 256)) + ',' + (Math.floor(Math.random() * 256)) + ',' + (Math.floor(Math.random() * 256)) + ')';
+        chartData.push({
+            label: key,
+            data: monthlyData,
+            backgroundColor: colour,
+            borderColor: colour,
+            borderWidth: 1
+        });
+
+    }
+
+    var ctx = document.getElementById("navigationChart");
+    var myChart = new Chart(ctx, {
+        type: 'line',
+        data: {
+            labels: Object.keys(data[Object.keys(data)[0]]),
+            datasets: chartData
+        },
     });
 
 }

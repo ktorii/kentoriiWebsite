@@ -163,9 +163,15 @@ class Landing extends CI_Controller {
 
 	}
 
-	public function chartData(){
+	public function landingChartData(){
 		
 		echo json_encode($this->tracking_model->get_landing_data());
+		
+	}
+
+		public function navigationChartData(){
+		
+		echo json_encode($this->tracking_model->get_navigation_data());
 		
 	}
 }

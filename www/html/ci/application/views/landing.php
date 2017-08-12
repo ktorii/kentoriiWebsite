@@ -592,9 +592,26 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <!--ADMIN PAGE-->
 <div class="container kt-tabs-component-content clean-container-theme strictly-no-padding" id="adminpage">
 	<button type="button" id='logout'>Logout</button>
-	<div class="chart-container" style="position: relative; height:40vh; width:80vw">
-    <canvas id="chart"></canvas>
-</div>
+	<div>
+		<div class="chart-container" style="position: relative; height:40vh; width:80vw; margin: 10%">
+    		<canvas id="landingChart"></canvas>
+		</div>
+		<div class="chart-container" style="position: relative; height:40vh; width:80vw; margin: 10%">
+    		<canvas id="navigationChart"></canvas>
+		</div>
+	</div>
+	
+	<div>
+		<form action="/action_page.php">
+  			<input type="date" name="minDate">
+			<input type="date" name="maxDate">
+			<input list="countries" name="countries">
+  				<datalist id="countries">
+    				<option value="Canada">
+  				</datalist> 
+  			<input type="submit" name = 'Apply' id = "chartApply"> 
+		</form>
+	</div>
 </div>
 
 
