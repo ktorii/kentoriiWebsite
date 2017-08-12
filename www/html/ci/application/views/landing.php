@@ -20,8 +20,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 			<div class="modal-body">
 
 				<div id='errorMessage'>
-		        {{error|nl2br}}
-		    </div>
+		        	
+		    	</div>
 
 		    <form method="POST" action="controllers/Landing.php" name="signIn" id="signInForm">
 

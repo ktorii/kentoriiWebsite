@@ -131,14 +131,7 @@ class Landing extends CI_Controller {
 			
 		
 		}else{
-			$data['error'] =  validation_errors(' ', ' ');;
-
-			$this->output->set_output(
-				$this->twig->render(
-					'login.html', 
-					$data
-				)
-			);
+			echo(validation_errors('<p>', '</p>'));
 
 		}	
 	}
