@@ -5,7 +5,10 @@ function googleTranslateElementInit() {
     }, 'google_translate_element');
 }
 
+
 $(document).ready(function() {
+
+
     var random_greeting;
     var random_int = Math.floor((Math.random() * 3) + 1);
     if (random_int == 1) {
@@ -44,8 +47,10 @@ $(document).ready(function() {
                 location.reload();
             }
         );
+    });
 
-
+    $("#myBtn").click(function(event) {
+        $("#myModal").modal("show");
     });
 
     //tracking navbar
@@ -57,7 +62,21 @@ $(document).ready(function() {
     //tracking landings
     trackUser(updateLandingTracking);
 
+    $('#signInForm').submit(function(event) {
+        event.preventDefault();
 
+        $.post('{{ base_url }}index.php/landing/login',
+            $('#signInForm').serializeArray(),
+            function(data) {
+                if (data == 'loggedIn') {
+                    window.location.href = "{{base_url}}";
+                } else {
+                    $('html').html(data)
+
+                }
+            }
+        )
+    });
 
 });
 
@@ -117,4 +136,14 @@ function getDate() {
 
     return datetime;
 
+}
+
+function unlock(x) {
+    x.classList.remove("fa-lock");
+    x.classList.add("fa-unlock");
+}
+
+function lock(x) {
+    x.classList.remove("fa-unlock");
+    x.classList.add("fa-lock");
 }
