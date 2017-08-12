@@ -1,23 +1,10 @@
 $('document').ready(function() {
-    $.get(
-        'index.php/landing/navigationChartData',
-        function(data) {
-            data = JSON.parse(data);
-            adminGraphNavigation(data);
+    getAdminCharts();
 
+    $('#chartApply').submit(function() {
+        getAdminCharts();
 
-        }
-    );
-
-    $.get(
-        'index.php/landing/landingChartData',
-        function(data) {
-            data = JSON.parse(data);
-            adminGraphLanding(data);
-
-
-        }
-    );
+    });
 
 });
 
@@ -27,7 +14,6 @@ function adminGraphLanding(data) {
     for (var key in data) {
         monthlyData.push(data[key]);
     }
-    console.log(monthlyData);
 
     var ctx = document.getElementById("landingChart");
     var myChart = new Chart(ctx, {
@@ -79,4 +65,26 @@ function adminGraphNavigation(data) {
         },
     });
 
+}
+
+function getAdminCharts() {
+    $.get(
+        'index.php/landing/navigationChartData',
+        function(data) {
+            data = JSON.parse(data);
+            adminGraphNavigation(data);
+
+
+        }
+    );
+
+    $.get(
+        'index.php/landing/landingChartData',
+        function(data) {
+            data = JSON.parse(data);
+            adminGraphLanding(data);
+
+
+        }
+    );
 }

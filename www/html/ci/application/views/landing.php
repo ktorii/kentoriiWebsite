@@ -648,7 +648,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
   				<datalist id="countries">
     				<option value="Canada">
   				</datalist> 
-  			<input type="submit" name = 'Apply' id = "chartApply"> 
+  			<input type="submit" name = 'Apply' value = 'apply' id = "chartApply"> 
 		</form>
 	</div>
 </div>
