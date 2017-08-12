@@ -20,8 +20,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 			<div class="modal-body">
 
 				<div id ="errorMessage" class="alert alert-danger" role="alert" style = "display: none">
-  					<span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
-  					<span class="sr-only">Error:</span>
+
 					  
 				</div>
 

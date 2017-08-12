@@ -71,7 +71,7 @@ $(document).ready(function() {
                 if (data == 'loggedIn') {
                     location.reload();
                 } else {
-                    $('#errorMessage').append(data);
+                    $('#errorMessage').html(data);
                     $('#errorMessage').show();
 
 
