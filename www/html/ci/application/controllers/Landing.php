@@ -113,8 +113,8 @@ class Landing extends CI_Controller {
         $this->form_validation->set_rules('password', 'Password', "required|md5|callback_password_check",
         	array(
 				'required' => 'You must provide a %s.',
-				'password_check' => 'Password does not match Username',
-				'md5' => 'didnt work'
+				'password_check' => 'Password does not match Username.',
+				
 
 		   )
 		);
@@ -131,7 +131,7 @@ class Landing extends CI_Controller {
 			
 		
 		}else{
-			echo(validation_errors('<p>', '</p>'));
+			echo(validation_errors('', ' '));
 
 		}	
 	}
