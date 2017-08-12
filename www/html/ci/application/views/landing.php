@@ -19,9 +19,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 			</div>
 			<div class="modal-body">
 
-				<div id='errorMessage'>
-		        {{error|nl2br}}
-		    </div>
+				<div id ="errorMessage" class="alert alert-danger" role="alert" style = "display: none">
+
+					  
+				</div>
 
 		    <form method="POST" action="controllers/Landing.php" name="signIn" id="signInForm">
 

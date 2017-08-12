@@ -102,20 +102,11 @@ class Landing extends CI_Controller {
 		$GLOBALS['dbUser'] = $this->user_model->get_user($this->input->post('username'));
 
 		
-		$this->form_validation->set_rules('username', 'Username', "required",
-			array(
-				'required' => 'You must provide a %s.',
-				
-					
-			)
-		);
+		$this->form_validation->set_rules('username', 'Username');
 
-        $this->form_validation->set_rules('password', 'Password', "required|md5|callback_password_check",
+        $this->form_validation->set_rules('password', 'Password', "md5|callback_password_check",
         	array(
-				'required' => 'You must provide a %s.',
-				'password_check' => 'Password does not match Username',
-				'md5' => 'didnt work'
-
+				'password_check' => "An error occured",
 		   )
 		);
 
@@ -131,21 +122,14 @@ class Landing extends CI_Controller {
 			
 		
 		}else{
-			$data['error'] =  validation_errors(' ', ' ');;
-
-			$this->output->set_output(
-				$this->twig->render(
-					'login.html', 
-					$data
-				)
-			);
+			echo(validation_errors('<span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span><span class="sr-only">Error:</span> &nbsp', ''));
 
 		}	
 	}
 
 
 	public function password_check($password){
-		if($password ==  $GLOBALS['dbUser']['password']){
+		if($password ===  $GLOBALS['dbUser']['password']){
 			return true; 
 		}
 		return false;

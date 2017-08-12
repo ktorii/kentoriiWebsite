@@ -47,10 +47,10 @@ $(document).ready(function() {
                 location.reload();
             }
         );
-      });
+    });
 
     $("#myBtn").click(function(event) {
-      $("#myModal").modal("show");
+        $("#myModal").modal("show");
     });
 
     //tracking navbar
@@ -65,13 +65,15 @@ $(document).ready(function() {
     $('#signInForm').submit(function(event) {
         event.preventDefault();
 
-        $.post('{{ base_url }}index.php/landing/login',
+        $.post('index.php/landing/login',
             $('#signInForm').serializeArray(),
             function(data) {
                 if (data == 'loggedIn') {
-                    window.location.href = "{{base_url}}";
+                    location.reload();
                 } else {
-                    $('html').html(data)
+                    $('#errorMessage').html(data);
+                    $('#errorMessage').show();
+
 
                 }
             }
@@ -136,12 +138,12 @@ function getDate() {
 
 }
 
-function unlock(x){
-  x.classList.remove("fa-lock");
-  x.classList.add("fa-unlock");
+function unlock(x) {
+    x.classList.remove("fa-lock");
+    x.classList.add("fa-unlock");
 }
 
 function lock(x) {
-  x.classList.remove("fa-unlock");
-  x.classList.add("fa-lock");
+    x.classList.remove("fa-unlock");
+    x.classList.add("fa-lock");
 }
