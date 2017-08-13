@@ -65,13 +65,15 @@ $(document).ready(function() {
     $('#signInForm').submit(function(event) {
         event.preventDefault();
 
-        $.post('{{ base_url }}index.php/landing/login',
+        $.post('index.php/landing/login',
             $('#signInForm').serializeArray(),
             function(data) {
                 if (data == 'loggedIn') {
-                    window.location.href = "{{base_url}}";
+                    location.reload();
                 } else {
-                    $('html').html(data)
+                    $('#errorMessage').html(data);
+                    $('#errorMessage').show();
+
 
                 }
             }

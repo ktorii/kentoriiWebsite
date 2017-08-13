@@ -8,10 +8,15 @@
 }
 
 .kt-tabs-component-content {
-    border: 1px solid #e7e7e7;
+    <<<<<<< HEAD border: 1px solid #e7e7e7;
     min-height: 700px;
     padding-top: 15px;
     margin-bottom: 80px;
+    =======border: 1px solid #e7e7e7;
+    min-height: 900px;
+    padding-top: 15px;
+    margin-bottom: 80px;
+    >>>>>>>6d727ebdad1a1e6e2e05f450eaed455f4a943623
 }
 
 .kt-tabs-component-content .navbar {
@@ -473,13 +478,13 @@ input.btn {
 }
 
 #copyright {
-    color: #fed136;
+    color: #9d9d9d;
     padding-left: 5px;
     padding-right: 10px;
 }
 
 i.fa.fa-2x {
-    color: #fed136;
+    color: #9d9d9d !important;
     padding-left: 10px;
 }
 
@@ -493,11 +498,10 @@ footer.container-fluid.center-block {
     margin-top: 100;
     padding-top: 15px;
     text-align: center;
-    position: fixed;
+    position: relative;
     left: 0;
     bottom: 0;
-    height: 80px;
     width: 100%;
     overflow: hidden;
-    z-index: 9999;
+    z-index: 100;
 }
