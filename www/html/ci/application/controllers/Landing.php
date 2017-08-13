@@ -80,7 +80,9 @@ class Landing extends CI_Controller {
 		$info = "";
 		$data = array(
 			'session' => 	$_SESSION['loggedIn'],
-			'base_url' => 	base_url()
+			'base_url' => 	base_url(),
+			'countries' => 	$this->tracking_model->get_countries(),
+			'cities' => 	$this->tracking_model->get_cities()
 		);
 
 		// render views
@@ -98,6 +100,8 @@ class Landing extends CI_Controller {
 			'session' => 	$_SESSION,
 			'error' => 		'',
 			'base_url' => 	base_url(),
+			'countries' => $this->tracking_model->get_countries(),
+			'cities' => 	$this->tracking_model->get_cities()			
 		);
 		$GLOBALS['dbUser'] = $this->user_model->get_user($this->input->post('username'));
 
@@ -145,6 +149,23 @@ class Landing extends CI_Controller {
 		$this->session->set_userdata($newdata);
 		
 
+	}
+
+	public function landingChartData(){
+		if('applied' == $this->input->post('applied')){
+			echo json_encode($this->tracking_model->get_landing_data($this->input->post('minDate'), $this->input->post('maxDate'), $this->input->post('countries'), $this->input->post('cities')));
+		}else{
+			echo json_encode($this->tracking_model->get_landing_data());
+		}
+		
+	}
+
+	public function navigationChartData(){
+		if('applied' == $this->input->post('applied')){
+			echo json_encode($this->tracking_model->get_navigation_data($this->input->post('minDate'), $this->input->post('maxDate'), $this->input->post('countries'), $this->input->post('cities')));
+		}else{
+			echo json_encode($this->tracking_model->get_navigation_data());
+		}
 	}
 }
 

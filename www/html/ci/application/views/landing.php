@@ -631,7 +631,38 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 <!--ADMIN PAGE-->
 <div class="container kt-tabs-component-content clean-container-theme strictly-no-padding" id="adminpage">
+	<div>
+		<div class="admin-container" style = "position: relative; height: 50vh; width: 80vw; margin: auto; margin-top: 5vh;">
+    		<canvas id="landingChart"></canvas>
+		</div>
+		<div class="admin-container" style = "position: relative; height: 50vh; width: 80vw; margin: auto; margin-top: 10vh;">
+    		<canvas id="navigationChart"></canvas>
+		</div>
+	</div>
+	
+	<div id = "form-container" style = "position: relative; width: 80vw; margin: auto; margin-top: 5vh;">
+		<form method="POST" action="controllers/Landing.php" name="adminForm" id="adminForm" style = "text-align: center">
+  			<input type="date" name="minDate">
+			<input type="date" name="maxDate">
+			
+			<input list="countries" name="countries">
+  				<datalist id="countries">
+					{% for country in countries %}
+        				<option value = "{{ country['country'] }}">
+    				{% endfor %}					
+  				</datalist>
 
+			<input list="cities" name="cities">
+  				<datalist id="cities">
+					{% for city in cities %}
+        				<option value = "{{ city['city'] }}">
+    				{% endfor %}					
+  				</datalist>		
+
+			<input type ='hidden' name = 'applied' value = 'applied'> 
+  			<input type="submit" name = 'apply' value = 'Apply Filter' id = "chartApply"> 
+		</form>
+	</div>
 </div>
 
 

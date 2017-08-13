@@ -81,11 +81,13 @@ $(document).ready(function() {
     });
 
 });
+
+
 $(document).ready(function() {
     $(".kt-tabs-component-content").hide();
     $("#aboutsite").show();
-
 });
+
 
 
 //ajax function
