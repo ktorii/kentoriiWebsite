@@ -28,11 +28,11 @@ function adminGraphLanding(data) {
         data: {
             labels: Object.keys(data),
             datasets: [{
-                label: '# of Votes',
+                label: '# of Landings',
                 data: monthlyData,
-                backgroundColor: 'rgba(255, 99, 132, 0.2)',
-                borderColor: 'rgba(255,99,132,1)',
-                borderWidth: 1
+                backgroundColor: 'red',
+                borderColor: 'red',
+                fill: false,
             }]
         },
     });
@@ -41,8 +41,8 @@ function adminGraphLanding(data) {
 
 
 function adminGraphNavigation(data) {
-
-
+    var colours = ['red', 'blue', 'green', 'black', 'yellow', 'grey', 'purple', 'orange', 'pink', 'cyan', 'brown']
+    var colourCount = 0
     var chartData = [];
 
     for (var key in data) {
@@ -52,13 +52,14 @@ function adminGraphNavigation(data) {
             monthlyData.push(data[key][month]);
         }
 
-        colour = 'rgb(' + (Math.floor(Math.random() * 256)) + ',' + (Math.floor(Math.random() * 256)) + ',' + (Math.floor(Math.random() * 256)) + ')';
+        colour = colours[colourCount];
+        colourCount++;
         chartData.push({
             label: key,
             data: monthlyData,
             backgroundColor: colour,
             borderColor: colour,
-            borderWidth: 1
+            fill: false,
         });
 
     }
