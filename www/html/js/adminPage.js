@@ -1,8 +1,9 @@
 $('document').ready(function() {
     getAdminCharts();
 
-    $('#chartApply').submit(function() {
-        getAdminCharts();
+    $('#chartApply').click(function(event) {
+        event.preventDefault();
+        updateAdminCharts();
 
     });
 
@@ -16,6 +17,12 @@ function adminGraphLanding(data) {
     }
 
     var ctx = document.getElementById("landingChart");
+    ctx.style.width = '100%';
+    ctx.style.height = '100%';
+
+    ctx.width = ctx.offsetWidth;
+    ctx.height = ctx.offsetHeight;
+
     var myChart = new Chart(ctx, {
         type: 'line',
         data: {
@@ -57,6 +64,12 @@ function adminGraphNavigation(data) {
     }
 
     var ctx = document.getElementById("navigationChart");
+    ctx.style.width = '100%';
+    ctx.style.height = '100%';
+
+    ctx.width = ctx.offsetWidth;
+    ctx.height = ctx.offsetHeight;
+
     var myChart = new Chart(ctx, {
         type: 'line',
         data: {
@@ -83,6 +96,34 @@ function getAdminCharts() {
         function(data) {
             data = JSON.parse(data);
             adminGraphLanding(data);
+
+
+
+        }
+    );
+}
+
+function updateAdminCharts() {
+
+    var formData = $('#adminForm').serializeArray();
+    $.post(
+        'index.php/landing/navigationChartData',
+        formData,
+        function(data) {
+            data = JSON.parse(data);
+            adminGraphNavigation(data);
+
+
+        }
+    );
+
+    $.post(
+        'index.php/landing/landingChartData',
+        formData,
+        function(data) {
+            data = JSON.parse(data);
+            adminGraphLanding(data);
+
 
 
         }

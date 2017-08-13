@@ -630,25 +630,36 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 <!--ADMIN PAGE-->
 <div class="container kt-tabs-component-content clean-container-theme strictly-no-padding" id="adminpage">
-	<button type="button" id='logout'>Logout</button>
 	<div>
-		<div class="chart-container" style="position: relative; height:40vh; width:80vw; margin: 10%">
+		<div class="admin-container" style = "position: relative; height: 50vh; width: 80vw; margin: auto; margin-top: 5vh;">
     		<canvas id="landingChart"></canvas>
 		</div>
-		<div class="chart-container" style="position: relative; height:40vh; width:80vw; margin: 10%">
+		<div class="admin-container" style = "position: relative; height: 50vh; width: 80vw; margin: auto; margin-top: 10vh;">
     		<canvas id="navigationChart"></canvas>
 		</div>
 	</div>
 	
-	<div>
-		<form action="/action_page.php">
+	<div id = "form-container" style = "position: relative; width: 80vw; margin: auto; margin-top: 5vh;">
+		<form method="POST" action="controllers/Landing.php" name="adminForm" id="adminForm" style = "text-align: center">
   			<input type="date" name="minDate">
 			<input type="date" name="maxDate">
+			
 			<input list="countries" name="countries">
   				<datalist id="countries">
-    				<option value="Canada">
-  				</datalist> 
-  			<input type="submit" name = 'Apply' value = 'apply' id = "chartApply"> 
+					{% for country in countries %}
+        				<option value = "{{ country['country'] }}">
+    				{% endfor %}					
+  				</datalist>
+
+			<input list="cities" name="cities">
+  				<datalist id="cities">
+					{% for city in cities %}
+        				<option value = "{{ city['city'] }}">
+    				{% endfor %}					
+  				</datalist>		
+
+			<input type ='hidden' name = 'applied' value = 'applied'> 
+  			<input type="submit" name = 'apply' value = 'Apply Filter' id = "chartApply"> 
 		</form>
 	</div>
 </div>

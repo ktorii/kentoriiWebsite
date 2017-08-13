@@ -17,37 +17,37 @@
             
         }
 
-        public function get_landing_data($min = null, $max = null, $country = null){
+        public function get_landing_data($min = null, $max = null, $country = null, $city = null){
             
-            if(null === $min){
+            if(empty($min)){
                 $minDate = $this->get_min('user_tracking_entry');
-                }else{
-                    $minDate = $min;
+            }else{
+                $minDate = date_create($min);
 
             }
-            if(null === $max){
+            if(empty($max)){
                 $maxDate = $this->get_max('user_tracking_entry');
             }else{
-                    $maxDate = $max;
+                    $maxDate = date_create($max);
 
             }
 
-            return $this->get_chart('user_tracking_entry', null, $minDate, $maxDate, $country); 
+            return $this->get_chart('user_tracking_entry', null, $minDate, $maxDate, $country, $city); 
         }
 
-        public function get_navigation_data($min = null, $max = null, $country = null){
+        public function get_navigation_data($min = null, $max = null, $country = null, $city = null){
             $data = array();
 
-            if(null === $min){
+            if(empty($min)){
                 $minDate = $this->get_min('user_tracking_entry');
-                }else{
-                    $minDate = $min;
+            }else{
+                $minDate = date_create($min);
 
             }
-            if(null === $max){
+            if(empty($max)){
                 $maxDate = $this->get_max('user_tracking_entry');
             }else{
-                    $maxDate = $max;
+                    $maxDate = date_create($max);
 
             }
             
@@ -61,7 +61,7 @@
             
             foreach($data as $key => $value){
                 
-                $data[$key] = $this->get_chart('user_tracking_timing', $key, $minDate, $maxDate, $country);
+                $data[$key] = $this->get_chart('user_tracking_timing', $key, $minDate, $maxDate, $country, $city);
                 
 
             } 
@@ -70,12 +70,13 @@
 
 
 
-        public function get_chart($table, $page, $min, $max, $country){
+        private function get_chart($table, $page, $min, $max, $country, $city){
             $currentDate = date_create(date_format($min,'Y-m-d' ));
-            $maxDate = date_create(date_format($max,'Y-m-d' ));
+            $finalDate = date_format($max,'Y-m-d' );
+            $maxDate = date_create($finalDate);
             $data = array();
             
-            while($currentDate <= $maxDate){
+            while($currentDate < $maxDate){
                 
                 $date =  date_format($currentDate,'Y-m-d' );
                 $nextdate = date_create($date);
@@ -84,32 +85,46 @@
 
                 $this->db->where('recorded_at >=', $date);
                 $this->db->where('recorded_at <', $nextdate);
-                if($country !== null){$this->db->where('country =', $country);}
+                $this->db->where('recorded_at <=', $finalDate);
+                if(!empty($country)){$this->db->where('country =', $country);}
+                if(!empty($city)){$this->db->where('city =', $city);}
+
                 if($table == 'user_tracking_timing'){$this->db->where('page_name =', $page);}
+                
                 $count = $this->db->count_all_results($table);
                 
-                
-                $data[substr($date,0,8)] = $count;
-                
+                $data[$date] = $count;
                 
             }
              return $data;
         }
         
-        public function get_max($table){
+        private function get_max($table){
             $this->db->select_max('recorded_at', 'maxDate');
             $maxDate = $this->db->get($table);
-            $maxDate = date_create(substr($maxDate->result_array()[0]['maxDate'],0,8).'01');
+            $maxDate = date_create(substr($maxDate->result_array()[0]['maxDate'],0,8).'31');
             
             return $maxDate;
         }
         
-        public function get_min($table){
+        private function get_min($table){
             $this->db->select_min('recorded_at', 'minDate');
             $minDate = $this->db->get($table);
             $minDate = date_create(substr($minDate->result_array()[0]["minDate"],0,8)."01");
 
             return $minDate;
-        }           
+        }
+        public function get_countries(){
+            $this->db->select('country');
+            $this->db->distinct();
+            return $this->db->get('user_tracking_entry')->result_array();
+        }
+        
+        public function get_cities(){
+            $this->db->select('city');
+            $this->db->distinct();
+            return $this->db->get('user_tracking_entry')->result_array();
+        }
+                   
     }
 ?>
