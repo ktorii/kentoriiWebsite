@@ -80,7 +80,9 @@ class Landing extends CI_Controller {
 		$info = "";
 		$data = array(
 			'session' => 	$_SESSION['loggedIn'],
-			'base_url' => 	base_url()
+			'base_url' => 	base_url(),
+			'countries' => 	$this->tracking_model->get_countries(),
+			'cities' => 	$this->tracking_model->get_cities()
 		);
 
 		// render views
@@ -98,24 +100,17 @@ class Landing extends CI_Controller {
 			'session' => 	$_SESSION,
 			'error' => 		'',
 			'base_url' => 	base_url(),
+			'countries' => $this->tracking_model->get_countries(),
+			'cities' => 	$this->tracking_model->get_cities()			
 		);
 		$GLOBALS['dbUser'] = $this->user_model->get_user($this->input->post('username'));
 
 		
-		$this->form_validation->set_rules('username', 'Username', "required",
-			array(
-				'required' => 'You must provide a %s.',
-				
-					
-			)
-		);
+		$this->form_validation->set_rules('username', 'Username');
 
-        $this->form_validation->set_rules('password', 'Password', "required|md5|callback_password_check",
+        $this->form_validation->set_rules('password', 'Password', "md5|callback_password_check",
         	array(
-				'required' => 'You must provide a %s.',
-				'password_check' => 'Password does not match Username',
-				'md5' => 'didnt work'
-
+				'password_check' => "An error occured",
 		   )
 		);
 
@@ -131,14 +126,14 @@ class Landing extends CI_Controller {
 			
 		
 		}else{
-			echo(validation_errors('<p>', '</p>'));
+			echo(validation_errors('<span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span><span class="sr-only">Error:</span> &nbsp', ''));
 
 		}	
 	}
 
 
 	public function password_check($password){
-		if($password ==  $GLOBALS['dbUser']['password']){
+		if($password ===  $GLOBALS['dbUser']['password']){
 			return true; 
 		}
 		return false;
@@ -154,6 +149,23 @@ class Landing extends CI_Controller {
 		$this->session->set_userdata($newdata);
 		
 
+	}
+
+	public function landingChartData(){
+		if('applied' == $this->input->post('applied')){
+			echo json_encode($this->tracking_model->get_landing_data($this->input->post('minDate'), $this->input->post('maxDate'), $this->input->post('countries'), $this->input->post('cities')));
+		}else{
+			echo json_encode($this->tracking_model->get_landing_data());
+		}
+		
+	}
+
+	public function navigationChartData(){
+		if('applied' == $this->input->post('applied')){
+			echo json_encode($this->tracking_model->get_navigation_data($this->input->post('minDate'), $this->input->post('maxDate'), $this->input->post('countries'), $this->input->post('cities')));
+		}else{
+			echo json_encode($this->tracking_model->get_navigation_data());
+		}
 	}
 }
 

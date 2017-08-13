@@ -72,6 +72,8 @@ $(document).ready(function() {
                     location.reload();
                 } else {
                     $('#errorMessage').html(data);
+                    $('#errorMessage').show();
+
 
                 }
             }
@@ -79,11 +81,13 @@ $(document).ready(function() {
     });
 
 });
+
+
 $(document).ready(function() {
     $(".kt-tabs-component-content").hide();
     $("#aboutsite").show();
-
 });
+
 
 
 //ajax function
