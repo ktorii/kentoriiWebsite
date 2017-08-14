@@ -54,7 +54,7 @@ $(document).ready(function() {
     });
 
     //tracking navbar
-    $(".navbar-tab").click(function() {
+    $(".navbar-tab:not(.active)").click(function() {
         page = $(this).text();
         trackUser(updateNavbarTracking, page);
     });
