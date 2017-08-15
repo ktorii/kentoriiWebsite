@@ -20,7 +20,7 @@ $(document).ready(function() {
     }
     $("#randomGreeting").text(random_greeting);
     $(".kt-tabs-component-nav li a").click(function(e) {
-        if (!$(this).hasClass('dropdown-toggle') && $(this).attr('id' != 'blog-link')) {
+        if (!$(this).hasClass('dropdown-toggle') && $(this).attr('id') != 'blog-link') {
             e.preventDefault();
             $(".kt-tabs-component-nav li").removeClass("active");
             $(this).parent().addClass("active");
