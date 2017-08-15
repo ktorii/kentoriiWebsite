@@ -51,7 +51,7 @@
                                     <li class="navbar-tab"><a href="#math">Math</a></li>
                                 </ul>
                             </li>
-                            <li class="navbar-tab"><a href="http://www.kentorii.wordpress.com">Blog</a></li>
+                            <li class="navbar-tab"><a id='blog-link' href="http://www.kentorii.wordpress.com">Blog</a></li>
 
                             <li class="navbar-tab"><a href="#contactme">Contact</a></li>
                             {% if true == session %}
@@ -75,17 +75,21 @@
     {% block content %}{% endblock %}
 
 
-    	<footer class="container-fluid center-block">
-    		<table><tr>
-    			<td><h6 id="copyright">Copyright KenTorii.com</h6></td>
-          {% if true == session %}
-    			<td><a type="button"><i class="fa fa-2x fa-unlock" onmouseover="lock(this)" onmouseout="unlock(this)" id="logout" aria-hidden="true"></i></a></td>
-          {% else %}
-          <td><a type="button" data-toggle="modal" data-target="#myModal"><i class="fa fa-2x fa-lock" onmouseover="unlock(this)" onmouseout="lock(this)" aria-hidden="true"></i></a></td>
-          {% endif %}
-    		</tr></table>
+    <footer class="container-fluid center-block">
+        <table>
+            <tr>
+                <td>
+                    <h6 id="copyright">Copyright KenTorii.com</h6>
+                </td>
+                {% if true == session %}
+                <td><a type="button"><i class="fa fa-2x fa-unlock" onmouseover="lock(this)" onmouseout="unlock(this)" id="logout" aria-hidden="true"></i></a></td>
+                {% else %}
+                <td><a type="button" data-toggle="modal" data-target="#myModal"><i class="fa fa-2x fa-lock" onmouseover="unlock(this)" onmouseout="lock(this)" aria-hidden="true"></i></a></td>
+                {% endif %}
+            </tr>
+        </table>
 
-    	</footer>
+    </footer>
 
 </body>
 
