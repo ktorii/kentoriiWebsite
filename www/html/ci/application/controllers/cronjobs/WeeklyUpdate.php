@@ -19,12 +19,13 @@ class WeeklyUpdate extends CI_Controller {
 
 	public function getWeekData(){
 		$data = $this->tracking_model->get_week_data();
-		$message = $data[2] . " to " . $data[3] . "\n";
-		$message .= "Landing: ". current($data[0]). " \n";
+		$message = $data[2] . " to " . $data[3] . "\n \n";
+		$message .= "Landing: ". current($data[0]). " \n \n";
+		$message .="Clicks on each tab: \n";
 		foreach($data[1] as $key => $value){
 			$message .= $key .': '. current($value). " \n";
 		}
-
+		
 		$this->email->set_newline("\r\n");
         $this->email->to("russellparco@gmail.com");
         $this->email->from("russellparco@gmail.com");
