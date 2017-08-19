@@ -128,7 +128,7 @@
             return $this->db->get('user_tracking_entry')->result_array();
         }
         public function get_week_data(){
-            $today = date_create('now');
+            $today = date_create('now', timezone_open("America/New_York"));
             $weekEnd = date_format($today->modify('-1 days'), 'Y-m-d 23:59:59');
             $weekEndFormated = date_format($today, 'F d, Y 23:59:59');
             $weekStart = date_format($today->modify('-6 days'), 'Y-m-d 00:00:00');
