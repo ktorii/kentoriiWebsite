@@ -27,8 +27,8 @@ class WeeklyUpdate extends CI_Controller {
 		}
 		
 		$this->email->set_newline("\r\n");
-        $this->email->to("russellparco@gmail.com");
-        $this->email->from("russellparco@gmail.com");
+        $this->email->to("ken.torii7@gmail.com");
+        $this->email->from();
         $this->email->subject("Weekly kentorii.com update");
         $this->email->message($message);
         $this->email->send();
