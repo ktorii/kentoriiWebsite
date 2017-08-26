@@ -8,7 +8,7 @@ class Landing extends CI_Controller {
 
 	private $loader;
 	private $twig;
-	
+
 
 	public function __construct() {
 		parent::__construct();
@@ -37,43 +37,43 @@ class Landing extends CI_Controller {
 		$this->loader = new Twig_Loader_Filesystem('ci/application/views');
 		$this->twig = new Twig_Environment($this->loader);
 	}
-	
+
 	public function trackingNavigation(){
-		
-       
-		
+
+
+
 		$pagename =  $this->input->post('page');
 		$time =  $this->input->post('time');
 		$city =  $this->input->post('city');
 		$country =  $this->input->post('country');
-		
+
 		$data = array(
 	    	'page_name' => 		$pagename,
 	        'recorded_at' =>	$time,
 	        'city' => 			$city,
 	        'country' => 		$country
         );
-		
+
 		$this->tracking_model->input_navigation_data($data);
-        
+
 	}
 	public function trackingLanding(){
-		
+
 		$time =  $this->input->post('time');
 		$city =  $this->input->post('city');
 		$country =  $this->input->post('country');
-		
+
 		$data = array(
-	   
+
 	        'recorded_at' => $time,
 	        'city' => $city,
 	        'country' => $country
         );
 
 		$this->tracking_model->input_landing_data($data);
-        
+
 	}
-	
+
 
 
 	public function index() {
@@ -94,7 +94,7 @@ class Landing extends CI_Controller {
 			)
 		);
 	}
-	
+
 		public function login() {
 		$this->load->model('user_model');
 		$data = array(
@@ -102,11 +102,11 @@ class Landing extends CI_Controller {
 			'error' => 		'',
 			'base_url' => 	base_url(),
 			'countries' => $this->tracking_model->get_countries(),
-			'cities' => 	$this->tracking_model->get_cities()			
+			'cities' => 	$this->tracking_model->get_cities()
 		);
 		$GLOBALS['dbUser'] = $this->user_model->get_user($this->input->post('username'));
 
-		
+
 		$this->form_validation->set_rules('username', 'Username');
 
         $this->form_validation->set_rules('password', 'Password', "md5|callback_password_check",
@@ -122,33 +122,33 @@ class Landing extends CI_Controller {
 			);
 
 			$this->session->set_userdata($newdata);
-			
+
 			echo('loggedIn');
-			
-		
+
+
 		}else{
 			echo(validation_errors('<span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span><span class="sr-only">Error:</span> &nbsp', ''));
 
-		}	
+		}
 	}
 
 
 	public function password_check($password){
 		if($password ===  $GLOBALS['dbUser']['password']){
-			return true; 
+			return true;
 		}
 		return false;
 	}
-	
+
 	public function logout(){
-		
+
 		$newdata = array(
         	'username'  => 	null,
         	'loggedIn' => 	false
 		);
 
 		$this->session->set_userdata($newdata);
-		
+
 
 	}
 
@@ -158,7 +158,7 @@ class Landing extends CI_Controller {
 		}else{
 			echo json_encode($this->tracking_model->get_landing_data());
 		}
-		
+
 	}
 
 	public function navigationChartData(){
@@ -169,5 +169,28 @@ class Landing extends CI_Controller {
 		}
 	}
 
-}
 
+	public function uploadResume(){
+
+	$filename = "resume.pdf";
+	$uploadname = $_FILES['resumefile']['name'];
+	$filetmp = $_FILES['resumefile']['tmp_name'];
+	$filesize = $_FILES['resumefile']['size'];
+	$filetype = $_FILES['resumefile']['type'];
+	$error = false;
+
+	if ( $filetype !== "application/pdf"){
+		$error = true;
+		echo "Wrong File Extension (Needs to be PDF)";
+	}
+
+	$targetDirectory = "uploads/";
+	$targetFile = $targetDirectory . $filename;
+
+		if ($error) {
+			echo "\nFile not uploaded";
+		} elseif (move_uploaded_file($filetmp, $targetFile)) {
+			echo "File Uploaded";
+		}
+	}
+}

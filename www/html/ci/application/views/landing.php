@@ -7,6 +7,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 {% block content %}
 
+
 <!-- Modal -->
 <div id="myModal" class="modal fade" role="dialog">
 	<div class="modal-dialog">
@@ -21,7 +22,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 				<div id ="errorMessage" class="alert alert-danger" role="alert" style = "display: none">
 
-					  
+
 				</div>
 
 		    <form method="POST" action="controllers/Landing.php" name="signIn" id="signInForm">
@@ -338,7 +339,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 				<h1 class="section-heading">Resume</h1><!--'-->
 			</div>
 			<div class="col-sm-12 maintenance-info-box">
-				<h3><a href="http://kentorii.com/2B%20resume.pdf" target="_blank">Resume</a></h3>			
+				<h3><a href="uploads/resume.pdf" target="_blank">Resume</a></h3>
 				<h3>Listen to some music on spotify that I listen to:</h3>
 				<iframe src="https://embed.spotify.com/?uri=spotify%3Auser%3Aktorii%3Aplaylist%3A4z1Tkn4FCpt5ARe81ev1C6" width="300" height="380" frameborder="0" allowtransparency="true"></iframe>
 				<iframe src="https://embed.spotify.com/?uri=spotify%3Auser%3Aktorii%3Aplaylist%3A5iRIXZAwETSNzgjZihwLGi" width="300" height="380" frameborder="0" allowtransparency="true"></iframe>
@@ -639,34 +640,39 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     		<canvas id="navigationChart"></canvas>
 		</div>
 	</div>
-	
+
 	<div id = "form-container" style = "position: relative; width: 80vw; margin: auto; margin-top: 5vh;">
 		<form method="POST" action="controllers/Landing.php" name="adminForm" id="adminForm" style = "text-align: center">
   			<input type="date" name="minDate">
 			<input type="date" name="maxDate">
-			
+
 			<input list="countries" name="countries">
   				<datalist id="countries">
 					{% for country in countries %}
         				<option value = "{{ country['country'] }}">
-    				{% endfor %}					
+    				{% endfor %}
   				</datalist>
 
 			<input list="cities" name="cities">
   				<datalist id="cities">
 					{% for city in cities %}
         				<option value = "{{ city['city'] }}">
-    				{% endfor %}					
-  				</datalist>		
+    				{% endfor %}
+  				</datalist>
 
-			<input type ='hidden' name = 'applied' value = 'applied'> 
-  			<input type="submit" name = 'apply' value = 'Apply Filter' id = "chartApply"> 
+			<input type ='hidden' name = 'applied' value = 'applied'>
+  			<input type="submit" name = 'apply' value = 'Apply Filter' id = "chartApply">
 		</form>
 	</div>
+
+	<h3>Upload Resume</h3>
+
+	<form target="_blank" method="post" enctype="multipart/form-data" id="Fileupload">
+		<input type="file" name="resumefile" id="resumefile">
+    <input type="submit" value="Upload Image" name="submit" id="submit">
+	</form>
+
 </div>
-
-
-
 
 
 {% endblock %}
