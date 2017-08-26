@@ -25,7 +25,7 @@ class Landing extends CI_Controller {
 		if(!isset($_SESSION['loggedIn'])){
 			$newdata = array(
         		'username'  => null,
-        		'loggedIn' => flase
+        		'loggedIn' => false
 			);
 			$this->session->set_userdata($newdata);
 		}
@@ -169,7 +169,6 @@ class Landing extends CI_Controller {
 		}
 	}
 
-}
 
 	public function uploadResume(){
 
@@ -182,13 +181,14 @@ class Landing extends CI_Controller {
 
 	if ( $filetype !== "application/pdf"){
 		$error = true;
+		echo "Wrong File Extension (Needs to be PDF)";
 	}
 
 	$targetDirectory = "uploads/";
 	$targetFile = $targetDirectory . $filename;
 
 		if ($error) {
-			echo "File not uploaded due to error with file";
+			echo "\nFile not uploaded";
 		} elseif (move_uploaded_file($filetmp, $targetFile)) {
 			echo "File Uploaded";
 		}
