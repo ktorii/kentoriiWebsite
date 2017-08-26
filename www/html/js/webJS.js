@@ -62,6 +62,26 @@ $(document).ready(function() {
     //tracking landings
     trackUser(updateLandingTracking);
 
+    $('#Fileupload').submit(function(event) {
+    event.preventDefault();
+    var file_data = $('#resumefile').prop('files')[0];
+    var form_data = new FormData();
+    form_data.append('resumefile', file_data);
+    $.ajax({
+        url: 'index.php/landing/uploadResume', // point to server-side PHP script
+        dataType: 'text',  // what to expect back from the PHP script, if anything
+        cache: false,
+        contentType: false,
+        processData: false,
+        data: form_data,
+        type: 'post',
+        success: function(php_script_response){
+            alert(php_script_response); // display response from the PHP script, if any
+        }
+   });
+   });
+
+
     $('#signInForm').submit(function(event) {
         event.preventDefault();
 
