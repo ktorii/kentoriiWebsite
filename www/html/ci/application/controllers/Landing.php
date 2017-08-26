@@ -25,7 +25,7 @@ class Landing extends CI_Controller {
 		if(!isset($_SESSION['loggedIn'])){
 			$newdata = array(
         		'username'  => null,
-        		'loggedIn' => true
+        		'loggedIn' => flase
 			);
 			$this->session->set_userdata($newdata);
 		}
