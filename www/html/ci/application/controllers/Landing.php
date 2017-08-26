@@ -19,6 +19,7 @@ class Landing extends CI_Controller {
 		$this->load->helper(array('url', 'form'));
 		$this->load->library('form_validation');
 		$this->load->library('session');
+		$this->load->library('email');
 		$this->load->model('tracking_model');
 
 		if(!isset($_SESSION['loggedIn'])){
@@ -167,6 +168,8 @@ class Landing extends CI_Controller {
 			echo json_encode($this->tracking_model->get_navigation_data());
 		}
 	}
+
+}
 
 	public function uploadResume(){
 

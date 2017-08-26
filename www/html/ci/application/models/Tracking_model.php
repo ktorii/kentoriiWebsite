@@ -5,6 +5,7 @@
         {
                 parent::__construct();
                 // Your own constructor code
+                $this->load->database();
         }
         
         public function input_navigation_data($data) {
@@ -71,9 +72,9 @@
 
 
 
-        private function get_chart($table, $page, $min, $max, $country, $city){
+        private function get_chart($table, $page, $min = null, $max = null, $country= null, $city = null){
             $currentDate = date_create(date_format($min,'Y-m-d' ));
-            $finalDate = date_format($max,'Y-m-d' );
+            $finalDate = date_format($max,'Y-m-d 23:59:59');
             $maxDate = date_create($finalDate);
             $data = array();
             
@@ -125,6 +126,21 @@
             $this->db->select('city');
             $this->db->distinct();
             return $this->db->get('user_tracking_entry')->result_array();
+        }
+        public function get_week_data(){
+            $today = date_create('now', timezone_open("America/New_York"));
+            $weekEnd = date_format($today->modify('-1 days'), 'Y-m-d 23:59:59');
+            $weekEndFormated = date_format($today, 'F d, Y 23:59:59');
+            $weekStart = date_format($today->modify('-6 days'), 'Y-m-d 00:00:00');
+            $weekStartFormated = date_format($today, 'F d, Y 00:00:00');
+            
+            $data = array($this->get_landing_data($weekStart, $weekEnd), $this->get_navigation_data($weekStart, $weekEnd), $weekStartFormated, $weekEndFormated);
+            
+
+
+            return $data;
+
+
         }
                    
     }
