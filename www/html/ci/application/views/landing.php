@@ -82,7 +82,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	    	<img style="display:none;" src="{{ base_url }}img/patrickover.png" width="100px" height="100px" />
 	    </div>
 		<div style="text-align:center;">Follow me on <a href="https://twitter.com/kTmochi">Twitter</a></div>
-	    <a class="twitter-timeline"href="https://twitter.com/kTmochi"data-tweet-limit = "3">
+	    <a class="twitter-timeline" href="https://twitter.com/kTmochi" data-tweet-limit="3">
 	    	Tweets by kTmochi
 			</a>
 			<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
