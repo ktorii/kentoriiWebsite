@@ -15,7 +15,7 @@ class Landing extends CI_Controller {
 
 		// load database
 
-        $this->load->database();
+    $this->load->database();
 		$this->load->helper(array('url', 'form'));
 		$this->load->library('form_validation');
 		$this->load->library('session');
@@ -78,12 +78,17 @@ class Landing extends CI_Controller {
 
 	public function index() {
 
+		$query = $this->db->query("SELECT `filename` FROM `resume_file`;");
+		$row = $query->result_array();
+		$currentfile = $row[0]['filename'];
+
 		$info = "";
 		$data = array(
 			'session' => 	$_SESSION['loggedIn'],
 			'base_url' => 	base_url(),
 			'countries' => 	$this->tracking_model->get_countries(),
-			'cities' => 	$this->tracking_model->get_cities()
+			'cities' => 	$this->tracking_model->get_cities(),
+			'resume_file' => $currentfile
 		);
 
 		// render views
@@ -172,8 +177,13 @@ class Landing extends CI_Controller {
 
 	public function uploadResume(){
 
-	$filename = "resume.pdf";
-	$uploadname = $_FILES['resumefile']['name'];
+	$query = $this->db->query("SELECT `filename` FROM `resume_file`;");
+	$row = $query->result_array();
+  $oldfile = $row[0]['filename'];
+
+
+	$targetDirectory = "";
+	$filename = $_FILES['resumefile']['name'];
 	$filetmp = $_FILES['resumefile']['tmp_name'];
 	$filesize = $_FILES['resumefile']['size'];
 	$filetype = $_FILES['resumefile']['type'];
@@ -191,6 +201,16 @@ class Landing extends CI_Controller {
 			echo "\nFile not uploaded";
 		} elseif (move_uploaded_file($filetmp, $targetFile)) {
 			echo "File Uploaded";
+
+			$this->db->where('filename', $oldfile);
+			$this->db->delete('resume_file');
+
+			unlink("uploads/" . $oldfile);
+
+			$sql = ['filename' => $filename];
+			$this->db->insert('resume_file', $sql);
+
+
 		}
 	}
 }
