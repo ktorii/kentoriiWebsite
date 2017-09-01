@@ -502,3 +502,9 @@ footer.container-fluid.center-block {
     overflow: hidden;
     z-index: 100;
 }
+
+#Fileupload {
+  margin-top: 5vh;
+  margin-bottom: 5vh;
+  margin-left: 10%;
+}

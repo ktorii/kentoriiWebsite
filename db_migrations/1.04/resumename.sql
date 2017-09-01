@@ -1,0 +1,4 @@
+CREATE TABLE `vizmvp`.`resume_file` (
+id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+filename VARCHAR(30) NOT NULL
+);
