@@ -83,7 +83,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	    </div>
 		<div style="text-align:center;">Follow me on <a href="https://twitter.com/kTmochi">Twitter</a></div>
 	    <div style="text-align:center;">
-			<a class="twitter-timeline" href="https://twitter.com/kTmochi" data-tweet-limit="3" data-width = "40%">
+			<a class="twitter-timeline" href="https://twitter.com/kTmochi" data-tweet-limit="4" data-width = "40%">
 	    		Tweets by kTmochi
 			</a>
 			<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
