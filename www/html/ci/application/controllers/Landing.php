@@ -80,16 +80,20 @@ class Landing extends CI_Controller {
 
 		$query = $this->db->query("SELECT `filename` FROM `resume_file`;");
 		$row = $query->result_array();
-		$currentfile = $row[0]['filename'];
 
 		$info = "";
 		$data = array(
 			'session' => 	$_SESSION['loggedIn'],
 			'base_url' => 	base_url(),
 			'countries' => 	$this->tracking_model->get_countries(),
-			'cities' => 	$this->tracking_model->get_cities(),
-			'resume_file' => $currentfile
+			'cities' => 	$this->tracking_model->get_cities()
 		);
+
+		if (!empty($row)){
+			$currentfile = "uploads/" . $row[0]['filename'];
+			$data += ['resume_file' => $currentfile];
+		}
+
 
 		// render views
 		$this->output->set_output(
@@ -204,8 +208,6 @@ class Landing extends CI_Controller {
 
 			$this->db->where('filename', $oldfile);
 			$this->db->delete('resume_file');
-
-			unlink("uploads/" . $oldfile);
 
 			$sql = ['filename' => $filename];
 			$this->db->insert('resume_file', $sql);
