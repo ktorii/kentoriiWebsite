@@ -89,8 +89,19 @@ class Landing extends CI_Controller {
 			'cities' => 	$this->tracking_model->get_cities()
 		);
 
+		// establishes resume file name
 		if (!empty($row)){
-			$currentfile = "uploads/" . $row[0]['filename'];
+			$currentfile = $row[0]['filename'];
+
+			for ($i = 0; $i < strlen($currentfile); $i++){
+				if ($currentfile[$i] == " "){
+					$prefix = substr($currentfile, 0, $i);
+					$end = substr($currentfile, $i + 1);
+					$currentfile = $prefix . "%20" . $end;
+				}
+			}
+
+			$currentfile = "uploads/" . $currentfile;
 			$data += ['resume_file' => $currentfile];
 		}
 
@@ -215,4 +226,5 @@ class Landing extends CI_Controller {
 
 		}
 	}
+
 }
