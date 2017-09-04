@@ -344,7 +344,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 				<h1 class="section-heading">Resume</h1><!--'-->
 			</div>
 			<div class="col-sm-12 maintenance-info-box">
-				<h3><a href="uploads/{{ resume_file }}" target="_blank">Resume</a></h3>
+				<h3><a href="{{ resume_file }}" target="_blank">Resume</a></h3>
 				<h3>Listen to some music on spotify that I listen to:</h3>
 				<iframe src="https://embed.spotify.com/?uri=spotify%3Auser%3Aktorii%3Aplaylist%3A4z1Tkn4FCpt5ARe81ev1C6" width="300" height="380" frameborder="0" allowtransparency="true"></iframe>
 				<iframe src="https://embed.spotify.com/?uri=spotify%3Auser%3Aktorii%3Aplaylist%3A5iRIXZAwETSNzgjZihwLGi" width="300" height="380" frameborder="0" allowtransparency="true"></iframe>
