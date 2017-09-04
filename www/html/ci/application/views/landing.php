@@ -69,19 +69,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	<div class="jumbotron strictly-no-background-color">
 	  <div class="container">
 	    <h1 style="text-align:center;">What's up Ken?</h1>
-	    <h2>Catching up with old friends after 3-6 years. Actually amazing.</h2>
-	    <h3>On my coop term.</h3>
-
-	    <h4 style="display:visible;">Feeling good.</h4>
-	    <h4 style="display:none;">Feeling ok.</h4>
-	    <h4 style="display:none;">Feeling done.</h4>
-
-	    <div class="col-sm-12" style="text-align:center;">
-	    	<img style="display:none;" src="{{ base_url }}img/totorohappy.jpeg" width="100px" height="100px" />
-	    	<img style="display:visible;" src="{{ base_url }}img/totoroalright.png" width="100px" height="100px" />
-	    	<img style="display:none;" src="{{ base_url }}img/patrickover.png" width="100px" height="100px" />
-	    </div>
-		<div style="text-align:center;">Follow me on <a href="https://twitter.com/kTmochi">Twitter</a></div>
 	    <div style="text-align:center;">
 			<a class="twitter-timeline" href="https://twitter.com/kTmochi" data-tweet-limit="4" data-width = "40%">
 	    		Tweets by kTmochi
