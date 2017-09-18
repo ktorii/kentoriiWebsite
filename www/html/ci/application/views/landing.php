@@ -444,7 +444,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 		<div class="container">
 			<div class="text-center">
 				<h1 class="section-heading">Contact Me</h1><!--'-->
-				<h3 class="text-muted"><a href="https://ca.linkedin.com/in/ken-torii-444118a6" target="_blank">Linkedin</a> &bull; ken.torii7@gmail.com &bull; <a href="https://www.facebook.com/ken.torii.1?fref=ts" target="_blank">Facebook</a> &bull; <a href="https://twitter.com/kTmochi" target="_blank">Twitter</a> &bull; <a href="https://www.instagram.com/ktmochi7/" target="_blank">Instagram</a></h3>
+				<h3 class="text-muted"><a href="https://ca.linkedin.com/in/ken-torii-444118a6" target="_blank">Linkedin</a> &bull; ken.torii7@gmail.com &bull; <a href="https://www.facebook.com/ken.torii.1?fref=ts" target="_blank">Facebook</a> &bull; <a href="https://twitter.com/kTmochi" target="_blank">Twitter</a> &bull; <a href="https://www.instagram.com/ktmochii/" target="_blank">Instagram</a></h3>
 			</div>
 		</div>
 	</div>
