@@ -621,7 +621,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 		</div>
 	</div>
 </body>
-
+{% if true == session %}
 <!--ADMIN PAGE-->
 <div class="container kt-tabs-component-content clean-container-theme strictly-no-padding" id="adminpage">
 	<div>
@@ -666,6 +666,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	</form>
 
 </div>
-
+{% endif %}
 
 {% endblock %}
