@@ -1,12 +1,14 @@
 $('document').ready(function() {
-    getAdminCharts();
+    if ($('#chartApply').length) {
 
-    $('#chartApply').click(function(event) {
-        event.preventDefault();
-        updateAdminCharts();
+        getAdminCharts();
 
-    });
+        $('#chartApply').click(function(event) {
+            event.preventDefault();
+            updateAdminCharts();
 
+        });
+    }
 });
 
 function adminGraphLanding(data) {
