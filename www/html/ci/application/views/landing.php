@@ -160,7 +160,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 								</a>
 							</div>
 						</div>
-						<img alt="" class="img-responsive" src="{{ base_url }}img/dangopuckpreview.png">
+						<img alt="" class="img-responsive" src="{{ base_url }}img/dangoploppreview.png">
 					</div>
 					<div class="portfolio-caption">
 						<h4>Dango Puck! v1.0</h4>
@@ -233,8 +233,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 						<p class="text-muted">Game Developer</p>
 					</div>
 				</div>
-				
-			<div class="row">
+            </div>
+            <div class="row">
                 <div class="col-md-4 col-sm-6 portfolio-item">
 					<div class="portfolio-link">
 						<div class="portfolio-hover">
@@ -266,9 +266,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 						<h4>Straights Card Game</h4>
 						<p class="text-muted">Game Developer</p>
 					</div>
-				</div>
-			</div>
-				<div class="col-md-4 col-sm-6 portfolio-item">
+                </div>
+                <div class="col-md-4 col-sm-6 portfolio-item">
 					<div class="portfolio-link">
 						<div class="portfolio-hover">
 							<div class="portfolio-hover-content">
@@ -301,6 +300,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 					</div>
 				</div>
 			</div>
+				
 		</div>
 	</section>
 </div>
@@ -580,15 +580,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 							<a href="{{ base_url }}downloads/DangoPuckv1LinuxUniversal.zip" download>Linux Universal.</a>
 						    </p>
 							<p><strong>Check out the GitHub <a href="https://github.com/ktorii/DangoPuckv1" target="_blank">here!</a></strong></p>
-							<p>Audio Development: Audacity and MAC's garageband. e.x: end game sound, score sounds, whistle sounds, etc.</p>
-							<p>Code Development: C#</p>
-							<p>Graphics Development: Blender, Adobe Photoshop, Illustrator. e.x: 3-d lamp objects, brick wall texture, main menu, how to play screen, etc.</p>
-							<p>Game Dev Software: Unity 5</p>
-							<ul class="list-inline">
-								<li>Date: January 2017</li>
-								<li>Game Developer: Ken Torii</li>
-								<li>Category: Multi Platform Game</li>
-							</ul><button class="btn btn-primary" data-dismiss="modal" type="button">Close Project</button>
+							<button class="btn btn-primary" data-dismiss="modal" type="button">Close Project</button>
 						</div>
 					</div>
 				</div>
@@ -667,24 +659,16 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 					<div class="col-lg-8 col-lg-offset-2">
 						<div class="modal-body">
 							<!-- Project Details Go Here -->
-							<h2>Dango Plop!<a class="button-play" href="{{ base_url }}index.php/Games/DangoPuck">Play!</a></h2>
-							<p class="item-intro text-muted">Inspired by Mario Party 2's minigame: Speed Hockey. Made using the popular <strong>Unity5</strong> game dev software.</p><img alt="" class="img-responsive img-centered" src="{{ base_url }}img/dangopuckpreviewmodal.png">
-							<p>Combine the cuteness of mochi sticky rice balls and a classic game of speed hockey. You get Dango Puck! With the exception of the music, everything was made by me. All graphics, code, and audio clips were made by me.</p>
+							<h2>Dango Plop!<a class="button-play" href="{{ base_url }}index.php/Games/DangoPlop">Play!</a></h2>
+                            <p class="item-intro text-muted">Combine the cuteness of dangos with the fun of popping balls with your bazooka. Built with a fabulous student driven team and <strong>Unity5</strong> game dev software.</p>
+                            <img alt="" class="img-responsive img-centered" src="{{ base_url }}img/dangoplopmodal.png">
 							<p><strong>Download the game for </strong>
-							<a href="{{ base_url }}downloads/DangoPuckv1MacUniversal.zip" download>MacOS</a>,
-							<a href="{{ base_url }}downloads/DangoPuckv1Win86.zip" download>Windows</a>, or
-							<a href="{{ base_url }}downloads/DangoPuckv1LinuxUniversal.zip" download>Linux Universal.</a>
+							<a href="{{ base_url }}downloads/dangoplopMac.zip" download>MacOS</a>,
+							<a href="{{ base_url }}downloads/dangoplopWindows.zip" download>Windows</a>, or
+							<a href="{{ base_url }}downloads/dangoplopLinux.zip" download>Linux Universal.</a>
 						    </p>
-							<p><strong>Check out the GitHub <a href="https://github.com/ktorii/DangoPuckv1" target="_blank">here!</a></strong></p>
-							<p>Audio Development: Audacity and MAC's garageband. e.x: end game sound, score sounds, whistle sounds, etc.</p>
-							<p>Code Development: C#</p>
-							<p>Graphics Development: Blender, Adobe Photoshop, Illustrator. e.x: 3-d lamp objects, brick wall texture, main menu, how to play screen, etc.</p>
-							<p>Game Dev Software: Unity 5</p>
-							<ul class="list-inline">
-								<li>Date: January 2017</li>
-								<li>Game Developer: Ken Torii</li>
-								<li>Category: Multi Platform Game</li>
-							</ul><button class="btn btn-primary" data-dismiss="modal" type="button">Close Project</button>
+							<p><strong>Check out the GitHub <a href="https://github.com/ktorii/dangoplop" target="_blank">here!</a></strong></p>
+                            <button class="btn btn-primary" data-dismiss="modal" type="button">Close Project</button>
 						</div>
 					</div>
 				</div>
