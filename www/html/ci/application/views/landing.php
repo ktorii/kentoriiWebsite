@@ -163,7 +163,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 						<img alt="" class="img-responsive" src="{{ base_url }}img/dangoploppreview.png">
 					</div>
 					<div class="portfolio-caption">
-						<h4>Dango Puck! v1.0</h4>
+						<h4>Dango Plop! v1.0</h4>
 						<p class="text-muted">Game+Graphics+Sound Developer</p>
 					</div>
 				</div>
