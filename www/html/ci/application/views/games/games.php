@@ -5,6 +5,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 ?>
 {% endblock %}
 
+{% block css_content %}
+ {{ css_embed | raw }}
+{% endblock %}
+
 {% block content %}
 
 <div class="container kt-tabs-component-content clean-container-theme"><!--id="aboutsite"-->

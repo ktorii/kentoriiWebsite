@@ -13,15 +13,8 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
 	<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
     
-    <link rel="stylesheet" href="{{ base_url }}games/general/TemplateData/style.css">
-    <style>
-        .template-wrap {
-            -webkit-transform: translate(-50%, -10%) !important;
-            transform: translate(-50%, -10%) !important;
-        }
-    </style>
-    <link rel="shortcut icon" href="{{ base_url }}games/general/TemplateData/favicon.ico" />
-    <script src="{{ base_url }}games/general/TemplateData/UnityProgress.js"></script>
+    {% block css_content %}{% endblock %}
+    
 	<!-- <script type="text/javascript" src="{{ base_url }}js/webJS.js"></script> -->
 </head>
 
@@ -54,6 +47,7 @@
             </nav>
         </div>
     </div>
+    <div>please wait 10 seconds for the game to load...</div>
     {% block content %}{% endblock %}
 </body>
 

@@ -1,0 +1,9 @@
+{
+"TOTAL_MEMORY": 268435456,
+"dataUrl": "dangoplopWeb.data.unityweb",
+"asmCodeUrl": "dangoplopWeb.asm.code.unityweb",
+"asmMemoryUrl": "dangoplopWeb.asm.memory.unityweb",
+"asmFrameworkUrl": "dangoplopWeb.asm.framework.unityweb",
+"splashScreenStyle": "Dark",
+"backgroundColor": "#222C36"
+}
