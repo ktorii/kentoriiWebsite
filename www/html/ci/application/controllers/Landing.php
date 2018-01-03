@@ -77,8 +77,8 @@ class Landing extends CI_Controller {
 
 
 	public function index() {
-        $this->load->model('ip_block_model');
-        print_r($this->ip_block_model->is_blocked_ip());
+        // $this->load->model('ip_block_model');
+        // print_r($this->ip_block_model->is_blocked_ip());
 
 		$query = $this->db->query("SELECT `filename` FROM `resume_file`;");
 		$row = $query->result_array();
