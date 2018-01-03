@@ -15,7 +15,7 @@ class Landing extends CI_Controller {
 
 		// load database
 
-    $this->load->database();
+        $this->load->database();
 		$this->load->helper(array('url', 'form'));
 		$this->load->library('form_validation');
 		$this->load->library('session');
@@ -77,6 +77,8 @@ class Landing extends CI_Controller {
 
 
 	public function index() {
+        $this->load->model('ip_block_model');
+        print_r($this->ip_block_model->is_blocked_ip());
 
 		$query = $this->db->query("SELECT `filename` FROM `resume_file`;");
 		$row = $query->result_array();
