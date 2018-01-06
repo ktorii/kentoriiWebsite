@@ -21,3 +21,4 @@ fi
 cp -rf $REPO_DIRECTORY/www/html/ci/application/views/* $GODADDY_SITE_ROOT/ci/application/views/
 cp -rf $REPO_DIRECTORY/www/html/ci/application/controllers/* $GODADDY_SITE_ROOT/ci/application/controllers/
 cp -rf $REPO_DIRECTORY/www/html/ci/application/models/* $GODADDY_SITE_ROOT/ci/application/models/
+cp -rf $REPO_DIRECTORY/www/html/games/* $GODADDY_SITE_ROOT/ci/application/games/
